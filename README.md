@@ -86,7 +86,7 @@ temperatura,
 
 Comentarios.
 ```python 
-# Ask the user for their name
+# pregunta al usuario por su nombre.
 temperatura = input("Cual es la temperatura? ")
 print("temperatura,")
 print(temperatura)
