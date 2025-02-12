@@ -13,7 +13,8 @@
 1. Descarga Thonny. Para descargar a Thonny nos dirigimos a la pagina oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
 
 1. Busca tu archivo descargado y lo ejecutas dandole doble click.
-1. Dale al boton <kbd>Next</kbd> y despues acepta los términos. ![Aceptar términos](./imagen/thony_aceptar_acuerdo.png).
+1. Dale al boton <kbd>Next</kbd> y despues acepta los términos.
+![Aceptar términos](./imagen/thony_aceptar_acuerdo.png).
 1. Activa la casilla para que te ponga un icono en el escritorio.
 ![Crear icono](./imagen/thony_acceso_directo.png). 
 1. Da clic en <kbd>Install</kbd> para que inicie el proceso de instalación. ![Iniciar instalación](./imagen/iniciar_instalacion.png)
