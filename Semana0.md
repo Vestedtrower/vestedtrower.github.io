@@ -1,5 +1,5 @@
 # Uso de Sensor Dht11 con Micropython.
-[semana 1](/Semana1)
+[semana 0](/Semana0)
 ## Materiales:
 - Sensor Dht11.
 - Esp32.
@@ -14,6 +14,7 @@
 
 1. Busca tu archivo descargado y lo ejecutas dandole doble click.
 1. Dale al boton <kbd>Next</kbd> y despues acepta los términos.
+
 ![Aceptar términos](./imagen/thony_aceptar_acuerdo.png).
 1. Activa la casilla para que te ponga un icono en el escritorio.
 ![Crear icono](./imagen/thony_acceso_directo.png). 
@@ -44,7 +45,7 @@ Para hacer esto utilizaremos la funcion **input**   .
 input("Cual es la temperatura? ")
 print("Hola, ambiente")
 ```
-El resultado del programa en la consola es el siguiente. 
+El resultado del programa en la consola es el siguiente: 
 
 ```console
 MPY: soft reboot
@@ -59,7 +60,7 @@ Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra v
 temperatura = input("Cual es la temperatura? ")
 print("Hola Ambiente : temperatura")
 ```
-Al obsevar el resultado nos dará la temperatura pero si esta asignando un valor a la variable temperatura. 
+Al obsevar el resultado nos dará la temperatura pero si esta asignando un valor a la variable temperatura:
 
 ```console
 MPY: soft reboot
@@ -74,7 +75,7 @@ temperatura = input("Cual es la temperatura? ")
 print("temperatura,")
 print(temperatura)
 ```
-El resultado obtenido es el siguiente.
+El resultado obtenido es el siguiente:
 
 ```console
 MPY: soft reboot
@@ -86,39 +87,45 @@ temperatura,
 
 Comentarios.
 ```python 
-# pregunta al usuario por su nombre.
+# Preguntamos al usuario que ingrese la temperatura
 temperatura = input("Cual es la temperatura? ")
 print("temperatura,")
 print(temperatura)
 ```
 Resultado obtenido.
-
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+temperatura,
+32
 ```
 
 Pseudocodigo.
+
 En python utilizamos **#** para crear un Pseudocodigo, No afecta al codigo funcional nos sirve para dar instrucciones dejando notas de seguimiento por asi decirlo.
 
 ```python
-# Ask the user for their temperatura
+# Preguntamos al usuario cual es la temperatura 
 temperatura = input("Cual es la temperatura? ")
 
 # Print Hola Ambiente
 print("Hola Ambiente,")
 
-# Print the temperatura inputted
+# Utilizamos print para ingresar la temperatura en numeros por ejemplo 32 
 print(temperatura)
 ```
 Resultado obtenido. 
 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+Hola Ambiente,
+32
 ```
 Mejorando el programa.
 
 ```python
-# Ask the user for their temperatura
+# Le pedimos al usuario la temperatura 
 temperatura = input("Cual es la temperatura? ")
 
 # Print Hola Ambiente and the inputted temperatura
@@ -138,15 +145,16 @@ Las comas **,**  se utilizan para pasar multiples argumentos.
 En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes ver que dice "Hola Ambiente,"**,** temperatura
 
 ```python
-# Ask the user for their temperatura
+# Le preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
 
-# Print Hola Ambiente and the inputted temperatura
+# Impriminmos Hola Ambiente y ingresamos la temperatura
 print("Hola Ambiente,", temperatura)
 ```
 El resultado del programa es. 
 
 ```console
+
 ```
 Cadenas y parametros.
 
