@@ -84,8 +84,8 @@ temperatura,
 32
 ```
 
-
 Comentarios.
+En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la informacion que se desea compartir 
 ```python 
 # Preguntamos al usuario que ingrese la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -102,7 +102,9 @@ temperatura,
 
 Pseudocodigo.
 
-En python utilizamos **#** para crear un Pseudocodigo, No afecta al codigo funcional nos sirve para dar instrucciones dejando notas de seguimiento por asi decirlo.
+Para crear un Pseudocodigo, hacemos uso de la misma manera que un comentario.
+No afecta al codigo funcional nos sirve para dar instrucciones, dejando notas de seguimiento por asi decirlo. 
+
 
 ```python
 # Preguntamos al usuario cual es la temperatura 
@@ -128,7 +130,7 @@ Mejorando el programa.
 # Le pedimos al usuario la temperatura 
 temperatura = input("Cual es la temperatura? ")
 
-# Print Hola Ambiente and the inputted temperatura
+# Imprimimos Hola ambiente con la temperatura ingresada
 print("Hola Ambiente, " + temperatura)
 ```
 El resultado obtenido es. 
@@ -154,7 +156,9 @@ print("Hola Ambiente,", temperatura)
 El resultado del programa es. 
 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+Hola Ambiente, 32
 ```
 Cadenas y parametros.
 
