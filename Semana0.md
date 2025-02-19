@@ -165,75 +165,75 @@ Cadenas y parametros.
 Para representar una cadena utilizamos **str** nos sirven para realizar secuencias de texto. 
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
-print("hello,")
-print(name)
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
+print("hola ambiente,")
+print(temperatura)
 ```
 Modificaciones 
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
-print("hello,", end="")
-print(name)
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
+print("hola ambiente,", end="")
+print(temperatura)
 ```
 Formato cadenas 
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
-print(f"hello, {name}")
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
+print(f"hola ambiente, {temperatura}")
 ```
 Mas sobre cuerdas 
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
 
-# Remove whitespace from the str
-name = name.strip()
+# Eliminamos los espacios en blanco de la cadena 
+temperatura = temperatura.strip()
 
-# Print the output
-print(f"hello, {name}")
+# Imprimimos la salida
+print(f"hola ambiente, {temperatura}")
 
 ```
 Uso de tilte
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
 
-# Remove whitespace from the str
-name = name.strip()
+# Eliminamos los espacios en blanco de la cadena 
+temperatura = temperatura.strip()
 
-# Capitalize the first letter of each word
-name = name.title()
+# Escribimos con mayuscula la primera letra de cada palabra 
+temperatura = temperatura.title()
 
-# Print the output
-print(f"hello, {name}")
+# Imprimimos la salida
+print(f"hola ambiente, {temperatura}")
 ```
 Mejoramos mas el codigo para que obtengamos una mayor eficiencia
 
 ```python
-# Ask the user for their name
-name = input("What's your name? ")
+# Preguntamos al usuario por la temperatura
+temperatura = input("Cual es la temperatura? ")
 
-# Remove whitespace from the str and capitalize the first letter of each word
-name = name.strip().title()
+# Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
+temperatura = temperatura.strip().title()
 
-# Print the output
-print(f"hello, {name}")
+# Imprimimos la salida
+print(f"hola ambiente, {temperatura}")
 ```
 El siguiente codigo es para que mejorermos mas el programa.
 obteniendo los mismos resultados. 
 
 ```python
-# Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
-name = input("What's your name? ").strip().title()
+# Preguntamos al usuario por la temperatura, Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
+temperatura = input("Cual es la temperatura? ").strip().title()
 
-# Print the output
-print(f"hello, {name}")
+# Imprimimos la salida
+print(f"hola ambiente, {temperatura}")
 ```
 Numeros enteros o int.
 
