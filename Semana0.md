@@ -1,36 +1,55 @@
-# Uso de Sensor Dht11 con Micropython.
-[semana 0](/Semana0)
-## Materiales:
-- Sensor Dht11.
-- Esp32.
-- Cableado Jumper Electronica "F - F".
-- Cable USB tipo A con entrada para micro puerto tipo B.
-- Computadora.
-- Aplicacion Thonny. 
+# Funciones y variables con Micropython.
+- [Materiales](#materiales)
+- [Instrucciones](#instrucciones)
+  - [Instalar Thonny](#instalar-thonny)
+  - [Usar Thonny](#usar-thonny)
+  - [Variables](#variables)
+  
+
+## Materiales
+- Sensor DHT11
+- Esp32
+- Cableado Jumper Electronica "F - F"
+- Cable USB tipo A con entrada para micro puerto tipo B
+- Computadora
+- Aplicacion Thonny 
 
 ## Instrucciones
 ### Instalar Thonny
-1. Descarga Thonny. Para descargar a Thonny nos dirigimos a la pagina oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
-
-1. Busca tu archivo descargado y lo ejecutas dandole doble click.
-1. Dale al boton <kbd>Next</kbd> y despues acepta los términos.
-
+Descarga Thonny. Para descargar a Thonny nos dirigimos a la pagina oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
+Busca tu archivo descargado y lo ejecutas dandole doble click.
+Dale al boton <kbd>Next</kbd> y despues acepta los términos.
 ![Aceptar términos](./imagen/thony_aceptar_acuerdo.png).
-1. Activa la casilla para que te ponga un icono en el escritorio.
-![Crear icono](./imagen/thony_acceso_directo.png). 
-1. Da clic en <kbd>Install</kbd> para que inicie el proceso de instalación. ![Iniciar instalación](./imagen/iniciar_instalacion.png)
-1. Para finalizar la instalación hay que dar click en el boton <kbd>Finish</kbd>.
+
+Activa la casilla para que te ponga un icono en el escritorio.
+Con esto podras tener un acceso rapido en tu escritorio.
+![Crear icono](./imagen/thony_acceso_directo.png).
+
+Da click en <kbd>Install</kbd> para que inicie el proceso de instalación.
+Este proceso puede tomar tiempo, dependerá de el procesador de tu computadora. 
+![Iniciar instalación](./imagen/iniciar_instalacion.png)
+
+Para finalizar la instalación hay que dar click en el boton <kbd>Finish</kbd>.
+O simplemente puedes cerrar la ventana.
 ![Finalizar instalacion](./imagen/finalizar_instalacion.png)
  
 ### Usar Thonny
-1. Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
-1. Nos ubicamos en la interfaz del interprete para comenzar a escribir el codigo. ![Ubicamos la interfaz para escribir](./imagen/thony_ubicar_interfaz.png)
-1. Empecemos a desarrollar una función definimos nuestras variables. 
-![Interfaz donde se escribe el programa.](./imagen/empezar_programa.png)
+Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
+Nos ubicamos en la interfaz del interprete para comenzar a escribir el codigo.
+Al abrir el programa te abrira tambien un archivo en el que podras empezar a programar.
+![Inicio Thonny](./imagen/Inicio_Thonny.png)
+En la siguiente imagen esta señalado con un cadro amarillo donde podras editar este archivo. 
+![Ubicamos la interfaz para escribir](./imagen/thony_ubicar_interfaz.png)
+
+Notarás que en la consola, señalada en el recuadro amarillo de la siguiente imagen, no indica que no esta conectado el puerto COM 3.
+Esto quiere decir que tienes que conectar tu esp32 con el cable USB a tu compuadora.
+Duespues de esto, ve al menú **Ejecutar** y despues de click en **Detener/Reinicia back end**.
+![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
 
 Ahora comenzaremos a escribir el siguiente código.
-
-Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizamos"print(hola)".
+Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizando la función **print**.
+Para ejecutarlo ve al menú **Ejecutar** y da click en **Ejecutar el script actual**.
+De igual forma puedes presionar en tu teclado al tecla <kbd>F5</kbd>.
 ```python
 print("Hola esp32")
 ```
@@ -38,20 +57,22 @@ El resultado de este programa es el siguiente:
 ```console
 Hola esp32
 ```
-Para el siguiente ejemplo queremos solicitarle al usuario que ingrese algo escrito en la consola que se encuentra en la parte inferior de nuestra interfaz de Thonny. 
-Para hacer esto utilizaremos la funcion **input**   .
 
+Para el siguiente ejemplo queremos solicitarle al usuario que ingrese algo escrito en la consola que se encuentra en la parte inferior de nuestra interfaz de Thonny. 
+Para hacer esto utilizaremos la funcion **input**.
 ```python
 input("Cual es la temperatura? ")
 print("Hola, ambiente")
 ```
 El resultado del programa en la consola es el siguiente: 
-
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
 Hola, ambiente
 ```
+
+### Variables
+
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
