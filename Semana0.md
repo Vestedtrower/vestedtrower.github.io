@@ -76,28 +76,23 @@ Hola, ambiente
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
-
 ```python
 temperatura = input("Cual es la temperatura? ")
 print("Hola Ambiente : temperatura")
 ```
 Al obsevar el resultado nos dará la temperatura pero si esta asignando un valor a la variable temperatura:
-
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
 Temperatura: temperatura
-
 ```
 En este ejemplo podemos solucionar la asignacion antes mencionada, agragendo un print con la variable a la que le hemos asignado el valor.
-
 ```python
 temperatura = input("Cual es la temperatura? ")
 print("temperatura,")
 print(temperatura)
 ```
 El resultado obtenido es el siguiente:
-
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
@@ -105,8 +100,9 @@ temperatura,
 32
 ```
 
-Comentarios.
-En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la informacion que se desea compartir 
+### Comentarios
+
+En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la informacion que se desea compartir. 
 ```python 
 # Preguntamos al usuario que ingrese la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -121,12 +117,10 @@ temperatura,
 32
 ```
 
-Pseudocodigo.
+### Pseudocodigo
 
 Para crear un Pseudocodigo, hacemos uso de la misma manera que un comentario.
 No afecta al codigo funcional nos sirve para dar instrucciones, dejando notas de seguimiento por asi decirlo. 
-
-
 ```python
 # Preguntamos al usuario cual es la temperatura 
 temperatura = input("Cual es la temperatura? ")
@@ -138,15 +132,17 @@ print("Hola Ambiente,")
 print(temperatura)
 ```
 Resultado obtenido. 
-
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
 Hola Ambiente,
 32
 ```
-Mejorando el programa.
 
+### Mejorando el primer programa 
+
+Para el siguiente ejemplo podemos editar el anterior programa. 
+Donde podemos sumar los dos print de una manera mas optimizada.   
 ```python
 # Le pedimos al usuario la temperatura 
 temperatura = input("Cual es la temperatura? ")
@@ -162,11 +158,10 @@ Cual es la temperatura? 32
 Hola Ambiente, 32
 ```
 
-Comas. 
+### Comas 
 
 Las comas **,**  se utilizan para pasar multiples argumentos. 
-En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes ver que dice "Hola Ambiente,"**,** temperatura
-
+En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes ver que dice "Hola Ambiente," **,** temperatura.
 ```python
 # Le preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -175,23 +170,23 @@ temperatura = input("Cual es la temperatura? ")
 print("Hola Ambiente,", temperatura)
 ```
 El resultado del programa es. 
-
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
 Hola Ambiente, 32
 ```
-Cadenas y parametros.
+
+### Cadenas y parametros
 
 Para representar una cadena utilizamos **str** nos sirven para realizar secuencias de texto. 
-
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
 print("hola ambiente,")
 print(temperatura)
 ```
-Modificaciones 
+
+### Modificaciones 
 
 ```python
 # Preguntamos al usuario por la temperatura
@@ -199,14 +194,16 @@ temperatura = input("Cual es la temperatura? ")
 print("hola ambiente,", end="")
 print(temperatura)
 ```
-Formato cadenas 
+
+### Formato cadenas 
 
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
 print(f"hola ambiente, {temperatura}")
 ```
-Mas sobre cuerdas 
+
+### Mas sobre cuerdas 
 
 ```python
 # Preguntamos al usuario por la temperatura
@@ -219,7 +216,8 @@ temperatura = temperatura.strip()
 print(f"hola ambiente, {temperatura}")
 
 ```
-Uso de tilte
+
+### Uso de tilte
 
 ```python
 # Preguntamos al usuario por la temperatura
@@ -234,8 +232,7 @@ temperatura = temperatura.title()
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
 ```
-Mejoramos mas el codigo para que obtengamos una mayor eficiencia
-
+Mejoramos mas el codigo para que obtengamos una mayor eficiencia.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -248,7 +245,6 @@ print(f"hola ambiente, {temperatura}")
 ```
 El siguiente codigo es para que mejorermos mas el programa.
 obteniendo los mismos resultados. 
-
 ```python
 # Preguntamos al usuario por la temperatura, Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
 temperatura = input("Cual es la temperatura? ").strip().title()
@@ -256,7 +252,8 @@ temperatura = input("Cual es la temperatura? ").strip().title()
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
 ```
-Numeros enteros o int.
+
+### Numeros enteros o int
 
 ```python 
 x = 1
@@ -266,7 +263,8 @@ z = x + y
 
 print(z)
 ```
-interacion con input.
+
+### Interacion con input
 
 ```python
 x = input("What's x? ")
@@ -276,7 +274,8 @@ z = x + y
 
 print(z)
 ```
-cancatenamos dos cadenas mediante signos 
+
+### Concatenamos dos cadenas mediante signos 
 
 ```python
 x = input("What's x? ")
@@ -286,7 +285,6 @@ z = int(x) + int(y)
 
 print(z)
 ```
-
 El uso de int(x).
 
 ```python 
@@ -294,10 +292,9 @@ x = int(input("What's x? "))
 y = int(input("What's y? "))
 
 print(x + y)
-
 ```
 
-Conceptos basicos de flotacion.
+### Conceptos basicos de flotacion
 
 ```python 
 x = float(input("What's x? "))
@@ -305,7 +302,6 @@ y = float(input("What's y? "))
 
 print(x + y)
 ```
-
 ```python 
 # Get the user's input
 x = float(input("What's x? "))
@@ -317,7 +313,6 @@ z = round(x + y)
 # Print the result
 print(z)
 ```
-
 ```python 
 # Get the user's input
 x = float(input("What's x? "))
@@ -330,7 +325,7 @@ z = round(x + y)
 print(f"{z:,}")
 ```
 
-Mas sobre los flotadores 
+### Mas sobre los flotadores 
 
 ```python 
 # Get the user's input
@@ -369,7 +364,7 @@ print(f"{z:.2f}")
 
 ```
 
-Definion
+### Definicion
 
 ```python
 # Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
@@ -469,15 +464,10 @@ def square(n):
 main()
 ```
 
-
-
-
-
-
-
 ### Aplicasion thonny con el sensor Dht11
 
-ESTO ES EL PROGRAMA FINAL
+### ESTO ES EL PROGRAMA FINAL
+
 ```python
 from machine import Pin
 import dht
@@ -502,12 +492,10 @@ s = dht.DHT11(Pin(15))
 temp = s.temperature()
 hum = s.humidity()
 
-# IMPRIMEREMOS
+# IMPRIMIMOS 
 print("Temperatura {temp}" )
 print("Humedad: {hum}")
 ```
-
-
 ```python
 from machine import Pin
 import dht
