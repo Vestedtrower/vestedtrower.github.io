@@ -42,6 +42,7 @@ Con esto podras tener un acceso rapido en tu escritorio.
 
 Da click en <kbd>Install</kbd> para que inicie el proceso de instalación.
 Este proceso puede tomar tiempo, dependerá de el procesador de tu computadora. 
+
 ![Iniciar instalación](./imagen/iniciar_instalacion.png)
 
 Para finalizar la instalación hay que dar click en el boton <kbd>Finish</kbd>.
