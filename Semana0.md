@@ -4,8 +4,23 @@
   - [Instalar Thonny](#instalar-thonny)
   - [Usar Thonny](#usar-thonny)
   - [Variables](#variables)
+  - [Comentarios](#comentarios)
+  - [Pseudocodigo](#pseudocodigo)
+  - [Mejorando](#mejorando-el-primer-programa)
+  - [Comas](#comas)
+  - [Cadenas_y_parametros](#cadenas-y-parametros)
+  - [Modificaciones](#modificaciones)
+  - [Formato_cadenas](#formato-cadenas)
+  - [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
+  - [Uso_de_title](#uso-de-tilte)
+  - [Numeros_enteros_o_int](#numeros-enteros-o-int)
+  - [Interaccion_con_input](#interacion-con-input)
+  - [Concatenamos_dos_cadenas_mediante_signos](#concatenamos-dos-cadenas-mediante-signos)
+  - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
+  - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
+  - [Definicion](#Definicion)
+  - [Devolviendo_valores](#Devolviendo_valores)
   
-
 ## Materiales
 - Sensor DHT11
 - Esp32
