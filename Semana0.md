@@ -1,27 +1,27 @@
 # Funciones y variables con Micropython.
 - [Materiales](#materiales)
-- [Instrucciones](#instrucciones)
-  - [Instalar Thonny](#instalar-thonny)
-  - [Usar Thonny](#usar-thonny)
-  - [Variables](#variables)
-  - [Comentarios](#comentarios)
-  - [Pseudocodigo](#pseudocodigo)
-  - [Mejorando](#mejorando-el-primer-programa)
-  - [Comas](#comas)
-  - [Cadenas_y_parametros](#cadenas-y-parametros)
-  - [Modificaciones](#modificaciones)
-  - [Formato_cadenas](#formato-cadenas)
-  - [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
-  - [Uso_de_title](#uso-de-tilte)
-  - [Numeros_enteros_o_int](#numeros-enteros-o-int)
-  - [Interaccion_con_input](#interacion-con-input)
-  - [Concatenamos_dos_cadenas_mediante_signos](#concatenamos-dos-cadenas-mediante-signos)
-  - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
-  - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
-  - [Definicion](#Definicion)
-  - [Devolviendo_valores](#Devolviendo_valores)
+- [Instalar Thonny](#instalar-thonny)
+- [Usar Thonny](#usar-thonny)
+- [Variables](#variables)
+- [Comentarios](#comentarios)
+- [Pseudocodigo](#pseudocodigo)
+- [Mejorando](#mejorando-el-primer-programa)
+- [Comas](#comas)
+- [Cadenas_y_parametros](#cadenas-y-parametros)
+- [Modificaciones](#modificaciones)
+- [Formato_cadenas](#formato-cadenas)
+- [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
+- [Uso_de_title](#uso-de-tilte)
+- [Conentar el sensor DHT11 a nuestro esp32](#conentar-el-sensor-dht11-a-nuestro-esp32)
+- [Numeros_enteros_o_int](#numeros-enteros-o-int)
+- [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
+- [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
+- [Definicion](#Definicion)
+- [Devolviendo_valores](#Devolviendo_valores)
+- [Aplicasion_thonny_con_el_sensor_Dht11](#aplicasion-thonny-con-el-sensor-dht11)
   
 ## Materiales
+La lista de materiales es:
 - Sensor DHT11
 - Esp32
 - Cableado Jumper Electronica "F - F"
@@ -29,8 +29,7 @@
 - Computadora
 - Aplicacion Thonny 
 
-## Instrucciones
-### Instalar Thonny
+## Instalar Thonny
 Descarga Thonny. Para descargar a Thonny nos dirigimos a la pagina oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
 Busca tu archivo descargado y lo ejecutas dandole doble click.
 Dale al boton <kbd>Next</kbd> y despues acepta los términos.
@@ -49,7 +48,7 @@ Para finalizar la instalación hay que dar click en el boton <kbd>Finish</kbd>.
 O simplemente puedes cerrar la ventana.
 ![Finalizar instalacion](./imagen/finalizar_instalacion.png)
  
-### Usar Thonny
+## Usar Thonny
 Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
 Nos ubicamos en la interfaz del interprete para comenzar a escribir el codigo.
 Al abrir el programa te abrira tambien un archivo en el que podras empezar a programar.
@@ -87,94 +86,94 @@ Cual es la temperatura? 32
 Hola, ambiente
 ```
 
-### Variables
+## Variables
 
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
 ```python
 temperatura = input("Cual es la temperatura? ")
-print("Hola Ambiente : temperatura")
+print("La temperatura es: temperatura")
 ```
-Al obsevar el resultado nos dará la temperatura pero si esta asignando un valor a la variable temperatura:
+Al obsevar el resultado notarás que no nos dará la temperatura y solo esta imprimiendo **La temperatura es: temperatura**.
+Pero si esta asignando un valor a la variable **temperatura**, no obstante no lo esta imprimiendo:
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
-Temperatura: temperatura
+La temperatura es: temperatura
 ```
-En este ejemplo podemos solucionar la asignacion antes mencionada, agragendo un print con la variable a la que le hemos asignado el valor.
+En este ejemplo podemos solucionar que si nos imprima la temperatura que hemos ingresado de la siguiente forma.
 ```python
 temperatura = input("Cual es la temperatura? ")
-print("temperatura,")
+print("La temperatura es: ")
 print(temperatura)
 ```
 El resultado obtenido es el siguiente:
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
-temperatura,
+La temperatura es: 
 32
 ```
 
-### Comentarios
+## Comentarios
 
-En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la informacion que se desea compartir. 
+En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la lo que trata el bloque de código. 
 ```python 
 # Preguntamos al usuario que ingrese la temperatura
 temperatura = input("Cual es la temperatura? ")
-print("temperatura,")
+print("La temperatura es: ")
 print(temperatura)
 ```
 Resultado obtenido.
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
-temperatura,
+La temperatura es: 
 32
 ```
 
-### Pseudocodigo
+## Pseudocodigo
 
-Para crear un Pseudocodigo, hacemos uso de la misma manera que un comentario.
-No afecta al codigo funcional nos sirve para dar instrucciones, dejando notas de seguimiento por asi decirlo. 
+El pseudocódigo es una herramienta utilizada para describir la lógica de un programa de manera estructurada, sin depender de un lenguaje de programación específico. En Python, podemos representar un pseudocódigo utilizando comentarios, los cuales no afectan la ejecución del código, pero sirven para documentar y mejorar su comprensión.
+A continuación, se presenta un ejemplo en el que solicitamos al usuario ingresar una temperatura y luego la mostramos en pantalla.
 ```python
-# Preguntamos al usuario cual es la temperatura 
-temperatura = input("Cual es la temperatura? ")
+# Solicitamos al usuario que ingrese la temperatura
+temperatura = input("¿Cuál es la temperatura? ")
 
-# Print Hola Ambiente
-print("Hola Ambiente,")
+# Mostramos un mensaje en pantalla
+print("La temperatura es: ")
 
-# Utilizamos print para ingresar la temperatura en numeros por ejemplo 32 
+# Imprimimos la temperatura ingresada
 print(temperatura)
 ```
-Resultado obtenido. 
+Salida esperada. 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-Hola Ambiente,
+¿Cuál es la temperatura? 32
+La temperatura es: 
 32
 ```
 
-### Mejorando el primer programa 
+## Mejorando el programa anterior
 
-Para el siguiente ejemplo podemos editar el anterior programa. 
-Donde podemos sumar los dos print de una manera mas optimizada.   
+En este ejemplo, optimizaremos el código anterior combinando las dos llamadas a print() en una sola línea. Esto mejora la eficiencia y mantiene el código más limpio y legible. 
+Se optimiza la impresión en pantalla concatenando el texto "La temperatura es: " con la variable temperatura dentro de una única instrucción print().
 ```python
-# Le pedimos al usuario la temperatura 
-temperatura = input("Cual es la temperatura? ")
+# Solicitamos al usuario que ingrese la temperatura
+temperatura = input("¿Cuál es la temperatura? ")
 
-# Imprimimos Hola ambiente con la temperatura ingresada
-print("Hola Ambiente, " + temperatura)
+# Mostramos el mensaje y la temperatura en una sola línea
+print("La temperatura es: " + temperatura)
 ```
 El resultado obtenido es. 
-
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-Hola Ambiente, 32
+¿Cuál es la temperatura? 32
+La temperatura es: 32
 ```
 
-### Comas 
+## Comas 
 
 Las comas **,**  se utilizan para pasar multiples argumentos. 
 En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes ver que dice "Hola Ambiente," **,** temperatura.
@@ -192,9 +191,10 @@ Cual es la temperatura? 32
 Hola Ambiente, 32
 ```
 
-### Cadenas y parametros
+## Cadenas y parametros
 
 Para representar una cadena utilizamos **str** nos sirven para realizar secuencias de texto. 
+En Python, el tipo de dato str se utiliza para representar cadenas de texto. Estas cadenas permiten almacenar y manipular secuencias de caracteres, lo que resulta útil para diversas aplicaciones, como la comunicación con interfaces de usuario, el procesamiento de datos y la interacción con sistemas embebidos.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -202,8 +202,10 @@ print("hola ambiente,")
 print(temperatura)
 ```
 
-### Modificaciones 
+## Modificaciones 
 
+En el siguiente ejemplo podemos modificar nuestro codigo de la siguiente forma.
+Para no crear una linea nueva, Usamos **end=""**.  
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -211,15 +213,17 @@ print("hola ambiente,", end="")
 print(temperatura)
 ```
 
-### Formato cadenas 
+## Formato cadenas 
 
+Para usar las cadenas en el ejemplo que se muestra a continuacion probablemente sea una forma mas elegente para programar en python. Utilizamos **f** un indicador especial para que Python trate la cadena de un modo distinto a los enfoques anteriores.  
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
 print(f"hola ambiente, {temperatura}")
 ```
 
-### Mas sobre cuerdas 
+## Mas sobre cuerdas 
+
 
 ```python
 # Preguntamos al usuario por la temperatura
@@ -233,8 +237,10 @@ print(f"hola ambiente, {temperatura}")
 
 ```
 
-### Uso de tilte
+## Uso de tilte
 
+Si colocamos title en nuestro codigo nos va a servir para poner en mayuscula el nombre del Usuario.
+En consola obserbaremos los resultados en donde se muestra 
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -254,7 +260,7 @@ Mejoramos mas el codigo para que obtengamos una mayor eficiencia.
 temperatura = input("Cual es la temperatura? ")
 
 # Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
-temperatura = temperatura.strip().title()
+temperatura = temperatura   
 
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
@@ -269,10 +275,22 @@ temperatura = input("Cual es la temperatura? ").strip().title()
 print(f"hola ambiente, {temperatura}")
 ```
 
-### Numeros enteros o int
+## Conectar el sensor DHT11 a nuestro esp32
+Asegurate que los datos del DHT11 estan conectados al pin 15
+
+
+## Numeros enteros o int
+
+Notaras que te estoy agregando 4 lineas.
+Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
+Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
 
 ```python 
-x = 1
+from machine import Pin
+import dht
+sensor = dht.DHT11(Pin(15))
+sensor.measure()
+x = s.temperature()
 y = 2
 
 z = x + y
@@ -280,37 +298,8 @@ z = x + y
 print(z)
 ```
 
-### Interacion con input
 
-```python
-x = input("What's x? ")
-y = input("What's y? ")
-
-z = x + y
-
-print(z)
-```
-
-### Concatenamos dos cadenas mediante signos 
-
-```python
-x = input("What's x? ")
-y = input("What's y? ")
-
-z = int(x) + int(y)
-
-print(z)
-```
-El uso de int(x).
-
-```python 
-x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-print(x + y)
-```
-
-### Conceptos basicos de flotacion
+## Conceptos basicos de flotante
 
 ```python 
 x = float(input("What's x? "))
@@ -341,7 +330,7 @@ z = round(x + y)
 print(f"{z:,}")
 ```
 
-### Mas sobre los flotadores 
+## Mas sobre los flotadores 
 
 ```python 
 # Get the user's input
@@ -380,7 +369,7 @@ print(f"{z:.2f}")
 
 ```
 
-### Definicion
+## Definicion
 
 ```python
 # Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
@@ -480,10 +469,12 @@ def square(n):
 main()
 ```
 
-### Aplicasion thonny con el sensor Dht11
+## Aplicasion thonny con el sensor Dht11
 
-### ESTO ES EL PROGRAMA FINAL
+## ESTO ES EL PROGRAMA FINAL
 
+A continuacion se muestra un ejemplo con lo que anteriormente hemos visto.
+Para que apliquemos lo visto con un sensor DHT11 mismo que nos servira para capturar la temperatura en tiempo real.  
 ```python
 from machine import Pin
 import dht
@@ -512,6 +503,10 @@ hum = s.humidity()
 print("Temperatura {temp}" )
 print("Humedad: {hum}")
 ```
+El resultado de este programa es:
+```console
+
+```
 ```python
 from machine import Pin
 import dht
@@ -524,4 +519,8 @@ suma = int(temp) + int(hum)
 
 # IMPRIMEREMOS
 print("Suma {sum}" )
+```
+El resultado de este programa es:
+```console
+
 ```
