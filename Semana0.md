@@ -61,6 +61,11 @@ Esto quiere decir que tienes que conectar tu esp32 con el cable USB a tu compuad
 Duespues de esto, ve al menú **Ejecutar** y despues de click en **Detener/Reinicia back end**.
 ![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
 
+
+## Conectar el sensor DHT11 a nuestro esp32
+Asegurate que los datos del DHT11 estan conectados al pin 15
+![]()
+
 Ahora comenzaremos a escribir el siguiente código.
 Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizando la función **print**.
 Para ejecutarlo ve al menú **Ejecutar** y da click en **Ejecutar el script actual**.
@@ -275,12 +280,10 @@ temperatura = input("Cual es la temperatura? ").strip().title()
 print(f"hola ambiente, {temperatura}")
 ```
 
-## Conectar el sensor DHT11 a nuestro esp32
-Asegurate que los datos del DHT11 estan conectados al pin 15
-
-
 ## Numeros enteros o int
-
+En python a los numeros enteros se les denomina **int**. 
+Al estar familiarizados con las matematcicas podemos hacer uso de los operadores logicos como lo son.
+**+**, **-**, **/** y **%**. 
 Notaras que te estoy agregando 4 lineas.
 Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
 Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
@@ -300,6 +303,8 @@ print(z)
 
 
 ## Conceptos basicos de flotante
+Los valores flotantes son numeros reales con puntos decimales, Por ejemplo **0.22** dando asi una aproximacion a los enteros o int.
+Para utilizar los valores flotantes recordemos el comando de los numeros enteros, pero en su lugar utlizaremos **float**.
 
 ```python 
 x = float(input("What's x? "))
@@ -331,6 +336,7 @@ print(f"{z:,}")
 ```
 
 ## Mas sobre los flotadores 
+Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
 
 ```python 
 # Get the user's input
@@ -370,6 +376,7 @@ print(f"{z:.2f}")
 ```
 
 ## Definicion
+las definiciones en python son mejor conocidas como funciones. 
 
 ```python
 # Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
