@@ -328,37 +328,22 @@ Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la
 ```python 
 from machine import Pin
 import dht
+
 sensor = dht.DHT11(Pin(15))
 sensor.measure()
-x = s.temperature()
-y = 2
-
-z = x + y
+# Convertimos a entero
+x = int(sensor.temperature())  
+# Variable entero
+y = 2  
+# Suma de entero
+z = x + y  
 
 print(z)
 ```
 El resultado obtenido es.
-```python
-from machine import Pin   # Importa la clase Pin para gestionar los pines de la placa
-import dht                # Importa el módulo dht para interactuar con el sensor DHT11
-
-# Inicializa el sensor DHT11 conectado al pin 15
-sensor = dht.DHT11(Pin(15))
-
-# Realiza la medición de temperatura y humedad
-sensor.measure()
-
-# Obtiene la temperatura en grados Celsius
-temperatura = sensor.temperature()
-
-# Se define una constante para sumarla a la temperatura (ejemplo de operación)
-constante = 2
-
-# Se calcula la suma de la temperatura y la constante
-resultado = temperatura + constante
-
-# Muestra el resultado en la consola
-print(resultado)
+```console
+MPY: soft reboot
+30
 ```
 
 ## Conceptos basicos de flotante
@@ -411,10 +396,12 @@ import dht
 
 sensor = dht.DHT11(Pin(15))
 sensor.measure()
-x = float(sensor.temperature())  # Convertimos a flotante
-y = 2.5  # Variable flotante
-
-z = round(x + y)  # Suma de flotantes
+# Convertimos a flotante
+x = float(sensor.temperature())  
+# Variable flotante
+y = 2.5  
+# Suma de flotantes
+z = round(x + y)  
 
 print(z)
 ```
@@ -436,7 +423,10 @@ print(f"{z:,}")
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+What's x? 1.1
+What's y? 1.2
+2
 ```
 
 ## Mas sobre los flotadores 
