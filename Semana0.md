@@ -64,7 +64,7 @@ Duespues de esto, ve al menú **Ejecutar** y despues de click en **Detener/Reini
 
 ## Conectar el sensor DHT11 a nuestro esp32
 Asegurate que los datos del DHT11 estan conectados al pin 15
-![]()
+![IMG sensor](./imagen/IMGsensor.png)
 
 Ahora comenzaremos a escribir el siguiente código.
 Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizando la función **print**.
@@ -187,13 +187,13 @@ En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes
 temperatura = input("Cual es la temperatura? ")
 
 # Impriminmos Hola Ambiente y ingresamos la temperatura
-print("Hola Ambiente,", temperatura)
+print("la temperatura es,", temperatura)
 ```
 El resultado del programa es. 
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
-Hola Ambiente, 32
+la temperatura es, 32
 ```
 
 ## Cadenas y parametros
@@ -203,8 +203,15 @@ En Python, el tipo de dato str se utiliza para representar cadenas de texto. Est
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
-print("hola ambiente,")
+print("la temperatura es,")
 print(temperatura)
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+Cual es la temperatura? 32
+la temperatura es,
+32
 ```
 
 ## Modificaciones 
@@ -214,8 +221,14 @@ Para no crear una linea nueva, Usamos **end=""**.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
-print("hola ambiente,", end="")
+print("la temperatura es,", end="")
 print(temperatura)
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+Cual es la temperatura? 32
+la temperatura es,32
 ```
 
 ## Formato cadenas 
@@ -224,11 +237,16 @@ Para usar las cadenas en el ejemplo que se muestra a continuacion probablemente 
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
-print(f"hola ambiente, {temperatura}")
+print(f"la temperatura es, {temperatura}")
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+Cual es la temperatura? 32
+la temperatura es, 32
 ```
 
 ## Mas sobre cuerdas 
-
 
 ```python
 # Preguntamos al usuario por la temperatura
@@ -238,8 +256,13 @@ temperatura = input("Cual es la temperatura? ")
 temperatura = temperatura.strip()
 
 # Imprimimos la salida
-print(f"hola ambiente, {temperatura}")
-
+print(f"La temperatura es, {temperatura}")
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+Cual es la temperatura? 32
+La temperatura es, 32
 ```
 
 ## Uso de tilte
@@ -254,10 +277,14 @@ temperatura = input("Cual es la temperatura? ")
 temperatura = temperatura.strip()
 
 # Escribimos con mayuscula la primera letra de cada palabra 
-temperatura = temperatura.title()
+temperatura = temperatura.capitalize()
 
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
+```
+El resultado obtenido es 
+```console
+
 ```
 Mejoramos mas el codigo para que obtengamos una mayor eficiencia.
 ```python
@@ -268,7 +295,13 @@ temperatura = input("Cual es la temperatura? ")
 temperatura = temperatura   
 
 # Imprimimos la salida
-print(f"hola ambiente, {temperatura}")
+print(f"la temperatura es, {temperatura}")
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+Cual es la temperatura? 32
+la temperatura es, 32
 ```
 El siguiente codigo es para que mejorermos mas el programa.
 obteniendo los mismos resultados. 
@@ -278,6 +311,10 @@ temperatura = input("Cual es la temperatura? ").strip().title()
 
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
+```
+El resultado obtenido es 
+```console
+
 ```
 
 ## Numeros enteros o int
@@ -300,7 +337,29 @@ z = x + y
 
 print(z)
 ```
+El resultado obtenido es.
+```python
+from machine import Pin   # Importa la clase Pin para gestionar los pines de la placa
+import dht                # Importa el módulo dht para interactuar con el sensor DHT11
 
+# Inicializa el sensor DHT11 conectado al pin 15
+sensor = dht.DHT11(Pin(15))
+
+# Realiza la medición de temperatura y humedad
+sensor.measure()
+
+# Obtiene la temperatura en grados Celsius
+temperatura = sensor.temperature()
+
+# Se define una constante para sumarla a la temperatura (ejemplo de operación)
+constante = 2
+
+# Se calcula la suma de la temperatura y la constante
+resultado = temperatura + constante
+
+# Muestra el resultado en la consola
+print(resultado)
+```
 
 ## Conceptos basicos de flotante
 Los valores flotantes son numeros reales con puntos decimales, Por ejemplo **0.22** dando asi una aproximacion a los enteros o int.
@@ -312,66 +371,125 @@ y = float(input("What's y? "))
 
 print(x + y)
 ```
-```python 
-# Get the user's input
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+```python
+from machine import Pin
+import dht
 
-# Create a rounded result
-z = round(x + y)
+sensor = dht.DHT11(Pin(15))
+sensor.measure()
+x = float(sensor.temperature())  # Convertimos a flotante
+y = 2.5  # Variable flotante
 
-# Print the result
+z = x + y  # Suma de flotantes
+
 print(z)
 ```
+El resultado obtenido es. 
+```console
+MPY: soft reboot
+24.5
+```
+
 ```python 
-# Get the user's input
+#Obtener la entrada del usuario
 x = float(input("What's x? "))
 y = float(input("What's y? "))
 
-# Create a rounded result
+#Crear un resultado redondeado
 z = round(x + y)
 
-# Print the formatted result
+#imprimir el resultado
+print(z)
+```
+El resultado obtenido es 
+```console
+
+```
+```python
+from machine import Pin
+import dht
+
+sensor = dht.DHT11(Pin(15))
+sensor.measure()
+x = float(sensor.temperature())  # Convertimos a flotante
+y = 2.5  # Variable flotante
+
+z = round(x + y)  # Suma de flotantes
+
+print(z)
+```
+El resultado obtenido es 
+```console
+MPY: soft reboot
+26
+```
+```python 
+#Obtener la entrada del usuario
+x = float(input("What's x? "))
+y = float(input("What's y? "))
+
+#Crear un resultado redondeado
+z = round(x + y)
+
+#Imprimir el resultado formateado
 print(f"{z:,}")
+```
+El resultado obtenido es 
+```console
+
 ```
 
 ## Mas sobre los flotadores 
 Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
 
 ```python 
-# Get the user's input
+#Obtener la entrada del usuario
 x = float(input("What's x? "))
 y = float(input("What's y? "))
 
-# Calculate the result
+#Calcular el resultado
 z = x / y
 
-# Print the result
+#imprimir el resultado
 print(z)
 ```
-
+El resultado obtenido es 
+```console
+MPY: soft reboot
+What's x? 2
+What's y? 3
+0.6666667
+```
 ```python
-# Get the user's input
+#Obtener la entrada del usuario
 x = float(input("What's x? "))
 y = float(input("What's y? "))
 
-# Calculate the result and round
+#Calcular el resultado y redondear
 z = round(x / y, 2)
 
-# Print the result
+#imprimir el resultado
 print(z)
 ```
+El resultado obtenido es 
+```console
 
+```
 ```python
-# Get the user's input
+#Obtener la entrada del usuario
+
 x = float(input("What's x? "))
 y = float(input("What's y? "))
 
-# Calculate the result
+#Calcular el resultado
 z = x / y
 
-# Print the result
+#imprimir el resultado
 print(f"{z:.2f}")
+
+```
+El resultado obtenido es 
+```console
 
 ```
 
@@ -379,10 +497,10 @@ print(f"{z:.2f}")
 las definiciones en python son mejor conocidas como funciones. 
 
 ```python
-# Ask the user for their name, remove whitespace from the str and capitalize the first letter of each word
+#Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
 name = input("What's your name? ").strip().title()
 
-# Print the output
+#Imprimir la salida
 print(f"hello, {name}")
 ```
 
@@ -403,63 +521,75 @@ print(name)
 ```
 
 ```python
-# Create our own function
+#Crear nuestra propia función
 def hello(to):
     print("hello,", to)
 
 
-# Output using our own function
+#Salida usando nuestra propia función
 name = input("What's your name? ")
 hello(name)
 ```
+El resultado obtenido es 
+```console
 
+```
 ```python
-# Create our own function
+#Crear nuestra propia función
 def hello(to="world"):
     print("hello,", to)
 
-
-# Output using our own function
+#Salida usando nuestra propia función
 name = input("What's your name? ")
 hello(name)
 
-# Output without passing the expected arguments
+#Salida sin pasar los argumentos esperados
 hello()
 ```
+El resultado obtenido es 
+```console
 
+```
 ```python
 def main():
 
-    # Output using our own function
+    #Salida usando nuestra propia función
     name = input("What's your name? ")
     hello(name)
 
-    # Output without passing the expected arguments
+    #Salida sin pasar los argumentos esperados
     hello()
 
 
-# Create our own function
+#Crear nuestra propia función
 def hello(to="world"):
     print("hello,", to)
 ```
+El resultado obtenido es 
+```console
 
+```
 ```python
 def main():
 
-    # Output using our own function
+    #Salida usando nuestra propia función
     name = input("What's your name? ")
     hello(name)
 
-    # Output without passing the expected arguments
+    #Salida sin pasar los argumentos esperados
     hello()
 
 
-# Create our own function
+#Crear nuestra propia función
 def hello(to="world"):
     print("hello,", to)
 
 
 main()
+```
+El resultado obtenido es 
+```console
+
 ```
 Devolviendo valores 
 
@@ -474,6 +604,10 @@ def square(n):
 
 
 main()
+```
+El resultado obtenido es 
+```console
+
 ```
 
 ## Aplicasion thonny con el sensor Dht11
@@ -529,5 +663,9 @@ print("Suma {sum}" )
 ```
 El resultado de este programa es:
 ```console
-
+MPY: soft reboot
+Suma {sum}
+>>> 32+12
+44
+>>> 
 ```
