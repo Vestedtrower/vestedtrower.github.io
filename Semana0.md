@@ -463,7 +463,10 @@ print(z)
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+What's x? 1.1
+What's y? 1.4
+0.79
 ```
 ```python
 #Obtener la entrada del usuario
@@ -480,7 +483,10 @@ print(f"{z:.2f}")
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+What's x? 1.1
+What's y? 1.4
+0.79
 ```
 
 ## Definicion
