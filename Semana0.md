@@ -377,8 +377,8 @@ MPY: soft reboot
 
 ```python 
 #Obtener la entrada del usuario
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("temperatura x? "))
+y = float(input("humedad y? "))
 
 #Crear un resultado redondeado
 z = round(x + y)
@@ -388,7 +388,10 @@ print(z)
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+temperatura x? 32
+humedad y? 24
+56
 ```
 ```python
 from machine import Pin
@@ -500,13 +503,20 @@ temperatura = input("Cual es la temperatura? ").strip().title()
 #Imprimir la salida
 print(f"temperatura, {temperatura}")
 ```
-
+En este ejemplo es muy importante definir la funcion por lo cual generaremos un error a proposito. 
 ```python
 temperatura = input("What's your name? ")
 hello()
 print(temperatura)
 ```
-
+```console
+MPY: soft reboot
+What's your name? jerry
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'hello' isn't defined
+```
+En este ejemplo hemos defininido nuestra funcion mediante las dos primeras lineas de codigo por lo cual ya no tendremos el mismo error.
 ```python
 def hello():
     print("hello")
@@ -516,20 +526,28 @@ temperatura = input("What's your name? ")
 hello()
 print(temperatura)
 ```
+```console
+MPY: soft reboot
+What's your name? jerry
+hello
+jerry
+```
 
 ```python
 #Crear nuestra propia función
-def hello(to):
-    print("hello,", to)
+def ambiente(to):
+    print("temperatura,", to)
 
 
 #Salida usando nuestra propia función
-temperatura = input("What's your name? ")
-hello(temperatura)
+temperatura = input("Cual es la temperatura? ")
+ambiente(temperatura)
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+temperatura, 32
 ```
 ```python
 #Crear nuestra propia función
@@ -571,8 +589,8 @@ MPY: soft reboot
 def main():
 
     #Salida usando nuestra propia función
-    name = input("Cual es la temperatura? ")
-    temperatura(name)
+    ambiente = input("Cual es la temperatura? ")
+    temperatura(ambiente)
 
     #Salida sin pasar los argumentos esperados
     temperatura()
@@ -596,8 +614,8 @@ Devolviendo valores
 
 ```python
 def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
+    x = int(input("Cual es la temperatura x? "))
+    print("la temperatura al cuadrado es ", square(x))
 
 
 def square(n):
@@ -608,7 +626,9 @@ main()
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura x? 3
+la temperatura al cuadrado es  9
 ```
 
 ## Aplicasion thonny con el sensor Dht11
