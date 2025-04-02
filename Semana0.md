@@ -509,6 +509,7 @@ temperatura = input("What's your name? ")
 hello()
 print(temperatura)
 ```
+El resultado obtenido es
 ```console
 MPY: soft reboot
 What's your name? jerry
@@ -526,6 +527,7 @@ temperatura = input("What's your name? ")
 hello()
 print(temperatura)
 ```
+El resultado obtenido es
 ```console
 MPY: soft reboot
 What's your name? jerry
@@ -551,19 +553,22 @@ temperatura, 32
 ```
 ```python
 #Crear nuestra propia función
-def hello(to="world"):
-    print("hello,", to)
+def ambiente(to="temperatura"):
+    print("ambiente,", to)
 
 #Salida usando nuestra propia función
-name = input("What's your name? ")
-hello(name)
+name = input("Cual es la temperatura? ")
+ambiente(name)
 
 #Salida sin pasar los argumentos esperados
-hello()
+ambiente
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+ambiente, 32
+ambiente, temperatura
 ```
 ```python
 def main():
