@@ -520,19 +520,19 @@ NameError: name 'hello' isn't defined
 En este ejemplo hemos defininido nuestra funcion mediante las dos primeras lineas de codigo por lo cual ya no tendremos el mismo error.
 ```python
 def hello():
-    print("hello")
+    print("Ambiente")
 
 
-temperatura = input("What's your name? ")
+temperatura = input("Cual es la temperatura? ")
 hello()
 print(temperatura)
 ```
 El resultado obtenido es
 ```console
 MPY: soft reboot
-What's your name? jerry
-hello
-jerry
+Cual es la temperatura? 32
+Ambiente
+32
 ```
 
 ```python
