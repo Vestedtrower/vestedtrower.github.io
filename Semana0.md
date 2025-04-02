@@ -412,8 +412,8 @@ MPY: soft reboot
 ```
 ```python 
 #Obtener la entrada del usuario
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("temperatura x? "))
+y = float(input("humedad y? "))
 
 #Crear un resultado redondeado
 z = round(x + y)
@@ -424,8 +424,8 @@ print(f"{z:,}")
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-What's x? 1.1
-What's y? 1.2
+temperatura x? 1.1
+humedad y? 1.2
 2
 ```
 
@@ -434,8 +434,8 @@ Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado 
 
 ```python 
 #Obtener la entrada del usuario
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("temperatura x? "))
+y = float(input("humedad y? "))
 
 #Calcular el resultado
 z = x / y
@@ -446,14 +446,15 @@ print(z)
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-What's x? 2
-What's y? 3
+temperatura x? 2
+humedad y? 3
 0.6666667
 ```
+Division
 ```python
 #Obtener la entrada del usuario
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("temperatura x? "))
+y = float(input("humedad y? "))
 
 #Calcular el resultado y redondear
 z = round(x / y, 2)
@@ -464,15 +465,15 @@ print(z)
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-What's x? 1.1
-What's y? 1.4
+temperatura x? 1.1
+humedad y? 1.4
 0.79
 ```
 ```python
 #Obtener la entrada del usuario
 
-x = float(input("What's x? "))
-y = float(input("What's y? "))
+x = float(input("temperatura x? "))
+y = float(input("humedad y? "))
 
 #Calcular el resultado
 z = x / y
@@ -484,8 +485,8 @@ print(f"{z:.2f}")
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-What's x? 1.1
-What's y? 1.4
+temperatura x? 1.1
+humedad y? 1.4
 0.79
 ```
 
@@ -494,16 +495,16 @@ las definiciones en python son mejor conocidas como funciones.
 
 ```python
 #Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
-name = input("What's your name? ").strip().title()
+temperatura = input("Cual es la temperatura? ").strip().title()
 
 #Imprimir la salida
-print(f"hello, {name}")
+print(f"temperatura, {temperatura}")
 ```
 
 ```python
-name = input("What's your name? ")
+temperatura = input("What's your name? ")
 hello()
-print(name)
+print(temperatura)
 ```
 
 ```python
@@ -511,9 +512,9 @@ def hello():
     print("hello")
 
 
-name = input("What's your name? ")
+temperatura = input("What's your name? ")
 hello()
-print(name)
+print(temperatura)
 ```
 
 ```python
@@ -523,8 +524,8 @@ def hello(to):
 
 
 #Salida usando nuestra propia función
-name = input("What's your name? ")
-hello(name)
+temperatura = input("What's your name? ")
+hello(temperatura)
 ```
 El resultado obtenido es 
 ```console
@@ -550,42 +551,46 @@ El resultado obtenido es
 def main():
 
     #Salida usando nuestra propia función
-    name = input("What's your name? ")
-    hello(name)
+    name = input("Cual es la temperatura? ")
+    temperatura(name)
 
     #Salida sin pasar los argumentos esperados
-    hello()
+    temperatura()
 
 
 #Crear nuestra propia función
-def hello(to="world"):
-    print("hello,", to)
+def temperatura(to="ambiente"):
+    print("temperatura,", to)
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
 ```
+
 ```python
 def main():
 
     #Salida usando nuestra propia función
-    name = input("What's your name? ")
-    hello(name)
+    name = input("Cual es la temperatura? ")
+    temperatura(name)
 
     #Salida sin pasar los argumentos esperados
-    hello()
+    temperatura()
 
 
 #Crear nuestra propia función
-def hello(to="world"):
-    print("hello,", to)
+def temperatura(to="ambiente"):
+    print("temperatura,", to)
 
 
 main()
 ```
 El resultado obtenido es 
 ```console
-
+MPY: soft reboot
+Cual es la temperatura? 32
+temperatura, 32
+temperatura, ambiente
 ```
 Devolviendo valores 
 
