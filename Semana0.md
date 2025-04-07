@@ -101,7 +101,7 @@ temperatura = input("Cual es la temperatura? ")
 print("La temperatura es: temperatura")
 ```
 Al obsevar el resultado notarás que no nos dará la temperatura y solo esta imprimiendo **La temperatura es: temperatura**.
-Pero si esta asignando un valor a la variable **temperatura**, no obstante no lo esta imprimiendo:
+Pero si esta asignando un valor a la variable **temperatura**, no obstante no lo esta imprimiendo.
 ```console
 MPY: soft reboot
 Cual es la temperatura? 32
@@ -124,6 +124,8 @@ La temperatura es:
 ## Comentarios
 
 En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la lo que trata el bloque de código. 
+En Python, utilizamos el símbolo # para escribir comentarios en una sola línea. Estos comentarios son útiles para explicar qué hace una parte específica del código o para dejar notas importantes al programador.
+Además, es una buena práctica incluir comentarios al inicio de cada bloque de código para describir brevemente su propósito. Esto facilita la comprensión del programa, especialmente cuando se trabaja en equipo o se revisa el código después de un tiempo.
 ```python 
 # Preguntamos al usuario que ingrese la temperatura
 temperatura = input("Cual es la temperatura? ")
