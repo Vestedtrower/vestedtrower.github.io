@@ -17,7 +17,7 @@
 - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
 - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
 - [Definicion](#definicion)
-- [Devolviendo_valores](#Devolviendo-valores)
+- [Devolviendo_valores](#devolviendo-valores)
 - [Aplicasion_thonny_con_el_sensor_Dht11](#aplicasion-thonny-con-el-sensor-dht11)
   
 ## Materiales
