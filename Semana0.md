@@ -346,7 +346,7 @@ MPY: soft reboot
 30
 ```
 
-## Conceptos basicos de flotante
+## Conceptos basicos de flotacion
 Los valores flotantes son numeros reales con puntos decimales, Por ejemplo **0.22** dando asi una aproximacion a los enteros o int.
 Para utilizar los valores flotantes recordemos el comando de los numeros enteros, pero en su lugar utlizaremos **float**.
 
