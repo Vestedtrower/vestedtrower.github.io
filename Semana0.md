@@ -268,7 +268,7 @@ La temperatura es, 32
 ## Uso de tilte
 
 Si colocamos title en nuestro codigo nos va a servir para poner en mayuscula el nombre del Usuario.
-En consola obserbaremos los resultados en donde se muestra 
+En consola obserbaremos los resultados en donde se muestra. 
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -434,6 +434,7 @@ humedad y? 1.2
 
 ## Mas sobre los flotadores 
 Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
+Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digitales, lo que puede generar pequeñas imprecisiones o resultados inesperados al redondear.
 
 ```python 
 #Obtener la entrada del usuario
@@ -495,7 +496,8 @@ humedad y? 1.4
 
 ## Definicion
 las definiciones en python son mejor conocidas como funciones. 
-
+Definición
+En Python, una definición se refiere comúnmente a la creación de una función. Las funciones permiten encapsular un bloque de código que puede reutilizarse en diferentes partes del programa, facilitando la organización, mantenimiento y legibilidad del código.
 ```python
 #Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
 temperatura = input("Cual es la temperatura? ").strip().title()
