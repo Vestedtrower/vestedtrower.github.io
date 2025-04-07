@@ -16,7 +16,7 @@
 - [Numeros_enteros_o_int](#numeros-enteros-o-int)
 - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
 - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
-- [Definicion](#Definicion)
+- [Definicion](#definicion)
 - [Devolviendo_valores](#Devolviendo_valores)
 - [Aplicasion_thonny_con_el_sensor_Dht11](#aplicasion-thonny-con-el-sensor-dht11)
   
@@ -498,6 +498,7 @@ humedad y? 1.4
 las definiciones en python son mejor conocidas como funciones. 
 Definición
 En Python, una definición se refiere comúnmente a la creación de una función. Las funciones permiten encapsular un bloque de código que puede reutilizarse en diferentes partes del programa, facilitando la organización, mantenimiento y legibilidad del código.
+
 ```python
 #Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
 temperatura = input("Cual es la temperatura? ").strip().title()
