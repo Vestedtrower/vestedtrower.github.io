@@ -6,7 +6,7 @@
 - [Variables](#variables)
 - [Comentarios](#comentarios)
 - [Pseudocodigo](#pseudocodigo)
-- [Mejorando](#mejorando-el-primer-programa)
+- [Mejorando el programa anterior](#mejorando-el-programa-anterior)
 - [Comas](#comas)
 - [Cadenas_y_parametros](#cadenas-y-parametros)
 - [Modificaciones](#modificaciones)
