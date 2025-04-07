@@ -496,7 +496,7 @@ humedad y? 1.4
 
 ## Definicion
 las definiciones en python son mejor conocidas como funciones. 
-Definición
+Definición.
 En Python, una definición se refiere comúnmente a la creación de una función. Las funciones permiten encapsular un bloque de código que puede reutilizarse en diferentes partes del programa, facilitando la organización, mantenimiento y legibilidad del código.
 
 ```python
