@@ -53,7 +53,7 @@ Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el 
 Nos ubicamos en la interfaz del interprete para comenzar a escribir el codigo.
 Al abrir el programa te abrira tambien un archivo en el que podras empezar a programar.
 ![Inicio Thonny](./imagen/Inicio_Thonny.png)
-En la siguiente imagen esta señalado con un cadro amarillo donde podras editar este archivo. 
+En la siguiente imagen esta señalado con un cuadro amarillo donde podras editar este archivo. 
 ![Ubicamos la interfaz para escribir](./imagen/thony_ubicar_interfaz.png)
 
 Notarás que en la consola, señalada en el recuadro amarillo de la siguiente imagen, no indica que no esta conectado el puerto COM 3.
