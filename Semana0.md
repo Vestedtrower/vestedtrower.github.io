@@ -63,7 +63,7 @@ Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Re
 
 
 ## Conectar el sensor DHT11 a nuestro esp32
-Asegúrate que los datos del DHT11 estan conectados al pin 15
+Asegúrate que los datos del DHT11 estan conectados al pin 15.
 ![IMG sensor](./imagen/IMGsensor.png)
 
 Ahora comenzaremos a escribir el siguiente código.
@@ -123,7 +123,7 @@ La temperatura es:
 
 ## Comentarios
 
-En python utilizamos **#**  para comentar una linea mediante los bloques de codigo podemos informar al programador sobre la lo que trata el bloque de código. 
+En python utilizamos **#**  para comentar una linea mediante los bloques de código podemos informar al programador sobre la lo que trata el bloque de código. 
 En Python, utilizamos el símbolo # para escribir comentarios en una sola línea. Estos comentarios son útiles para explicar qué hace una parte específica del código o para dejar notas importantes al programador.
 Además, es una buena práctica incluir comentarios al inicio de cada bloque de código para describir brevemente su propósito. Esto facilita la comprensión del programa, especialmente cuando se trabaja en equipo o se revisa el código después de un tiempo.
 ```python 
@@ -267,7 +267,7 @@ Cual es la temperatura? 32
 La temperatura es, 32
 ```
 
-## Uso de tilte
+## Uso de title
 
 El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
 
@@ -305,7 +305,7 @@ Juan Pérez
 ```
 Como se puede ver, el método title() facilita la presentación profesional de los datos ingresados por el usuario.
 
-Mejoramos mas el codigo para que obtengamos una mayor eficiencia.
+Mejoramos mas el código para que obtengamos una mayor eficiencia.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -322,7 +322,7 @@ MPY: soft reboot
 Cual es la temperatura? 32
 la temperatura es, 32
 ```
-El siguiente codigo es para que mejorermos mas el programa.
+El siguiente código es para que mejorermos mas el programa.
 obteniendo los mismos resultados. 
 ```python
 # Preguntamos al usuario por la temperatura, Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
@@ -337,10 +337,10 @@ El resultado obtenido es
 ```
 
 ## Numeros enteros o int
-En python a los numeros enteros se les denomina **int**. 
+En python a los números enteros se les denomina **int**. 
 Al estar familiarizados con las matemátcicas podemos hacer uso de los operadores lógicos como lo son.
 **+**, **-**, **/** y **%**. 
-Notarás que te estoy agregando 4 lineas.
+Notarás que te estoy agregando 4 líneas.
 Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
 Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
 
@@ -366,8 +366,8 @@ MPY: soft reboot
 ```
 
 ## Conceptos basicos de flotacion
-Los valores flotantes son numeros reales con puntos decimales, Por ejemplo **0.22** dando asi una aproximacion a los enteros o int.
-Para utilizar los valores flotantes recordemos el comando de los numeros enteros, pero en su lugar utlizaremos **float**.
+Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
+Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
 
 ```python 
 x = float(input("What's x? "))
@@ -453,7 +453,7 @@ humedad y? 1.2
 
 ## Mas sobre los flotadores 
 Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
-Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digitales, lo que puede generar pequeñas imprecisiones o resultados inesperados al redondear.
+Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digítales, lo que puede generar pequeñas imprecisiónes o resultados inesperados al redondear.
 
 ```python 
 #Obtener la entrada del usuario
