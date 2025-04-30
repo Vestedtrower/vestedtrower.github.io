@@ -1,4 +1,4 @@
-# Funciones y variables con Micropython.
+# Funciónes y variables con Micropython.
 - [Materiales](#materiales)
 - [Instalar Thonny](#instalar-thonny)
 - [Usar Thonny](#usar-thonny)
@@ -24,19 +24,19 @@
 La lista de materiales es:
 - Sensor DHT11
 - Esp32
-- Cableado Jumper Electronica "F - F"
+- Cableado Jumper Electrónica "F - F"
 - Cable USB tipo A con entrada para micro puerto tipo B
 - Computadora
-- Aplicacion Thonny 
+- Aplicación Thonny 
 
 ## Instalar Thonny
-Descarga Thonny. Para descargar a Thonny nos dirigimos a la pagina oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
+Descarga Thonny. Para descargar a Thonny nos dirigimos a la página oficial al apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
 Busca tu archivo descargado y lo ejecutas dandole doble click.
 Dale al boton <kbd>Next</kbd> y despues acepta los términos.
 ![Aceptar términos](./imagen/thony_aceptar_acuerdo.png)
 
 Activa la casilla para que te ponga un icono en el escritorio.
-Con esto podras tener un acceso rapido en tu escritorio.
+Con esto podrás tener un acceso rápido en tu escritorio.
 ![Crear icono](./imagen/thony_acceso_directo.png)
 
 Da click en <kbd>Install</kbd> para que inicie el proceso de instalación.
@@ -50,20 +50,20 @@ O simplemente puedes cerrar la ventana.
  
 ## Usar Thonny
 Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
-Nos ubicamos en la interfaz del interprete para comenzar a escribir el codigo.
-Al abrir el programa te abrira tambien un archivo en el que podras empezar a programar.
+Nos ubicamos en la interfaz del interprete para comenzar a escribir el código.
+Al abrir el programa te abrira también un archivo en el que podrás empezar a programar.
 ![Inicio Thonny](./imagen/Inicio_Thonny.png)
-En la siguiente imagen esta señalado con un cuadro amarillo donde podras editar este archivo. 
+En la siguiente imagen esta señalado con un cuadro amarillo donde podrás editar este archivo. 
 ![Ubicamos la interfaz para escribir](./imagen/thony_ubicar_interfaz.png)
 
 Notarás que en la consola, señalada en el recuadro amarillo de la siguiente imagen, no indica que no esta conectado el puerto COM 3.
 Esto quiere decir que tienes que conectar tu esp32 con el cable USB a tu compuadora.
-Duespues de esto, ve al menú **Ejecutar** y despues de click en **Detener/Reinicia back end**.
+Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Reinicia back end**.
 ![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
 
 
 ## Conectar el sensor DHT11 a nuestro esp32
-Asegurate que los datos del DHT11 estan conectados al pin 15
+Asegúrate que los datos del DHT11 estan conectados al pin 15
 ![IMG sensor](./imagen/IMGsensor.png)
 
 Ahora comenzaremos a escribir el siguiente código.
@@ -235,7 +235,7 @@ la temperatura es,32
 
 ## Formato cadenas 
 
-Para usar las cadenas en el ejemplo que se muestra a continuacion probablemente sea una forma mas elegente para programar en python. Utilizamos **f** un indicador especial para que Python trate la cadena de un modo distinto a los enfoques anteriores.  
+Para trabajar con cadenas en Python, existe una forma más elegante y eficiente que los métodos tradicionales: las f-strings (cadenas formateadas). Este enfoque utiliza un prefijo especial **f** antes de la cadena, lo que permite insertar variables o expresiones directamente dentro del texto, haciendo el código más legible y conciso.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -269,8 +269,9 @@ La temperatura es, 32
 
 ## Uso de tilte
 
-Si colocamos title en nuestro codigo nos va a servir para poner en mayuscula el nombre del Usuario.
-En consola obserbaremos los resultados en donde se muestra. 
+El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
+
+Al ejecutar el código en consola, podremos observar cómo se transforma el texto. A continuación, se muestra un ejemplo práctico de su uso.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -284,10 +285,26 @@ temperatura = temperatura.capitalize()
 # Imprimimos la salida
 print(f"hola ambiente, {temperatura}")
 ```
-El resultado obtenido es 
-```console
+El resultado de este programa es 
+```consola
 
 ```
+
+El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
+
+Al ejecutar el código en consola, podremos observar cómo se transforma el texto. A continuación, se muestra un ejemplo práctico de su uso.
+El resultado obtenido es 
+```python
+nombre = "juan pérez"
+nombre_formateado = nombre.title()
+print(nombre_formateado)
+```
+El resultado de este programa es. 
+```console
+Juan Pérez
+```
+Como se puede ver, el método title() facilita la presentación profesional de los datos ingresados por el usuario.
+
 Mejoramos mas el codigo para que obtengamos una mayor eficiencia.
 ```python
 # Preguntamos al usuario por la temperatura
@@ -321,9 +338,9 @@ El resultado obtenido es
 
 ## Numeros enteros o int
 En python a los numeros enteros se les denomina **int**. 
-Al estar familiarizados con las matematcicas podemos hacer uso de los operadores logicos como lo son.
+Al estar familiarizados con las matemátcicas podemos hacer uso de los operadores lógicos como lo son.
 **+**, **-**, **/** y **%**. 
-Notaras que te estoy agregando 4 lineas.
+Notarás que te estoy agregando 4 lineas.
 Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
 Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
 
