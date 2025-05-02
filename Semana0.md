@@ -63,8 +63,8 @@ Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Re
 
 
 ## Conectar el sensor DHT11 a nuestro esp32
-Asegúrate que los datos del DHT11 estan conectados al pin 15.
-![IMG sensor](./imagen/IMGsensor.png)
+Asegúrate que los datos del DHT11 estan conectados al pin 15, vcc DHT11 en 3v3 del ESP32 y GND de DHT11 al GND de nuestro ESP32.
+![conexion](./imagen/conexionESPDHT11.png)
 
 Ahora comenzaremos a escribir el siguiente código.
 Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizando la función **print**.
