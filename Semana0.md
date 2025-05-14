@@ -1,6 +1,7 @@
 # Funciónes y variables con Micropython.
 - [Materiales](#materiales)
 - [Instalar Thonny](#instalar-thonny)
+- [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
 - [Usar Thonny](#usar-thonny)
 - [Conentar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
 - [Variables](#variables)
@@ -47,7 +48,13 @@ Este proceso puede tomar tiempo, dependerá de el procesador de tu computadora.
 Para finalizar la instalación hay que dar click en el boton <kbd>Finish</kbd>.
 O simplemente puedes cerrar la ventana.
 ![Finalizar instalacion](./imagen/finalizar_instalacion.png)
- 
+
+## Instalar firmware Micropython en ESP32
+Un firmware es el lenguaje que le vamos a instalar a nuestro esp32 para despues poder interpretarlo mediante una interfaz como lo es en nuestro caso la aplicacion de Thonny. 
+Descarga firmware. Para descargar firmware Micropython en ESP32
+nos dirigimos a la pagina oficial al apartado de [descargas](https://micropython.org/download/esp32/). 
+si damos click en el enlace de descagas nos dirigira a la pagina en google. ![paginaMicropython](./imagen/paginaMicropython.png) 
+ya una vez ubicados en la pagina oficial de micropython Buscamos Firmware al recorrer la pagina. ![firmwareThonnyESP32](./imagen/firmwareThonnyESP32.png) 
 ## Usar Thonny
 Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
 Nos ubicamos en la interfaz del interprete para comenzar a escribir el código.
@@ -267,7 +274,7 @@ Cual es la temperatura? 32
 La temperatura es, 32
 ```
 
-## Uso de title
+## Uso de title [QUITAR]
 
 El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
 
