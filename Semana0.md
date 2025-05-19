@@ -55,6 +55,14 @@ Descarga firmware. Para descargar firmware Micropython en ESP32
 nos dirigimos a la pagina oficial al apartado de [descargas](https://micropython.org/download/esp32/). 
 si damos click en el enlace de descagas nos dirigira a la pagina en google. ![paginaMicropython](./imagen/paginaMicropython.png) 
 ya una vez ubicados en la pagina oficial de micropython Buscamos Firmware al recorrer la pagina. ![firmwareThonnyESP32](./imagen/firmwareThonnyESP32.png) 
+Seleccionamos la Ultima version de firmware, Siempre nos aparecera al comienzo de la lista de versiones
+por cualquier duda de todas formas la señalamos adentro de el recuadro amarillo.Al cual damos click derecho para que iniciemos la descarga  
+![seleccionarVersion](./imagen/seleccionarVersion.png)
+Al finalizar la descarga nos dirigimos a la aplicación de thonny seleccionamos ''**Ejecutar**'' al dar click nos dirigimos a la primera opción ''**configurar interprete**''.  ![Ejecutar](./imagen/Ejecutar.png)
+Enseguida nos aparecera una ventanilla llamada **Opciones de Thonny**, enseguida seleccionamos las opciones enmarcadas en los recuadros amarillos. **Interprete**, **Micropython(ESP32)** y el puerto **COM3** en mi caso es donde tengo conectado mi ESP32. la deteccion de puertos es completamente automatica asi que les aparecera el puerto al que su ordenador este conectado con su ESP32.  
+![SELECTport](./imagen/SELECTport.png)
+
+
 ## Usar Thonny
 Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
 Nos ubicamos en la interfaz del interprete para comenzar a escribir el código.
