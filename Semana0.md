@@ -61,7 +61,16 @@ por cualquier duda de todas formas la señalamos adentro de el recuadro amarillo
 Al finalizar la descarga nos dirigimos a la aplicación de thonny seleccionamos ''**Ejecutar**'' al dar click nos dirigimos a la primera opción ''**configurar interprete**''.  ![Ejecutar](./imagen/Ejecutar.png)
 Enseguida nos aparecera una ventanilla llamada **Opciones de Thonny**, enseguida seleccionamos las opciones enmarcadas en los recuadros amarillos. **Interprete**, **Micropython(ESP32)** y el puerto **COM3** en mi caso es donde tengo conectado mi ESP32. la deteccion de puertos es completamente automatica asi que les aparecera el puerto al que su ordenador este conectado con su ESP32.  
 ![SELECTport](./imagen/SELECTport.png)
+Enseguida nos ubicamos en **Isntalar o actualizar Micropython**. se señala adentro del recuadro en la imagen y damos click para instalar o actualizar.
+![ActualizarFMW](./imagen/ActualizarFMW.png)
+Una vez seguidos los pasos anteriores nos abrira una nueva ventana que se llama  **Install Micro Python (esptool)** en las casillas para seleccion algunas ya vendran seleccionadas por defecto como lo es el puerto COM3 y en las tres casillas restantes ESP32, WROOM Y la version que descargamos v1.25.0 **Para empezar a Instalar o actualizar el firmware** Primero hay que formatear presionando el botón de nuestro esp32 el botón BOOT señalado en la imagen con un circulo rojo al mismo tiempo que damos click en <kbd>Instalar</kbd> tambien señalado de color rojo pero en un recuadro. hay que mantener Oprimido el botón de EBOOT hasta que empieze el porcentaje de la instalación. 
+![ResetearFMW2](./imagen/ResetearFMW2.png)
 
+para finalizar ya solo restaria dar click en el botón <kbd>OK</kbd>.
+![FinalFWM](./imagen/FinalFMW.png)
+
+Solo para confirmar la ultima version de nuestro firmware del esp32 podemos checar en la parte inferior.
+![Confirmacion](./imagen/ConfirmarFWM.png)
 
 ## Usar Thonny
 Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
