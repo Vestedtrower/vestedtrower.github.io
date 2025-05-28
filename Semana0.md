@@ -6,7 +6,7 @@ Bienbenidos [inicio](/README.md).
 - [Instalar Thonny](#instalar-thonny)
 - [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
 - [Usar Thonny](#usar-thonny)
-- [Conentar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
+- [Conectar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
 - [Variables](#variables)
 - [Comentarios](#comentarios)
 - [Pseudocodigo](#pseudocodigo)
@@ -94,6 +94,7 @@ Notarás que en la consola, señalada en el recuadro amarillo de la siguiente im
 Esto significa que debes conectar tu ESP32 a la computadora mediante un cable USB.  
 Después de conectar el dispositivo, ve al menú **Ejecutar** y haz clic en **Detener/Reiniciar backend**.  
 ![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
+
 ## Conectar el sensor DHT11 a nuestro esp32
 Asegúrate de que los datos del sensor DHT11 estén conectados al pin 15 del ESP32,  
 el pin VCC del DHT11 al pin 3.3V del ESP32, y el pin GND del DHT11 al GND del ESP32.
