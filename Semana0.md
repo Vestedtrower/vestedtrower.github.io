@@ -36,6 +36,7 @@ La lista de materiales es:
 Para instalar Thonny, dirígete a la página oficial en el apartado de [descargas](https://github.com/thonny/thonny/releases/download/v4.1.6/thonny-4.1.6.exe).
 Una vez que se haya completado la descarga, busca el archivo en tu carpeta de descargas y haz doble clic para ejecutarlo.
 En el instalador, haz clic en el botón <kbd>Next</kbd> y luego acepta los términos y condiciones.
+
 ![Aceptar términos](./imagen/thony_aceptar_acuerdo.png)
 
 Activa la casilla para crear un ícono en el escritorio.  
