@@ -48,8 +48,8 @@ Este procedimiento puede tardar algunos minutos, dependiendo del rendimiento del
 
 ![Iniciar instalación](./imagen/iniciar_instalacion.png)
 
-Para finalizar la instalación, haz clic en el botón <kbd>Finish</kbd>.  
-También puedes cerrar la ventana si lo prefieres.
+Para finalizar la instalación, haz clic en el botón <kbd>Finish</kbd>. También puedes cerrar la ventana si lo prefieres.
+
 ![Finalizar instalacion](./imagen/finalizar_instalacion.png)
 
 ## Instalar firmware Micropython en ESP32
