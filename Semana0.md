@@ -1,4 +1,7 @@
 # Funciónes y variables con Micropython.
+
+Bienbenidos [inicio](/README.md).
+
 - [Materiales](#materiales)
 - [Instalar Thonny](#instalar-thonny)
 - [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
@@ -13,7 +16,6 @@
 - [Modificaciones](#modificaciones)
 - [Formato_cadenas](#formato-cadenas)
 - [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
-- [Uso_de_title](#uso-de-tilte)
 - [Numeros_enteros_o_int](#numeros-enteros-o-int)
 - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
 - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
@@ -274,7 +276,6 @@ la temperatura es,32
 ```
 
 ## Formato cadenas 
-
 Para trabajar con cadenas en Python, existe una forma más elegante y eficiente que los métodos tradicionales: las **f-strings** (cadenas formateadas).  
 Este enfoque utiliza un prefijo especial **`f`** antes de la cadena, lo que permite insertar variables o expresiones directamente dentro del texto,  
 haciendo el código más legible, conciso y fácil de mantener.
@@ -295,7 +296,10 @@ la temperatura es, 32
 ```
 
 ## Mas sobre cuerdas 
-
+Nunca debes asumir que el usuario siempre cooperará como se espera. Por ello, es importante asegurarte de que los datos ingresados sean corregidos o validados adecuadamente.
+Afortunadamente, las cadenas en Python tienen métodos incorporados que permiten eliminar los espacios en blanco de una cadena.
+Al utilizar el método `strip` sobre una variable como `name` (por ejemplo: `name = name.strip()`), se eliminan los espacios en blanco al inicio y al final de la entrada del usuario.
+Puedes modificar tu código de la siguiente manera.
 ```python
 # Preguntamos al usuario por la temperatura
 temperatura = input("Cual es la temperatura? ")
@@ -312,18 +316,11 @@ MPY: soft reboot
 Cual es la temperatura? 32
 La temperatura es, 32
 ```
-
-## Uso de title [QUITAR]
-
-
 ## Numeros enteros o int
-En python a los números enteros se les denomina **int**. 
-Al estar familiarizados con las matemátcicas podemos hacer uso de los operadores lógicos como lo son.
-**+**, **-**, **/** y **%**. 
-Notarás que te estoy agregando 4 líneas.
-Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
-Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
-
+En Python, los números enteros se denominan **int**.
+Como ya estás familiarizado con las matemáticas, puedes utilizar operadores aritméticos como **+**, **-**, **/** y **%**.
+A continuación, notarás que agrego cuatro líneas de código. Por el momento, solo inclúyelas en tu script. Más adelante te explicaré en detalle para qué sirven.
+Por ahora, solo necesitas entender que la temperatura leída por el sensor se está asignando a la variable **x**.
 ```python 
 from machine import Pin
 import dht
@@ -346,8 +343,8 @@ MPY: soft reboot
 ```
 
 ## Conceptos basicos de flotacion
-Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
-Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
+Los valores flotantes son números reales que incluyen un punto decimal. Por ejemplo: **0.22**. Estos permiten representar valores con mayor precisión en comparación con los números enteros (**int**).
+Para trabajar con valores flotantes en Python, utilizamos la función **float** en lugar de **int**. Esta función convierte una entrada en un número de tipo flotante.
 
 ```python 
 x = float(input("What's x? "))
@@ -432,8 +429,8 @@ humedad y? 1.2
 ```
 
 ## Mas sobre los flotadores 
-Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
-Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digítales, lo que puede generar pequeñas imprecisiónes o resultados inesperados al redondear.
+Cuando trabajamos con valores en punto flotante y tratamos de redondearlos, es posible obtener resultados que parecen extenderse indefinidamente. 
+Esto ocurre debido a las limitaciones en la representación de números flotantes en los sistemas digitales. Estas limitaciones pueden generar pequeñas imprecisiones o resultados inesperados al redondear.
 
 ```python 
 #Obtener la entrada del usuario
@@ -494,10 +491,8 @@ humedad y? 1.4
 ```
 
 ## Definicion
-las definiciones en python son mejor conocidas como funciones. 
-Definición.
-En Python, una definición se refiere comúnmente a la creación de una función. Las funciones permiten encapsular un bloque de código que puede reutilizarse en diferentes partes del programa, facilitando la organización, mantenimiento y legibilidad del código.
-
+En Python, las definiciones son comúnmente conocidas como **funciones**.
+Una función es una forma de encapsular un bloque de código que puede reutilizarse en distintas partes del programa. Esto mejora la organización, facilita el mantenimiento y hace que el código sea más legible.
 ```python
 #Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
 temperatura = input("Cual es la temperatura? ").strip().title()
@@ -641,9 +636,9 @@ la temperatura al cuadrado es  9
 ## Aplicasion thonny con el sensor Dht11
 
 ## ESTO ES EL PROGRAMA FINAL
+A continuación, se muestra un ejemplo que reúne los conceptos que hemos visto hasta ahora.
+Aplicaremos este conocimiento utilizando un sensor **DHT11**, el cual nos permitirá capturar la temperatura en tiempo real.
 
-A continuacion se muestra un ejemplo con lo que anteriormente hemos visto.
-Para que apliquemos lo visto con un sensor DHT11 mismo que nos servira para capturar la temperatura en tiempo real.  
 ```python
 from machine import Pin
 import dht
