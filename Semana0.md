@@ -100,6 +100,7 @@ Después de conectar el dispositivo, ve al menú **Ejecutar** y haz clic en **De
 Asegúrate de que los datos del sensor DHT11 estén conectados al pin 15 del ESP32,  
 el pin VCC del DHT11 al pin 3.3V del ESP32, y el pin GND del DHT11 al GND del ESP32.
 ![conexion](./imagen/conexionESPDHT11.png)
+
 Ahora comenzaremos a escribir el siguiente código.  
 Como primer paso, pondremos a prueba lo básico de Python: imprimir una etiqueta de texto usando la función **print**.
 Para ejecutarlo, ve al menú **Ejecutar** y haz clic en **Ejecutar el script actual**.
@@ -114,7 +115,7 @@ El resultado de este programa será:
 Hola esp32
 ```
 En el siguiente ejemplo, le pediremos al usuario que ingrese un dato a través de la consola, ubicada en la parte inferior de la interfaz de Thonny.
-Para esto, utilizaremos la función**input**.
+Para esto, utilizaremos la función **input**.
 ```python
 input("Cual es la temperatura? ")
 print("Hola, ambiente")
@@ -645,17 +646,19 @@ Aplicaremos este conocimiento utilizando un sensor **DHT11**, el cual nos permit
 from machine import Pin
 import dht
 s = dht.DHT11(Pin(15))
+s.measure()
 temp = s.temperature()
 hum = s.humidity()
 
 # IMPRIMEREMOS
 print("Temperatura ",temp)
-print("Humedad: " + hum)
+print("Humedad: " + str(hum))
 ```
 El resultado de este programa será:
 ```console
-Temperatura 34
-Humedad: 68
+MPY: soft reboot
+Temperatura  28
+Humedad: 66
 ```
 ```python
 from machine import Pin
@@ -693,4 +696,18 @@ Suma {sum}
 >>> 32+12
 44
 >>> 
+```
+EJEMPLO KARLOS sustituir INT 
+````Python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+temp = s.temperature()
+hum = s.humidity()
+
+# IMPRIMEREMOS
+
+print("Temperatura ",temp)
+print("Humedad: " + str(hum))
 ```

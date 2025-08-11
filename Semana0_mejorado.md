@@ -695,12 +695,13 @@ Para que apliquemos lo visto con un sensor DHT11 mismo que nos servira para capt
 from machine import Pin
 import dht
 s = dht.DHT11(Pin(15))
+s-measure()
 temp = s.temperature()
 hum = s.humidity()
 
 # IMPRIMEREMOS
 print("Temperatura ",temp)
-print("Humedad: " + hum)
+print("Humedad: " + str(hum))
 ```
 El resultado de este programa es:
 ```console
