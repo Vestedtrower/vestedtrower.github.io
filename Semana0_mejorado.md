@@ -7,6 +7,7 @@ _Versión revisada: 2025-05-27_
 - [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
 - [Usar Thonny](#usar-thonny)
 - [Conentar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
+- [Bugs](#Bugs)
 - [Variables](#variables)
 - [Comentarios](#comentarios)
 - [Pseudocodigo](#pseudocodigo)
@@ -16,7 +17,6 @@ _Versión revisada: 2025-05-27_
 - [Modificaciones](#modificaciones)
 - [Formato_cadenas](#formato-cadenas)
 - [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
-- [Uso_de_title](#uso-de-tilte)
 - [Numeros_enteros_o_int](#numeros-enteros-o-int)
 - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
 - [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
@@ -98,13 +98,18 @@ Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir u
 Para ejecutarlo ve al menú **Ejecutar** y da click en **Ejecutar el script actual**.
 De igual forma puedes presionar en tu teclado al tecla <kbd>F5</kbd>.
 ```python
-print("Hola esp32")
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+print(s.temperature())
 ```
 El resultado de este programa es el siguiente:
 ```console
-Hola esp32
+MPY: soft reboot
+29
 ```
-
 Para el siguiente ejemplo queremos solicitarle al usuario que ingrese algo escrito en la consola que se encuentra en la parte inferior de nuestra interfaz de Thonny. 
 Para hacer esto utilizaremos la funcion **input**.
 ```python
@@ -118,62 +123,93 @@ Cual es la temperatura? 32
 Hola, ambiente
 ```
 
+## Bugs
+En programacion independientemente de cualquier lenguaje usualmente podemos cometer errores no te preocupes, es parte de covertirse en un gran programador a estos errores en programacion se les llama bugs.
+ 
+Imaginemos que en nuestro programa escribimos accidentalmente print("hola, mundo", olvidando la función final **)**. print Si cometemos este error, el intérprete mostrará un error en la ventana de terminal.
+```python
+print("Hola mundo"
+```
+Los mensajes de error suelen informarle de sus errores y ofrecerle pistas sobre cómo solucionarlos. Sin embargo, en muchas ocasiones el intérprete no será tan útil.
+```console
+MPY: soft reboot
+Traceback (most recent call last):
+  File "<stdin>", line 2
+SyntaxError: invalid syntax
+```
 ## Variables
-
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
 ```python
-temperatura = input("Cual es la temperatura? ")
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temperatura = s.temperature()
+
 print("La temperatura es: temperatura")
 ```
 Al obsevar el resultado notarás que no nos dará la temperatura y solo esta imprimiendo **La temperatura es: temperatura**.
 Pero si esta asignando un valor a la variable **temperatura**, no obstante no lo esta imprimiendo.
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
 La temperatura es: temperatura
 ```
 En este ejemplo podemos solucionar que si nos imprima la temperatura que hemos ingresado de la siguiente forma.
 ```python
-temperatura = input("Cual es la temperatura? ")
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temperatura = s.temperature()
+
 print("La temperatura es: ")
 print(temperatura)
 ```
 El resultado obtenido es el siguiente:
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
 La temperatura es: 
-32
+29
 ```
 
 ## Comentarios
-
 En python utilizamos **#**  para comentar una linea mediante los bloques de código podemos informar al programador sobre la lo que trata el bloque de código. 
 En Python, utilizamos el símbolo # para escribir comentarios en una sola línea. Estos comentarios son útiles para explicar qué hace una parte específica del código o para dejar notas importantes al programador.
 Además, es una buena práctica incluir comentarios al inicio de cada bloque de código para describir brevemente su propósito. Esto facilita la comprensión del programa, especialmente cuando se trabaja en equipo o se revisa el código después de un tiempo.
 ```python 
-# Preguntamos al usuario que ingrese la temperatura
-temperatura = input("Cual es la temperatura? ")
+# la medicion nos entregara la temperatura 
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temperatura = s.temperature()
+
 print("La temperatura es: ")
 print(temperatura)
 ```
 Resultado obtenido.
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
 La temperatura es: 
-32
+30
 ```
 
 ## Pseudocodigo
-
 El pseudocódigo es una herramienta utilizada para describir la lógica de un programa de manera estructurada, sin depender de un lenguaje de programación específico. En Python, podemos representar un pseudocódigo utilizando comentarios, los cuales no afectan la ejecución del código, pero sirven para documentar y mejorar su comprensión.
 A continuación, se presenta un ejemplo en el que solicitamos al usuario ingresar una temperatura y luego la mostramos en pantalla.
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Solicitamos al usuario que ingrese la temperatura
-temperatura = input("¿Cuál es la temperatura? ")
+temperatura = s.temperature()
 
 # Mostramos un mensaje en pantalla
 print("La temperatura es: ")
@@ -184,36 +220,42 @@ print(temperatura)
 Salida esperada. 
 ```console
 MPY: soft reboot
-¿Cuál es la temperatura? 32
 La temperatura es: 
-32
+30
 ```
 
 ## Mejorando el programa anterior
-
 En este ejemplo, optimizaremos el código anterior combinando las dos llamadas a print() en una sola línea. Esto mejora la eficiencia y mantiene el código más limpio y legible. 
 Se optimiza la impresión en pantalla concatenando el texto "La temperatura es: " con la variable temperatura dentro de una única instrucción print().
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Solicitamos al usuario que ingrese la temperatura
-temperatura = input("¿Cuál es la temperatura? ")
+temperatura = s.temperature()
 
 # Mostramos el mensaje y la temperatura en una sola línea
-print("La temperatura es: " + temperatura)
+print("La temperatura es: " + str(temperatura))
 ```
 El resultado obtenido es. 
 ```console
 MPY: soft reboot
-¿Cuál es la temperatura? 32
-La temperatura es: 32
+La temperatura es: 30
 ```
 
 ## Comas 
-
 Las comas **,**  se utilizan para pasar multiples argumentos. 
 En este caso estamos ingresando dos argumentos a print, lo sabemos por que pudes ver que dice "Hola Ambiente," **,** temperatura.
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Le preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
+temperatura = s.temperature()
 
 # Impriminmos Hola Ambiente y ingresamos la temperatura
 print("la temperatura es,", temperatura)
@@ -221,121 +263,77 @@ print("la temperatura es,", temperatura)
 El resultado del programa es. 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-la temperatura es, 32
+la temperatura es, 30
 ```
 
 ## Cadenas y parametros
-
 Para representar una cadena utilizamos **str** nos sirven para realizar secuencias de texto. 
 En Python, el tipo de dato str se utiliza para representar cadenas de texto. Estas cadenas permiten almacenar y manipular secuencias de caracteres, lo que resulta útil para diversas aplicaciones, como la comunicación con interfaces de usuario, el procesamiento de datos y la interacción con sistemas embebidos.
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
+temperatura = s.temperature()
 print("la temperatura es,")
 print(temperatura)
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
 la temperatura es,
-32
+30
 ```
 
 ## Modificaciones 
-
 En el siguiente ejemplo podemos modificar nuestro codigo de la siguiente forma.
 Para no crear una linea nueva, Usamos **end=""**.  
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
+temperatura = s.temperature()
 print("la temperatura es,", end="")
 print(temperatura)
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-la temperatura es,32
+la temperatura es,30
 ```
 
 ## Formato cadenas 
-
 Para trabajar con cadenas en Python, existe una forma más elegante y eficiente que los métodos tradicionales: las f-strings (cadenas formateadas). Este enfoque utiliza un prefijo especial **f** antes de la cadena, lo que permite insertar variables o expresiones directamente dentro del texto, haciendo el código más legible y conciso.
 ```python
+
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
+temperatura = s.temperature()
 print(f"la temperatura es, {temperatura}")
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-la temperatura es, 32
+la temperatura es, 30
 ```
-
-## Mas sobre cuerdas 
-
-```python
-# Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
-
-# Eliminamos los espacios en blanco de la cadena 
-temperatura = temperatura.strip()
-
-# Imprimimos la salida
-print(f"La temperatura es, {temperatura}")
-```
-El resultado obtenido es 
-```console
-MPY: soft reboot
-Cual es la temperatura? 32
-La temperatura es, 32
-```
-
-## Uso de title [QUITAR]
-
-El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
-
-Al ejecutar el código en consola, podremos observar cómo se transforma el texto. A continuación, se muestra un ejemplo práctico de su uso.
-```python
-# Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
-
-# Eliminamos los espacios en blanco de la cadena 
-temperatura = temperatura.strip()
-
-# Escribimos con mayuscula la primera letra de cada palabra 
-temperatura = temperatura.capitalize()
-
-# Imprimimos la salida
-print(f"hola ambiente, {temperatura}")
-```
-El resultado de este programa es 
-```consola
-
-```
-
-El método title() en Python nos permite convertir la primera letra de cada palabra en mayúscula. Esto resulta útil, por ejemplo, para mostrar de forma adecuada el nombre de un usuario.
-
-Al ejecutar el código en consola, podremos observar cómo se transforma el texto. A continuación, se muestra un ejemplo práctico de su uso.
-El resultado obtenido es 
-```python
-nombre = "juan pérez"
-nombre_formateado = nombre.title()
-print(nombre_formateado)
-```
-El resultado de este programa es. 
-```console
-Juan Pérez
-```
-Como se puede ver, el método title() facilita la presentación profesional de los datos ingresados por el usuario.
-
 Mejoramos mas el código para que obtengamos una mayor eficiencia.
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
 # Preguntamos al usuario por la temperatura
-temperatura = input("Cual es la temperatura? ")
+temperatura = s.temperature()
 
 # Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
 temperatura = temperatura   
@@ -346,21 +344,7 @@ print(f"la temperatura es, {temperatura}")
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-la temperatura es, 32
-```
-El siguiente código es para que mejorermos mas el programa.
-obteniendo los mismos resultados. 
-```python
-# Preguntamos al usuario por la temperatura, Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
-temperatura = input("Cual es la temperatura? ").strip().title()
-
-# Imprimimos la salida
-print(f"hola ambiente, {temperatura}")
-```
-El resultado obtenido es 
-```console
-
+la temperatura es, 29
 ```
 
 ## Numeros enteros o int
@@ -371,17 +355,37 @@ Notarás que te estoy agregando 4 líneas.
 Quiero que por el momento solo las incluyas en tu sccript y mas adelante te explicare de que se tratan.
 Por ahora basta que entiendas la temperatura de tu sensor se esta asignando a la variable **x**.
 
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+temp = s.temperature()
+hum = s.humidity()
+
+temp = 1
+hum = 2
+
+z = temp + hum
+
+print(z)
+```
+El resultado obtenido es.
+```console
+MPY: soft reboot
+3
+```
 ```python 
 from machine import Pin
 import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+temp = s.temperature()
+hum = s.humidity()
 
-sensor = dht.DHT11(Pin(15))
-sensor.measure()
-# Convertimos a entero
-x = int(sensor.temperature())  
-# Variable entero
-y = 2  
-# Suma de entero
+x = s.temperature()  
+y = s.humidity()  
+
 z = x + y  
 
 print(z)
@@ -389,80 +393,101 @@ print(z)
 El resultado obtenido es.
 ```console
 MPY: soft reboot
-30
-```
-
-## Conceptos basicos de flotacion
-Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
-Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
-
-```python 
-x = float(input("What's x? "))
-y = float(input("What's y? "))
-
-print(x + y)
+91
 ```
 ```python
 from machine import Pin
 import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+temp = s.temperature()
+hum = s.humidity()
 
-sensor = dht.DHT11(Pin(15))
-sensor.measure()
-x = float(sensor.temperature())  # Convertimos a flotante
-y = 2.5  # Variable flotante
+x = s.temperature()  
+y = s.humidity()  
 
-z = x + y  # Suma de flotantes
+z = int(x) + int(y)
 
+print(z)
+```
+El resultado de este programa es. 
+```console
+MPY: soft reboot
+90
+```
+
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+temp = s.temperature()
+hum = s.humidity()
+
+temp = int (s.temperature())
+hum = int(s.humidity())
+
+print(temp + hum)
+```
+```console
+MPY: soft reboot
+91
+```
+## Conceptos basicos de flotacion
+Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
+Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
+
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = float(s.temperature())
+hum = float(s.humidity())
+
+print(temp + hum)
+```
+```Console
+MPY: soft reboot
+92.0
+```
+
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+hum = s.humidity()
+# Get the user's input
+x = float(s.temperature())
+y = float(s.humidity())
+
+# Calculate the result and round
+z = round(x + y)
+
+# Print the result
 print(z)
 ```
 El resultado obtenido es. 
 ```console
 MPY: soft reboot
-24.5
+96
 ```
 
 ```python 
-#Obtener la entrada del usuario
-x = float(input("temperatura x? "))
-y = float(input("humedad y? "))
-
-#Crear un resultado redondeado
-z = round(x + y)
-
-#imprimir el resultado
-print(z)
-```
-El resultado obtenido es 
-```console
-MPY: soft reboot
-temperatura x? 32
-humedad y? 24
-56
-```
-```python
 from machine import Pin
 import dht
+s = dht.DHT11(Pin(15))
+s.measure()
 
-sensor = dht.DHT11(Pin(15))
-sensor.measure()
-# Convertimos a flotante
-x = float(sensor.temperature())  
-# Variable flotante
-y = 2.5  
-# Suma de flotantes
-z = round(x + y)  
-
-print(z)
-```
-El resultado obtenido es 
-```console
-MPY: soft reboot
-26
-```
-```python 
+temp = s.temperature()
+hum = s.humidity()
 #Obtener la entrada del usuario
-x = float(input("temperatura x? "))
-y = float(input("humedad y? "))
+x = float(s.temperature())
+y = float(s.humidity())
 
 #Crear un resultado redondeado
 z = round(x + y)
@@ -473,9 +498,7 @@ print(f"{z:,}")
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-temperatura x? 1.1
-humedad y? 1.2
-2
+95
 ```
 
 ## Mas sobre los flotadores 
@@ -483,9 +506,16 @@ Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado 
 Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digítales, lo que puede generar pequeñas imprecisiónes o resultados inesperados al redondear.
 
 ```python 
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+hum = s.humidity()
 #Obtener la entrada del usuario
-x = float(input("temperatura x? "))
-y = float(input("humedad y? "))
+x = float(s.temperature())
+y = float(s.humidity())
 
 #Calcular el resultado
 z = x / y
@@ -496,15 +526,20 @@ print(z)
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-temperatura x? 2
-humedad y? 3
-0.6666667
+0.4328358
 ```
 Division
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+hum = s.humidity()
 #Obtener la entrada del usuario
-x = float(input("temperatura x? "))
-y = float(input("humedad y? "))
+x = float(s.temperature())
+y = float(s.humidity())
 
 #Calcular el resultado y redondear
 z = round(x / y, 2)
@@ -515,29 +550,31 @@ print(z)
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-temperatura x? 1.1
-humedad y? 1.4
-0.79
+0.43
 ```
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+hum = s.humidity()
 #Obtener la entrada del usuario
 
-x = float(input("temperatura x? "))
-y = float(input("humedad y? "))
+x = float(s.temperature())
+y = float(s.humidity())
 
 #Calcular el resultado
 z = x / y
 
 #imprimir el resultado
 print(f"{z:.2f}")
-
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-temperatura x? 1.1
-humedad y? 1.4
-0.79
+0.43
 ```
 
 ## Definicion
@@ -583,22 +620,50 @@ Cual es la temperatura? 32
 Ambiente
 32
 ```
+Actualizado
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+
+def Temperature():
+        print("La temperatura es")
+
+
+Temperature()
+print(temp)
+```
+El resultado obtenido es
+```console
+MPY: soft reboot
+La temperatura es
+29
+```
 
 ```python
-#Crear nuestra propia función
-def ambiente(to):
-    print("temperatura,", to)
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+
+# Create our own function
+def temperatura(to):
+    print("Temperatura,", to)
 
 
-#Salida usando nuestra propia función
-temperatura = input("Cual es la temperatura? ")
-ambiente(temperatura)
+# Output using our own function
+name = temp = s.temperature()
+temperatura(name)
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-temperatura, 32
+Temperatura, 29
 ```
 ```python
 #Crear nuestra propia función
@@ -664,8 +729,8 @@ Cual es la temperatura? 32
 temperatura, 32
 temperatura, ambiente
 ```
-## Devolviendo valores 
 
+## Devolviendo valores 
 ```python
 def main():
     x = int(input("Cual es la temperatura x? "))
@@ -695,12 +760,12 @@ Para que apliquemos lo visto con un sensor DHT11 mismo que nos servira para capt
 from machine import Pin
 import dht
 s = dht.DHT11(Pin(15))
-s-measure()
+s.measure()
 temp = s.temperature()
 hum = s.humidity()
 
 # IMPRIMEREMOS
-print("Temperatura ",temp)
+print("Temperatura: ",temp)
 print("Humedad: " + str(hum))
 ```
 El resultado de este programa es:
@@ -712,17 +777,18 @@ Humedad: 68
 from machine import Pin
 import dht
 s = dht.DHT11(Pin(15))
-
+s.measure()
 temp = s.temperature()
 hum = s.humidity()
 
 # IMPRIMIMOS 
-print("Temperatura {temp}" )
-print("Humedad: {hum}")
+print("Temperatura {temp}", temp)
+print("Humedad: {hum}"+ str(hum))
 ```
 El resultado de este programa es:
 ```console
-
+Temperatura {temp} 24
+Humedad: {hum}56
 ```
 ```python
 from machine import Pin
