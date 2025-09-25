@@ -208,13 +208,13 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Solicitamos al usuario que ingrese la temperatura
+# Solicitamos al usuario que ingrese la temperatura en este caso al no manejar "input" solo usaremos la medicion. "s.temperature"
 temperatura = s.temperature()
 
 # Mostramos un mensaje en pantalla
 print("La temperatura es: ")
 
-# Imprimimos la temperatura ingresada
+# Imprimimos la temperatura obtenida por el sensor
 print(temperatura)
 ```
 Salida esperada. 
@@ -233,7 +233,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Solicitamos al usuario que ingrese la temperatura
+# Solicitamos la medicion dando play en el programa
 temperatura = s.temperature()
 
 # Mostramos el mensaje y la temperatura en una sola línea
@@ -254,10 +254,10 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Le preguntamos al usuario por la temperatura
+# Le preguntamos al usuario por la medicion
 temperatura = s.temperature()
 
-# Impriminmos Hola Ambiente y ingresamos la temperatura
+# Impriminmos la temperatura es y la medicion
 print("la temperatura es,", temperatura)
 ```
 El resultado del programa es. 
@@ -275,7 +275,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Preguntamos al usuario por la temperatura
+# Solicitamos la medicion dando play en el programa
 temperatura = s.temperature()
 print("la temperatura es,")
 print(temperatura)
@@ -296,7 +296,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Preguntamos al usuario por la temperatura
+# damos play a nuestro codigo para obtener la medicion de la temperatura 
 temperatura = s.temperature()
 print("la temperatura es,", end="")
 print(temperatura)
@@ -316,7 +316,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Preguntamos al usuario por la temperatura
+# damos play a nuestro codigo para obtener la medicion de la temperatura 
 temperatura = s.temperature()
 print(f"la temperatura es, {temperatura}")
 ```
@@ -332,7 +332,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
-# Preguntamos al usuario por la temperatura
+# damos play a nuestro codigo para obtener la medicion de la temperatura 
 temperatura = s.temperature()
 
 # Eliminamos los espacios en blanco de la cadena y escribimos con mayuscula la primera letra de cada palabra
@@ -433,7 +433,7 @@ print(temp + hum)
 MPY: soft reboot
 91
 ```
-## Conceptos basicos de flotacion
+## Flotantes
 Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
 Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
 
@@ -461,14 +461,14 @@ s.measure()
 
 temp = s.temperature()
 hum = s.humidity()
-# Get the user's input
+# Damos play al programa para obtener la medicion 
 x = float(s.temperature())
 y = float(s.humidity())
 
-# Calculate the result and round
+# Calculamos el resultado y redondeamos
 z = round(x + y)
 
-# Print the result
+# Imprimos el resultado
 print(z)
 ```
 El resultado obtenido es. 
@@ -490,43 +490,15 @@ x = float(s.temperature())
 y = float(s.humidity())
 
 #Crear un resultado redondeado
-z = round(x + y)
+z = x/y
 
 #Imprimir el resultado formateado
-print(f"{z:,}")
+print(f"{z:.2f}")
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
 95
-```
-
-## Mas sobre los flotadores 
-Si deseamos redondear nuestros valores de punto flotante obtenemos un resultado que aparenta llegar hasta el infinito.
-Cuando intentamos redondear valores en punto flotante, es posible que obtengamos resultados que aparentan extenderse indefinidamente. Esto se debe a las limitaciones de representación de los números en punto flotante dentro de los sistemas digítales, lo que puede generar pequeñas imprecisiónes o resultados inesperados al redondear.
-
-```python 
-from machine import Pin
-import dht
-s = dht.DHT11(Pin(15))
-s.measure()
-
-temp = s.temperature()
-hum = s.humidity()
-#Obtener la entrada del usuario
-x = float(s.temperature())
-y = float(s.humidity())
-
-#Calcular el resultado
-z = x / y
-
-#imprimir el resultado
-print(z)
-```
-El resultado obtenido es 
-```console
-MPY: soft reboot
-0.4328358
 ```
 Division
 ```python
@@ -552,30 +524,7 @@ El resultado obtenido es
 MPY: soft reboot
 0.43
 ```
-```python
-from machine import Pin
-import dht
-s = dht.DHT11(Pin(15))
-s.measure()
 
-temp = s.temperature()
-hum = s.humidity()
-#Obtener la entrada del usuario
-
-x = float(s.temperature())
-y = float(s.humidity())
-
-#Calcular el resultado
-z = x / y
-
-#imprimir el resultado
-print(f"{z:.2f}")
-```
-El resultado obtenido es 
-```console
-MPY: soft reboot
-0.43
-```
 
 ## Definicion
 las definiciones en python son mejor conocidas como funciones. 
@@ -584,7 +533,7 @@ En Python, una definición se refiere comúnmente a la creación de una función
 
 ```python
 #Pídale al usuario su nombre, elimine los espacios en blanco de la cadena y escriba en mayúscula la primera letra de cada palabra.
-temperatura = input("Cual es la temperatura? ").strip().title()
+temperatura = input("Cual es la temperatura? ")
 
 #Imprimir la salida
 print(f"temperatura, {temperatura}")
@@ -592,7 +541,7 @@ print(f"temperatura, {temperatura}")
 En este ejemplo es muy importante definir la funcion por lo cual generaremos un error a proposito. 
 ```python
 temperatura = input("What's your name? ")
-hello()
+Ambiente()
 print(temperatura)
 ```
 El resultado obtenido es
@@ -601,24 +550,31 @@ MPY: soft reboot
 What's your name? jerry
 Traceback (most recent call last):
   File "<stdin>", line 2, in <module>
-NameError: name 'hello' isn't defined
+NameError: name 'Ambiente' isn't defined
 ```
 En este ejemplo hemos defininido nuestra funcion mediante las dos primeras lineas de codigo por lo cual ya no tendremos el mismo error.
 ```python
-def hello():
-    print("Ambiente")
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
 
 
-temperatura = input("Cual es la temperatura? ")
-hello()
-print(temperatura)
+def Ambiente():
+    print("Temperatura")
+
+
+temp = s.temperature()
+Ambiente()
+print(temp)
 ```
 El resultado obtenido es
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-Ambiente
-32
+Temperatura
+30
 ```
 Actualizado
 ```python
@@ -666,23 +622,31 @@ MPY: soft reboot
 Temperatura, 29
 ```
 ```python
-#Crear nuestra propia función
-def ambiente(to="temperatura"):
-    print("ambiente,", to)
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
 
-#Salida usando nuestra propia función
-name = input("Cual es la temperatura? ")
-ambiente(name)
+temp = s.temperature()
 
-#Salida sin pasar los argumentos esperados
-ambiente
+
+# Create our own function
+def temperatura(to="Ambiente"):
+    print("temperatura,", to)
+
+
+# Output using our own function
+name = s.temperature()
+temperatura(name)
+
+# Output without passing the expected arguments
+temperatura()
 ```
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura? 32
-ambiente, 32
-ambiente, temperatura
+temperatura, 31
+temperatura, Ambiente
 ```
 ```python
 def main():
@@ -732,9 +696,16 @@ temperatura, ambiente
 
 ## Devolviendo valores 
 ```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+temp = s.temperature()
+
 def main():
-    x = int(input("Cual es la temperatura x? "))
-    print("la temperatura al cuadrado es ", square(x))
+    x = int(s.temperature())
+    print("x squared is", square(x))
 
 
 def square(n):
@@ -746,8 +717,7 @@ main()
 El resultado obtenido es 
 ```console
 MPY: soft reboot
-Cual es la temperatura x? 3
-la temperatura al cuadrado es  9
+x squared is 1024
 ```
 
 ## Aplicasion thonny con el sensor Dht11
