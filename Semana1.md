@@ -29,8 +29,8 @@ Las declaraciones condicionales comparan un término de la izquierda con un tér
 En la ventana de tu terminal, escribe code compare.py. Esto creará un nuevo archivo llamado "comparar".
 En la ventana del editor de texto, comience con lo siguiente:
 ```Python 
-x = int(input("What's x? "))
-y = int(input("What's y? "))
+x = ldr1
+y = ldr2
 
 if x < y:
     print("x is less than y")
