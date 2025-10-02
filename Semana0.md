@@ -88,7 +88,6 @@ Esto quiere decir que tienes que conectar tu esp32 con el cable USB a tu compuad
 Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Reinicia back end**.
 ![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
 
-
 ## Conectar el sensor DHT11 a nuestro esp32
 Asegúrate que los datos del DHT11 estan conectados al pin 15, vcc DHT11 en 3v3 del ESP32 y GND de DHT11 al GND de nuestro ESP32.
 ![conexion](./imagen/conexionESPDHT11.png)
