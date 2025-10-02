@@ -459,6 +459,7 @@ import dht
 s = dht.DHT11(Pin(15))
 s.measure()
 
+
 temp = s.temperature()
 hum = s.humidity()
 # Damos play al programa para obtener la medicion 
