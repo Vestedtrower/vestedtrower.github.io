@@ -651,7 +651,7 @@ temp = s.temperature()
 hum = s.humidity()
 
 # IMPRIMEREMOS
-print("Temperatura: ",temp)
+print("Temperatura:- ",temp)
 print("Humedad: " + str(hum))
 ```
 El resultado de este programa será:

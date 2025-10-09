@@ -13,7 +13,7 @@ Bienbenidos [inicio](/README.md).
 - [y match]()
 
 ## Condicionales.
-un condicional 
+Un condicional 
 Los condicionales le permiten a usted, el programador, permitir que su programa tome decisiones: como si su programa tuviera la opción de tomar el camino de la izquierda o el de la derecha en función de ciertas condiciones.
 Los condicionales permiten que su programa tome decisiones y elija un camino sobre otro dependiendo de condiciones específicas.
 Dentro de Python hay un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
