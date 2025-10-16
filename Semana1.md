@@ -36,35 +36,55 @@ Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos 
 Los condicionales le permiten a usted, el programador, permitir que su programa tome decisiones: como si su programa tuviera la opción de tomar el camino de la izquierda o el de la derecha en función de ciertas condiciones.
 
 Los condicionales permiten que su programa tome decisiones y elija un camino sobre otro dependiendo de condiciones específicas.
+
 Dentro de Python hay un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
 
->y <los símbolos probablemente te resulten bastante familiares.
->=denota “mayor o igual a”.
+los símbolos probablemente te resulten bastante familiares.
+- **>=** denota “mayor o igual a”.
+- **<=** denota “menor o igual a”.
+- **\==** denota “igual”. Nótese el doble signo igual: un solo signo igual **=** asigna un valor, mientras que dos signos iguales **==** comparan valores.
+- **\!\=** denota “no igual a”.
 
-<=denota “menor o igual a”.
-==denota “igual”. Nótese el doble signo igual: un solo signo igual asigna un valor, mientras que dos signos iguales comparan valores.
-!=denota “no igual a”.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
-<>
+## Declaraciones If
 
-## Declaraciones If.
-En la ventana de tu terminal, escribe code compare.py. Esto creará un nuevo archivo llamado "comparar".
-En la ventana del editor de texto, comience con lo siguiente:
+En la ventana del editor de texto, comience con lo siguiente.
+
+```Python 
+x = int(input("What's x? "))
+y = int(input("What's y? "))
+
+if x < y:
+   print("x is less than y")
+
+```
+Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"**por lo tanto solo la respuesta señalara lo antes mencionado. 
+```console
+
+MPY: soft reboot
+What's x? 2
+What's y? 4
+x is less than y
+```
+
 ```Python 
 x = ldr1
 y = ldr2
 
 if x < y:
     print("x is less than y")
+```
+```console
+```
 
 Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndolas en enteros y guardándolas en sus respectivas variables x e y. Luego, la instrucción compara x e y. Si se cumple ifla condición de , se ejecuta la instrucción.x < yprint
 
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
-```
+
 
 ## Flujo de control elif, else.
-Revise aún más su código de la siguiente manera:
+Revise aún más su código de la siguiente manera. 
 ```Python 
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -75,7 +95,29 @@ if x > y:
     print("x is greater than y")
 if x == y:
     print("x is equal to y")
+```
+Posibles respuestas para los tres casos.
 
+Caso **1** donde **"X"** es menor que **"Y"**. 
+```console 
+MPY: soft reboot
+What's x? 2
+What's y? 4
+x is less than y
+```
+Caso **2** donde **"X"** es mayor que **"Y"**.
+```console
+MPY: soft reboot
+What's x? 4
+What's y? 2
+x is greater than y
+```
+Caso **3** donde **"X"** y **"Y"** son iguales. 
+```console
+MPY: soft reboot
+What's x? 2
+What's y? 2
+x is equal to y
 ```
 Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
 
@@ -90,6 +132,24 @@ elif x > y:
 elif x == y:
     print("x is equal to y")
 ```
+```console
+MPY: soft reboot
+What's x? 4
+What's y? 6
+x is less than y
+```
+```console
+MPY: soft reboot
+What's x? 6
+What's y? 2
+x is greater than y
+```
+```console
+MPY: soft reboot
+What's x? 2
+What's y? 2
+x is equal to y
+```
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -101,8 +161,24 @@ elif x > y:
 else:
     print("x is equal to y")
 ```
-```Python
-
+```console
+MPY: soft reboot
+What's x? 2
+What's y? 4
+x is less than y
+```
+```console
+MPY: soft reboot
+What's x? 4
+What's y? 2
+x is greater than y
+```
+```console 
+MPY: soft reboot
+What's x? 2
+What's y? 2
+x is equal to y
+```
 Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
 ## Or.
@@ -117,6 +193,18 @@ if x < y or x > y:
 else:
     print("x is equal to y")
 ```
+```consola 
+MPY: soft reboot
+What's x? 2
+What's y? 4
+x is not equal to y
+```
+```consola
+MPY: soft reboot
+What's x? 3
+What's y? 3
+x is equal to y
+```
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -125,6 +213,18 @@ if x != y:
     print("x is not equal to y")
 else:
     print("x is equal to y")
+```
+```console
+MPY: soft reboot
+What's x? 4
+What's y? 2
+x is not equal to y
+```
+```console
+MPY: soft reboot
+What's x? 3
+What's y? 3
+x is equal to y
 ```
 ```Python
 x = int(input("What's x? "))
@@ -135,7 +235,18 @@ if x == y:
 else:
     print("x is not equal to y")
 ```
-
+```console
+MPY: soft reboot
+What's x? 2
+What's y? 4
+x is not equal to y
+```
+```console 
+MPY: soft reboot
+What's x? 3
+What's y? 3
+x is equal to y
+```
 ## And.
 Similar a or, andse puede utilizar dentro de declaraciones condicionales.
 Ejecútalo en la ventana de terminal code grade.py. Inicia tu nuevo programa como se indica a continuación:
@@ -153,6 +264,12 @@ elif score >=60 and score < 70:
 else:
     print("Grade: F")
 ```
+```consola
+
+```
+```consola
+
+```
 ```Python
 score = int(input("Score: "))
 
@@ -166,6 +283,8 @@ score = int(input("Score: "))
       print("Grade: D")
   else:
       print("Grade: F")
+```
+```
 ```
 ```Python
 score = int(input("Score: "))
@@ -235,6 +354,7 @@ def is_even(n):
 
 main()
 ```
+
 ## Pythonic
 En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
 
@@ -253,6 +373,9 @@ def is_even(n):
 
 main()
 ```
+Observe que esta declaración de retorno en nuestro código es casi como una oración en inglés. Esta es una forma única de codificar que solo se ve en Python.
+
+Podemos revisar aún más nuestro código y hacerlo cada vez más legible:
 ```Python
 def main():
     x = int(input("What's x? "))
