@@ -2,28 +2,51 @@
 
 Bienbenidos [inicio](/README.md).
 
+- [Materiales](#materiales)
+- [Coneccion de componentes](#coneccion-de-componentes)
+- [Usar Thonny](#usar-thonny)
 - [Condicionales](#condicionales)
-- [Declaraciones if]()
-- [Flujo de control elif else]()
-- [Or]()
-- [And]()
-- [Módulo]()
-- [Creando tu propia función de paridad ]() 
-- [Codificación pitónica]()
-- [y match]()
+- [Declaraciones if](#declaraciones-if)
+- [Flujo de control elif else](#flujo-de-control-elif-else)
+- [Or](#)
+- [And](#and)
+- [Módulo](#módulo)
+- [Creando tu propia función de paridad ](#creando-tu-propia-función-de-paridad) 
+- [Codificación pitónica](#codificación-pitónica)
+- [Pythonic](#pythonic)
+- [Match](#match)
+
+## Materiales 
+La lista de materiales es:
+- 2 protoboard 
+- 2 Sensores para deteccion de Luz Ldr
+- 2 resistencias
+- Esp32
+- Cableado Jumper Electrónica "F - F"
+- Cable USB tipo A con entrada para micro puerto tipo B
+- Computadora
+- Aplicación Thonny 
+
+## Coneccion de componentes
+Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
+
+## Usar Thonny
 
 ## Condicionales.
-Un condicional 
 Los condicionales le permiten a usted, el programador, permitir que su programa tome decisiones: como si su programa tuviera la opción de tomar el camino de la izquierda o el de la derecha en función de ciertas condiciones.
+
 Los condicionales permiten que su programa tome decisiones y elija un camino sobre otro dependiendo de condiciones específicas.
 Dentro de Python hay un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
 
 >y <los símbolos probablemente te resulten bastante familiares.
 >=denota “mayor o igual a”.
+
 <=denota “menor o igual a”.
 ==denota “igual”. Nótese el doble signo igual: un solo signo igual asigna un valor, mientras que dos signos iguales comparan valores.
 !=denota “no igual a”.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
+
+<>
 
 ## Declaraciones If.
 En la ventana de tu terminal, escribe code compare.py. Esto creará un nuevo archivo llamado "comparar".
@@ -35,10 +58,10 @@ y = ldr2
 if x < y:
     print("x is less than y")
 
-```
 Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndolas en enteros y guardándolas en sus respectivas variables x e y. Luego, la instrucción compara x e y. Si se cumple ifla condición de , se ejecuta la instrucción.x < yprint
 
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
+```
 
 ## Flujo de control elif, else.
 Revise aún más su código de la siguiente manera:
@@ -54,6 +77,7 @@ if x == y:
     print("x is equal to y")
 
 ```
+Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
 
 ```Python
 x = int(input("What's x? "))
@@ -79,10 +103,11 @@ else:
 ```
 ```Python
 
-Observe cómo proporciona una serie de ifinstrucciones. Primero, ifse evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
+Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
 ## Or.
-orPermite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera:
+
+Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -211,6 +236,7 @@ def is_even(n):
 main()
 ```
 ## Pythonic
+En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
 
 ```Python
 def main():
@@ -243,6 +269,7 @@ def is_even(n):
 main()
 ```
 ## Match
+De manera similar a las declaraciones if, elif, y else, matchlas declaraciones se pueden usar para ejecutar código condicional que coincida con ciertos valores.
 
 ```Python 
  name = input("What's your name? ")
