@@ -1,6 +1,8 @@
 # Tutorial mejorado de MicroPython para estudiantes de Mecatrónica
 _Versión revisada: 2025-05-27_
 
+Bienbenidos [inicio](/README.md).
+
 # Funciónes y variables con Micropython.
 - [Materiales](#materiales)
 - [Instalar Thonny](#instalar-thonny)
@@ -140,6 +142,9 @@ SyntaxError: invalid syntax
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
+
+
+
 ```python
 from machine import Pin
 import dht

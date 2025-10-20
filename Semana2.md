@@ -1,15 +1,15 @@
 # Bucles. 
 Bienbenidos [inicio](/README.md).
 
-- [Bucles]()
-- [Bucles white]()
-- [Bucles for]()
-- [Mejorando con la entrada del Usuario]()
-- [Mas sobre las listas]()
-- [Longitud]()
-- [Diccionarios]()
-- [Mario]()
-- [Resumiendo]()
+- [Bucles](#bucles)
+- [Bucles while](#bucles-while)
+- [Bucles for](#bucles-for)
+- [Mejorando con la entrada del Usuario](#mejorando-con-la-entrada-del-usuario)
+- [Mas sobre las listas](#mas-sobre-las-listas)
+- [Longitud](#longitud)
+- [Diccionarios](#diccionarios)
+- [Mario](#mario)
+- [Resumiendo](#resumiendo)
 
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
@@ -301,3 +301,6 @@ def print_row(width):
 
 main()
 ```
+## Resumiendo
+
+

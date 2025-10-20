@@ -1,12 +1,12 @@
 # Excepciones.
 Bienbenidos [inicio](/README.md).
 
-- [Excepciones]()
-- [Errores de tiempo de ejecucion]()
-- [try]()
-- [else]()
-- [Creacion de una funcion para obtener un entero]()
-- [Resumiendo]()
+- [Excepciones](#excepciones)
+- [Errores de tiempo de ejecucion](#errores-de-tiempo-de-ejecucion)
+- [try](#try)
+- [else](#else)
+- [Creacion de una funcion para obtener un entero](#creación-de-una-función-para-obtener-un-entero)
+- [Resumiendo](#resumiendo)
 
 ## Excepciones.
 Las excepciones son cosas que salen mal dentro de nuestra codificación.
@@ -17,7 +17,7 @@ En nuestro editor de texto, escriba code hello.pypara crear un nuevo archivo. Es
 print("hello, world)
 ```
 
-## Errores.
+## Errores de tiempo de ejecucion.
 Los errores de ejecución se refieren a aquellos generados por un comportamiento inesperado en el código. Por ejemplo, quizás se pretendía que un usuario ingresara un número, pero en su lugar se ingresa un carácter. El programa podría generar un error debido a esta entrada inesperada del usuario.
 En la ventana de terminal, ejecute code number.py. Codifique de la siguiente manera en su editor de texto:
 ```Python
@@ -156,3 +156,8 @@ def get_int(prompt):
 
 main()
 ```
+
+## Resumiendo
+
+
+

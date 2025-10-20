@@ -1,16 +1,15 @@
 # Bibliotecas.
-
 Bienbenidos [inicio](/README.md).
 
-- [Bibliotecas]()
-- [Aleatorio]()
-- [Estadistica]()
-- [Argumentos de linea de comandos]()
-- [Slice]()
-- [Paquetes]()
-- [API]()
-- [Creando tus propias bibliotecas]()
-- [Resumiendo]()
+- [Bibliotecas](#bibliotecas)
+- [Aleatorio](#aleatorio)
+- [Estadistica](#estadistica)
+- [Argumentos de linea de comandos](#argumentos-de-linea-de-comandos)
+- [Slice](#slice)
+- [Paquetes](#paquetes)
+- [API](#api)
+- [Creando tus propias bibliotecas](#creando-tus-propias-bibliotecas)
+- [Resumiendo](#resumiendo)
 
 ## Bibliotecas.
 Generalmente, las bibliotecas son fragmentos de código escritos por usted u otros y que puede utilizar en su programa.
@@ -90,5 +89,5 @@ def goodbye(name):
     print(f"goodbye, {name}")
 ```
 
-
+## Resumiendo
 
