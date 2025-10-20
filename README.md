@@ -6,3 +6,4 @@
 - [Semana 3](/Semana3.md)
 - [Semana 4](/Semana4.md)
 - [Semana 5](/Semana5.md)
+- [Semana 6](/Semana6.md)
