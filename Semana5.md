@@ -32,11 +32,19 @@ if __name__ == "__main__":
 
 
 ## assert
+El comando de Python assertnos permite indicar al intérprete que una afirmación es verdadera. Podemos aplicar esto a nuestro código de prueba de la siguiente manera:
 
 ## pytest
+pytestEs una biblioteca de terceros que permite realizar pruebas unitarias en el programa. Es decir, permite probar las funciones dentro del programa.
+Para utilizarlo pytest, escriba pip install pytesten la ventana de su consola.
+Antes de aplicar pytesta nuestro propio programa, modifique su test_squarefunción de la siguiente manera:
 
 ## Prueba de cadenas
+Retrocediendo en el tiempo, considere el siguiente código hello.py:
 
 ## Organizar pruebas en carpetas
+Las pruebas unitarias de código que utilizan múltiples pruebas son tan comunes que es posible ejecutar una carpeta completa de pruebas con un solo comando.
+Primero, en la ventana del terminal, ejecute mkdir testpara crear una carpeta llamada test.
+Luego, para crear una prueba dentro de esa carpeta, escriba en la ventana de terminal code test/test_hello.py. Observe que test/indica a la terminal que cree test_hello.pyen la carpeta llamada test.
 
 ## Resumiendo
