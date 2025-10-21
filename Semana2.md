@@ -9,7 +9,6 @@ Bienbenidos [inicio](/README.md).
 - [Longitud](#longitud)
 - [Diccionarios](#diccionarios)
 - [Mario](#mario)
-- [Resumiendo](#resumiendo)
 
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
@@ -285,6 +284,7 @@ def print_square(size):
 
 main()
 ```
+
 ```Python
 def main():
     print_square(3)
@@ -301,6 +301,6 @@ def print_row(width):
 
 main()
 ```
-## Resumiendo
+
 
 
