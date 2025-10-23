@@ -6,6 +6,7 @@ Bienbenidos [inicio](/README.md).
 - [try](#try)
 - [else](#else)
 - [Creacion de una funcion para obtener un entero](#creación-de-una-función-para-obtener-un-entero)
+-[]()
 
 ## Excepciones.
 Las excepciones son cosas que salen mal dentro de nuestra codificación.
@@ -49,6 +50,7 @@ MPY: soft reboot
 What's x?cat
 x is not an integer
 ```
+Esta aún no es la mejor manera de implementar este código. Observe que estamos intentando ejecutar dos líneas de código. Para una mejor práctica, deberíamos usar solo tryla menor cantidad posible de líneas de código que nos preocupen que puedan fallar. Ajuste su código de la siguiente manera:
 ```Python
 try:
     x = int(input("What's x?"))
@@ -93,7 +95,9 @@ MPY: soft reboot
 What's x?cat
 x is not an integer
 ```
+Tenga en cuenta que si no se produce ninguna excepción, se ejecutará el bloque de código dentro de [nombre de la excepción else]. Al ejecutar [nombre de la excepción python number.py] y proporcionar 50[nombre de la excepción], verá que se imprimirá el resultado. Si lo intenta de nuevo, esta vez proporcionando [nombre de la excepción] cat, notará que el programa detecta el error.
 
+Al considerar mejorar nuestro código, tenga en cuenta que estamos siendo un poco groseros con el usuario. Si no coopera, simplemente finalizamos el programa. Considere cómo podemos usar un bucle para solicitarle al usuario que lo haga xy, si no, solicitarlo de nuevo.
 ```Python
 while True:
     try:
@@ -150,7 +154,9 @@ What's x?cat
 x is not an integer
 What's x?
 ```
+Observe que estamos manifestando muchas propiedades excelentes. Primero, hemos abstraído la capacidad de obtener un entero. Ahora, todo el programa se reduce a las tres primeras líneas.
 
+Aun así, podemos mejorar este programa. Piensa en qué más podrías hacer para mejorarlo. Modifica tu código de la siguiente manera:
 ```Python
 def main():
     x = get_int()
@@ -180,6 +186,9 @@ What's x?cat
 x is not an integer
 What's x?
 ```
+Tenga en cuenta que esto returnno solo lo sacará de un bucle, sino que también devolverá un valor.
+
+Algunas personas podrían argumentar que podría hacer lo siguiente:
 ```Python
 def main():
     x = get_int()
@@ -207,6 +216,8 @@ What's x?cat
 x is not an integer
 What's x?
 ```
+## Pass 
+Podemos hacer que nuestro código no advierta a nuestro usuario, sino que simplemente le vuelva a preguntar nuestra pregunta inicial modificando nuestro código de la siguiente manera:
 
 ```Python
 def main():
