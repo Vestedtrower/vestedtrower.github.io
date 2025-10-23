@@ -6,7 +6,7 @@ Bienbenidos [inicio](/README.md).
 - [try](#try)
 - [else](#else)
 - [Creacion de una funcion para obtener un entero](#creación-de-una-función-para-obtener-un-entero)
--[Pass](#pass)
+- [Pass](#pass)
 
 ## Excepciones.
 Las excepciones son cosas que salen mal dentro de nuestra codificación.
