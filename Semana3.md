@@ -216,6 +216,7 @@ What's x?cat
 x is not an integer
 What's x?
 ```
+
 ## Pass 
 Podemos hacer que nuestro código no advierta a nuestro usuario, sino que simplemente le vuelva a preguntar nuestra pregunta inicial modificando nuestro código de la siguiente manera:
 
@@ -243,7 +244,7 @@ x is 22
 ```console
 
 ```
-
+Una última mejora que podría mejorar la implementación de esta get_intfunción. Observe que actualmente nos basamos en el sistema de honor presente xen las funciones mainy get_int. Probablemente queramos incluir un mensaje que el usuario vea cuando se le solicite información. Modifique su código de la siguiente manera.
 ```Python
 def main():
     x = get_int("What's x? ")
