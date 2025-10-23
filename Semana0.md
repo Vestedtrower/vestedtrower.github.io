@@ -8,7 +8,7 @@ Bienbenidos [inicio](/README.md).
 - [Instalar Thonny](#instalar-thonny)
 - [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
 - [Usar Thonny](#usar-thonny)
-- [Conentar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
+- [Conectar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
 - [Bugs](#Bugs)
 - [Variables](#variables)
 - [Comentarios](#comentarios)

@@ -23,6 +23,11 @@ En la ventana de terminal, ejecute code number.py. Codifique de la siguiente man
 x = int(input("What's x? "))
 print(f"x is {x}")
 ```
+```console
+MPY: soft reboot
+What's x? 2
+x is 2
+```
 ## Try.
 En Python try, y exceptson formas de probar la entrada del usuario antes de que algo falle. Modifique su código de la siguiente manera:
 ```Python
@@ -32,6 +37,18 @@ try:
 except ValueError:
     print("x is not an integer")
 ```
+Posibles respuestas:
+
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+```
 ```Python
 try:
     x = int(input("What's x?"))
@@ -39,6 +56,17 @@ except ValueError:
     print("x is not an integer")
 
 print(f"x is {x}")
+```
+Posibles respuestas:
+```console
+MPY: soft reboot
+What's x? 22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
 ```
 
 ## Else.
@@ -53,6 +81,18 @@ except ValueError:
 else:
     print(f"x is {x}")
 ```
+Posibles respuestas:
+
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+```
 
 ```Python
 while True:
@@ -64,6 +104,17 @@ while True:
         break
 
 print(f"x is {x}")
+```
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+What's x?
 ```
 
 ## Creación de una función para obtener un entero.
@@ -88,6 +139,17 @@ def get_int():
 
 main()
 ```
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+What's x?
+```
 
 ```Python
 def main():
@@ -107,6 +169,17 @@ def get_int():
 
 main()
 ```
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+What's x?
+```
 ```Python
 def main():
     x = get_int()
@@ -123,6 +196,18 @@ def get_int():
 
 main()
 ```
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+MPY: soft reboot
+What's x?cat
+x is not an integer
+What's x?
+```
+
 ```Python
 def main():
     x = get_int()
@@ -139,6 +224,15 @@ def get_int():
 
 main()
 ```
+```console
+MPY: soft reboot
+What's x?22
+x is 22
+```
+```console
+
+```
+
 ```Python
 def main():
     x = get_int("What's x? ")
@@ -154,6 +248,11 @@ def get_int(prompt):
 
 
 main()
+```
+```console
+MPY: soft reboot
+What's x? 22
+x is 22
 ```
 
 

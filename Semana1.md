@@ -75,8 +75,7 @@ y = ldr2
 if x < y:
     print("x is less than y")
 ```
-```console
-```
+
 
 Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndolas en enteros y guardándolas en sus respectivas variables x e y. Luego, la instrucción compara x e y. Si se cumple ifla condición de , se ejecuta la instrucción.x < yprint
 

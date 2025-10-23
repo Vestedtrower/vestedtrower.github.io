@@ -9,7 +9,7 @@ Bienbenidos [inicio](/README.md).
 - [Paquetes](#paquetes)
 - [API](#api)
 - [Creando tus propias bibliotecas](#creando-tus-propias-bibliotecas)
-- [Resumiendo](#resumiendo)
+
 
 ## Bibliotecas.
 Generalmente, las bibliotecas son fragmentos de código escritos por usted u otros y que puede utilizar en su programa.
@@ -89,5 +89,5 @@ def goodbye(name):
     print(f"goodbye, {name}")
 ```
 
-## Resumiendo
+
 
