@@ -10,7 +10,6 @@ Bienbenidos [inicio](/README.md).
 - [API](#api)
 - [Creando tus propias bibliotecas](#creando-tus-propias-bibliotecas)
 
-
 ## Bibliotecas.
 Generalmente, las bibliotecas son fragmentos de código escritos por usted u otros y que puede utilizar en su programa.
 Python le permite compartir funciones o características con otros como “módulos”.

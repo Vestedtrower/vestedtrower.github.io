@@ -244,7 +244,7 @@ x is 22
 ```console
 
 ```
-Una última mejora que podría mejorar la implementación de esta get_intfunción. Observe que actualmente nos basamos en el sistema de honor presente xen las funciones mainy get_int. Probablemente queramos incluir un mensaje que el usuario vea cuando se le solicite información. Modifique su código de la siguiente manera.
+Una última mejora que podría mejorar la implementación de esta get_intfunción. Observe que actualmente nos basamos en el sistema de honor presente x en las funciones main y get_int. Probablemente queramos incluir un mensaje que el usuario vea cuando se le solicite información. Modifique su código de la siguiente manera.
 ```Python
 def main():
     x = get_int("What's x? ")

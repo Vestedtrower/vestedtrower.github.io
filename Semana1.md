@@ -48,9 +48,7 @@ los símbolos probablemente te resulten bastante familiares.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
-
 En la ventana del editor de texto, comience con lo siguiente.
-
 ```Python 
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -59,15 +57,17 @@ if x < y:
    print("x is less than y")
 
 ```
-Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"**por lo tanto solo la respuesta señalara lo antes mencionado. 
-```console
+EL resultado es.
 
+```Console 
 MPY: soft reboot
 What's x? 2
 What's y? 4
 x is less than y
 ```
+Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
 
+## Ejemplo sensor LDR
 ```Python 
 x = ldr1
 y = ldr2
@@ -76,14 +76,12 @@ if x < y:
     print("x is less than y")
 ```
 
-
 Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndolas en enteros y guardándolas en sus respectivas variables x e y. Luego, la instrucción compara x e y. Si se cumple ifla condición de , se ejecuta la instrucción.x < yprint
 
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
 
-
 ## Flujo de control elif, else.
-Revise aún más su código de la siguiente manera. 
+Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
 ```Python 
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -95,7 +93,7 @@ if x > y:
 if x == y:
     print("x is equal to y")
 ```
-Posibles respuestas para los tres casos.
+Posibles respuestas para los tres casos **if**.
 
 Caso **1** donde **"X"** es menor que **"Y"**. 
 ```console 
@@ -118,8 +116,8 @@ What's x? 2
 What's y? 2
 x is equal to y
 ```
-Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
-
+## Aplicaion de elif
+Observe comp el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -131,12 +129,15 @@ elif x > y:
 elif x == y:
     print("x is equal to y")
 ```
+Posibles repuestas para los tres casos. **menor**, **mayor** y **igual que**.
+
 ```console
 MPY: soft reboot
 What's x? 4
 What's y? 6
 x is less than y
 ```
+
 ```console
 MPY: soft reboot
 What's x? 6
@@ -149,6 +150,8 @@ What's x? 2
 What's y? 2
 x is equal to y
 ```
+## Aplicasion de else.
+Podemos crear un resultado predeterminado general usando una declarasion else. Podemos revisarlo de la siguiente forma. 
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -160,6 +163,7 @@ elif x > y:
 else:
     print("x is equal to y")
 ```
+Posibles resultados para los tres casos **menor**, **mayor** y **igual** que.
 ```console
 MPY: soft reboot
 What's x? 2
@@ -180,8 +184,7 @@ x is equal to y
 ```
 Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
-## Or.
-
+## Aplicasion de Or.
 Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
 ```Python
 x = int(input("What's x? "))
@@ -192,18 +195,22 @@ if x < y or x > y:
 else:
     print("x is equal to y")
 ```
+Posibles resultados para los dos casos es **igual** y **no es igual que**.
+
 ```consola 
 MPY: soft reboot
 What's x? 2
 What's y? 4
 x is not equal to y
 ```
+
 ```consola
 MPY: soft reboot
 What's x? 3
 What's y? 3
 x is equal to y
 ```
+en el siguiente ejemplo mejoramos mas aun nuestro programa eliminando el operadr **or**.
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -213,6 +220,7 @@ if x != y:
 else:
     print("x is equal to y")
 ```
+Posibles respuestas para los dos casos es **igual** o **no es igual** que.
 ```console
 MPY: soft reboot
 What's x? 4
@@ -234,6 +242,7 @@ if x == y:
 else:
     print("x is not equal to y")
 ```
+Posibles  respuestas para los dos casos **no es igual** y es **igual que**. 
 ```console
 MPY: soft reboot
 What's x? 2
@@ -263,12 +272,13 @@ elif score >=60 and score < 70:
 else:
     print("Grade: F")
 ```
+Posibles resultados 
 ```consola
-
+MPY: soft reboot
+Score: 97
+Grade: A
 ```
-```consola
-
-```
+Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
 ```Python
 score = int(input("Score: "))
 
@@ -283,7 +293,8 @@ score = int(input("Score: "))
   else:
       print("Grade: F")
 ```
-```
+```console
+
 ```
 ```Python
 score = int(input("Score: "))
@@ -299,7 +310,11 @@ elif score >= 60:
 else:
     print("Grade: F")
 ```
-
+```console
+MPY: soft reboot
+Score: 97
+Grade: A
+```
 ## Módulo.
 En matemáticas, la paridad se refiere a si un número es par o impar.
 El operador módulo %en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
@@ -312,6 +327,17 @@ if x % 2 == 0:
     print("Even")
 else:
     print("Odd")
+```
+Posibles respuestas para los dos casos par e impar Even, Odd. 
+```console 
+MPY: soft reboot
+What's x? 4
+Even
+```
+```console
+MPY: soft reboot
+What's x? 5
+Odd
 ```
 
 ## Creando tu propia función de paridad.
@@ -335,28 +361,20 @@ def is_even(n):
 
 main()
 ```
-
-## Codificación Pitónica.
-En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
-```Python
-def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
-    else:
-        print("Odd")
-
-
-def is_even(n):
-    return True if n % 2 == 0 else False
-
-
-main()
+Posibles respuestas para los dos casos par e impar Even y Odd 
+```console
+MPY: soft reboot
+What's x? 2
+Even
+```
+```console
+MPY: soft reboot
+What's x? 3
+Odd
 ```
 
 ## Pythonic
 En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
-
 ```Python
 def main():
     x = int(input("What's x? "))
@@ -372,10 +390,20 @@ def is_even(n):
 
 main()
 ```
+```console
+MPY: soft reboot
+What's x? 2
+Even
+```
+```console
+MPY: soft reboot
+What's x? 3
+Odd
+```
 Observe que esta declaración de retorno en nuestro código es casi como una oración en inglés. Esta es una forma única de codificar que solo se ve en Python.
 
 Podemos revisar aún más nuestro código y hacerlo cada vez más legible:
-```Python
+```python
 def main():
     x = int(input("What's x? "))
     if is_even(x):
@@ -389,6 +417,16 @@ def is_even(n):
 
 
 main()
+```
+```console
+MPY: soft reboot
+What's x? 2
+Even
+```
+```console
+MPY: soft reboot
+What's x? 3
+Odd
 ```
 ## Match
 De manera similar a las declaraciones if, elif, y else, matchlas declaraciones se pueden usar para ejecutar código condicional que coincida con ciertos valores.
@@ -407,7 +445,9 @@ De manera similar a las declaraciones if, elif, y else, matchlas declaraciones s
   else:
       print("Who?")
 ```
+```console
 
+```
 ```Python
  name = input("What's your name? ")
 
@@ -417,6 +457,9 @@ De manera similar a las declaraciones if, elif, y else, matchlas declaraciones s
       print("Slytherin")
   else:
       print("Who?")
+```
+```console
+
 ```
 ```Python
 name = input("What's your name? ")
@@ -433,6 +476,9 @@ name = input("What's your name? ")
       case _:
           print("Who?")
 ```
+```console
+
+```
 ```Python
  name = input("What's your name? ")
 
@@ -443,4 +489,7 @@ name = input("What's your name? ")
           print("Slytherin")
       case _:
           print("Who?")
+```
+```console
+
 ```
