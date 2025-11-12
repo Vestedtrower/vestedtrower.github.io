@@ -390,6 +390,7 @@ def is_even(n):
 
 main()
 ```
+Posibles respuestas para los dos casos par e impar Even, Odd. 
 ```console
 MPY: soft reboot
 What's x? 2
@@ -418,6 +419,7 @@ def is_even(n):
 
 main()
 ```
+Posibles respuestas para los dos casos par e impar Even, Odd. 
 ```console
 MPY: soft reboot
 What's x? 2
@@ -445,9 +447,33 @@ De manera similar a las declaraciones if, elif, y else, matchlas declaraciones s
   else:
       print("Who?")
 ```
+Posibles respuestas para los 4 Nombres definidos en nuestro codigo. **Harry**, **Hermione**, **Ron** y **Draco**. En caso de ser otro Nombre la respuesta sera, Who?
 ```console
-
+MPY: soft reboot
+What's your name? Harry
+Gryffindor
 ```
+```console
+MPY: soft reboot
+What's your name? Hermione
+Gryffindor
+```
+```console
+MPY: soft reboot
+What's your name? Ron
+Gryffindor
+```
+```console
+MPY: soft reboot
+What's your name? Draco
+Slytherin
+```
+```console
+MPY: soft reboot
+What's your name? Lovegood 
+Who?
+```
+En nuestro suguiente ejemplo implementaremos **Or**.para que asi mejoremos un poco nuestro codigo.
 ```Python
  name = input("What's your name? ")
 
@@ -458,13 +484,38 @@ De manera similar a las declaraciones if, elif, y else, matchlas declaraciones s
   else:
       print("Who?")
 ```
-```console
 
+```console
+MPY: soft reboot
+What's your name? Harry
+Gryffindor
 ```
+```console
+MPY: soft reboot
+What's your name? Herione
+Gryffindor
+```
+```console
+MPY: soft reboot
+What's your name? Ron
+Gryffindor
+```
+```console
+MPY: soft reboot
+What's your name? Draco
+Slytherin
+```
+```console
+MPY: soft reboot
+What's your name? Lovegood
+Who?
+```
+EJEMPLOS MATH DAN ERROR, en Thonny.
+
 ```Python
 name = input("What's your name? ")
 
-  match name: 
+match name: 
       case "Harry":
           print("Gryffindor")
       case "Hermione":
