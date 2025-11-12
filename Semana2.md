@@ -27,7 +27,7 @@ meow
 ```
 
 ## Bucles While.
-El whilebucle es casi universal en todos los lenguajes de codificación.
+El while bucle es casi universal en todos los lenguajes de codificación.
 Un bucle de este tipo repetirá un bloque de código una y otra vez.
 de manera ilimitada. 
 ```Python
@@ -86,12 +86,11 @@ meow
 meow
 meow
 ```
-## Bucles for.
 
+## Bucles for.
 Un for bucle es un tipo diferente de bucle.
 Para comprender mejor un forbucle, conviene empezar hablando de un nuevo tipo de variable llamado a listen Python. Como en otras áreas de nuestra vida, podemos tener una lista de la compra, una lista de tareas, etc.
 Un forbucle itera sobre un listconjunto de elementos. Por ejemplo, en la ventana del editor de texto, modifique su cat.pycódigo de la siguiente manera: 
-
 ```Python
 for i in [0, 1, 2]:
     print("meow")
@@ -117,7 +116,7 @@ meow
 for _ in range(3):
     print("meow")
 ```
-````console 
+```console 
 MPY: soft reboot
 meow
 meow
@@ -144,7 +143,6 @@ meow
 Quizás queramos obtener información de nuestro usuario. Podemos usar bucles para validarla.
 Un paradigma común dentro de Python es utilizar un whilebucle para validar la entrada del usuario.
 Por ejemplo, intentemos solicitarle al usuario un número mayor o igual a 0:
-
 ```Python
 while True:
     n = int(input("What's n? "))
@@ -214,7 +212,6 @@ meow
 Considere el mundo de Hogwarts del famoso universo de Harry Potter.
 En la terminal, escriba code hogwarts.py.
 En el editor de texto, escriba el código de la siguiente manera: 
-
 ```Python
 students = ["Hermione", "Harry", "Ron"]
 
@@ -244,8 +241,7 @@ Ron
 ## Longitud.
 Podemos utilizarlo lencomo una forma de comprobar la longitud del listllamado students.
 Imagina que no solo quieres imprimir el nombre del estudiante, sino también su posición en la lista. Para ello, puedes editar tu código de la siguiente manera:
-
-```
+```Python
 students = ["Hermione", "Harry", "Ron"]
 
 for i in range(len(students)):
@@ -257,6 +253,7 @@ MPY: soft reboot
 2 Harry
 3 Ron
 ```
+
 ## Diccionarios.
 dictLos diccionarios o s son una estructura de datos que permite asociar claves con valores.
 Donde a listes una lista de múltiples valores, a dictasocia una clave con un valor.
@@ -320,7 +317,6 @@ for student in students:
     print(student, students[student])
     
 ```
-
 ```console
 MPY: soft reboot
 Draco Slytherin
@@ -489,6 +485,7 @@ MPY: soft reboot
 ###
 ###
 ```
+
 
 
 
