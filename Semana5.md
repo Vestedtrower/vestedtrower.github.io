@@ -238,21 +238,14 @@ def hello(to="world"):
 if __name__ == "__main__":
     main()
 ```
-
-```Python
-def main():
-    name = input("What's your name? ")
-    print(hello(name))
+```Python 
+from hello import hello
 
 
-def hello(to="world"):
-    return f"hello, {to}"
-
-
-if __name__ == "__main__":
-    main()
+def test_hello():
+    assert hello("David") == "hello, David"
+    assert hello() == "hello, world"
 ```
-
 ```Python
 from hello import hello
 
