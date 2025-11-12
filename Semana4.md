@@ -20,13 +20,22 @@ randomEs una biblioteca que viene con Python y que puedes importar a tu propio p
 Para un programador es más fácil apoyarse en los hombros de los programadores anteriores.
 Entonces, ¿cómo se carga un módulo en el programa? Puedes usar la palabra importen el programa.
 Dentro del randommódulo, hay una función integrada llamada random.choice(seq). randomque es el módulo que estás importando. Dentro de ese módulo, se encuentra la choicefunción . Esta función acepta una seqsecuencia o una lista.
-
 ```Python
 import random
 
 coin = random.choice(["heads", "tails"])
 print(coin)
 ```
+```Python
+
+```
+```Python 
+
+```
+```Python
+
+```
+
 ## Estadistica.
 Python incluye una biblioteca integrada statistics. ¿Cómo podríamos usar este módulo?
 meanEs una función de esta biblioteca muy útil. En la ventana de terminal, escribe code average.py. En el editor de texto, modifica tu código de la siguiente manera:
@@ -46,8 +55,23 @@ import sys
 
 print("hello, my name is", sys.argv[1])
 ```
+```Python
+
+```
+```Python
+
+```
+```Python
+
+```
 ## Slice.
 sliceEs un comando que nos permite tomar un `a` liste indicarle al intérprete dónde queremos que considere el inicio listy el final de ` list. Por ejemplo, modifique su código de la siguiente manera:
+```Python
+
+```
+```Python
+
+```
 
 ## Paquetes.
 Una de las razones por las que Python es tan popular es la existencia de numerosas y potentes bibliotecas de terceros que añaden funcionalidad. Estas bibliotecas, implementadas como una carpeta, se denominan «paquetes».
@@ -56,7 +80,12 @@ cowsayEs un paquete conocido que permite a una vaca hablar con el usuario.
 Python tiene un administrador de paquetes llamado pipque le permite instalar paquetes rápidamente en su sistema.
 En la ventana de terminal, puedes instalar el cowsaypaquete escribiendo pip install cowsay. Tras un breve resultado, ya puedes usar este paquete en tu código.
 En la ventana de terminal, escribe code say.py. En el editor de texto, escribe el código de la siguiente manera:
+```Python
 
+```
+```Python
+
+```
 ## API.
 Las API o “interfaces de programación de aplicaciones” le permiten conectarse al código de otros.
 requestses un paquete que permite que su programa se comporte como lo haría un navegador web.
@@ -74,6 +103,12 @@ if len(sys.argv) != 2:
 response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
 print(response.json())
 ```
+```Python
+
+```
+```Python
+
+```
 
 ## Creando tus propias bibliotecas.
 ¡Como programador Python tienes la capacidad de crear tu propia biblioteca!
@@ -86,6 +121,9 @@ def hello(name):
 
 def goodbye(name):
     print(f"goodbye, {name}")
+```
+```Python
+
 ```
 
 
