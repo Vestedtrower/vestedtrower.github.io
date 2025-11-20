@@ -91,7 +91,7 @@ Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Re
 ![Ubicamos la consola para interactuar](./imagen/Ubicar_Consola.png)
 
 ## Conectar el sensor DHT11 a nuestro esp32
-Asegúrate que los datos del DHT11 estan conectados al pin 15, vcc DHT11 en 3v3 del ESP32 y GND de DHT11 al GND de nuestro ESP32.
+Asegúrate que los datos abreviado **DAT** del DHT11 estan conectados al pin 15, **VCC** DHT11 en 3v3 del ESP32 y **GND** de DHT11 al **GND** de nuestro ESP32.
 ![conexion](./imagen/conexionESPDHT11.png)
 
 Ahora comenzaremos a escribir el siguiente código.
@@ -142,9 +142,6 @@ SyntaxError: invalid syntax
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
 Colocaremos a la derecha de este simbolo el valor que le quermos dar a nuestra variable que estara del lado izquierdo del simbolo.
-
-
-
 ```python
 from machine import Pin
 import dht
@@ -745,8 +742,9 @@ print("Humedad: " + str(hum))
 ```
 El resultado de este programa es:
 ```console
-Temperatura 34
-Humedad: 68
+MPY: soft reboot
+Temperatura:  29
+Humedad: 62
 ```
 ```python
 from machine import Pin
@@ -775,7 +773,7 @@ hum = s.humidity()
 
 suma = int(temp) + int(hum)
 
-# IMPRIMEREMOS
+# IMPRIMIREMOS
 print("Suma {sum}" )
 ```
 El resultado de este programa es:

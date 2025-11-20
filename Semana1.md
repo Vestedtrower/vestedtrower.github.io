@@ -31,6 +31,7 @@ La lista de materiales es:
 Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
 
 ## Usar Thonny
+para empezar a usar el programa thonny nesecitamos conectar nuestro esp32 a nuestro pc o hardware para poder ejecutar el codigo en nuestro interprete ya dependiendo del sensor a programar sera lo que ejecutara. 
 
 ## Condicionales.
 Los condicionales le permiten a usted, el programador, permitir que su programa tome decisiones: como si su programa tuviera la opción de tomar el camino de la izquierda o el de la derecha en función de ciertas condiciones.
@@ -48,7 +49,9 @@ los símbolos probablemente te resulten bastante familiares.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
-En la ventana del editor de texto, comience con lo siguiente.
+En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera; de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
+
+En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para **if**. 
 ```Python 
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -63,6 +66,29 @@ EL resultado es.
 MPY: soft reboot
 What's x? 2
 What's y? 4
+x is less than y
+```
+Ejemplo Karlos
+```python
+from machine import Pin
+import dht
+s = dht.DHT11(Pin(15))
+s.measure()
+
+x = s.temperature()
+y = s.humidity()
+
+print(x)
+print(y)
+
+if x < y:
+   print("x is less than y")
+   
+```
+```console
+MPY: soft reboot
+28
+50
 x is less than y
 ```
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
