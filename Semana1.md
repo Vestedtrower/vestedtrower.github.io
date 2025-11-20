@@ -31,14 +31,12 @@ La lista de materiales es:
 Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
 
 ## Usar Thonny
-para empezar a usar el programa thonny nesecitamos conectar nuestro esp32 a nuestro pc o hardware para poder ejecutar el codigo en nuestro interprete ya dependiendo del sensor a programar sera lo que ejecutara. 
+Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactor nuetro codigo.
 
 ## Condicionales.
-Los condicionales le permiten a usted, el programador, permitir que su programa tome decisiones: como si su programa tuviera la opción de tomar el camino de la izquierda o el de la derecha en función de ciertas condiciones.
-
 Los condicionales permiten que su programa tome decisiones y elija un camino sobre otro dependiendo de condiciones específicas.
 
-Dentro de Python hay un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
+En Python tenemos un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
 
 los símbolos probablemente te resulten bastante familiares.
 - **>=** denota “mayor o igual a”.
@@ -51,7 +49,7 @@ Las declaraciones condicionales comparan un término de la izquierda con un tér
 ## Declaraciones If
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera; de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
-En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para **if**. 
+En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
 ```Python 
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -82,14 +80,14 @@ print(x)
 print(y)
 
 if x < y:
-   print("x is less than y")
+   print("x es menor que y")
    
 ```
 ```console
 MPY: soft reboot
-28
-50
-x is less than y
+27
+72
+x es menor que y
 ```
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
 
@@ -282,8 +280,8 @@ What's y? 3
 x is equal to y
 ```
 ## And.
-Similar a or, andse puede utilizar dentro de declaraciones condicionales.
-Ejecútalo en la ventana de terminal code grade.py. Inicia tu nuevo programa como se indica a continuación:
+Similar a or, and se puede utilizar dentro de declaraciones condicionales.
+Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
 ```Python 
 score = int(input("Score: "))
 
@@ -303,6 +301,33 @@ Posibles resultados
 MPY: soft reboot
 Score: 97
 Grade: A
+```
+Ejemplo Jerry
+```python
+from machine import ADC, Pin
+import time
+
+ldr = ADC(Pin(34))
+ldr.atten(ADC.ATTN_11DB)   
+ldr.width(ADC.WIDTH_10BIT) 
+
+valor = ldr.read()
+print(valor)
+score = ldr.read()
+
+if score >= 900 and score <= 1000:
+    print("Grade: A")
+elif score >=800 and score < 900:
+    print("Grade: B")
+elif score >=700 and score < 800:
+    print("Grade: C")
+elif score >=60 and score < 700:
+    print("Grade: D")
+```
+```
+MPY: soft reboot
+833
+Grade: B
 ```
 Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
 ```Python
@@ -341,6 +366,7 @@ MPY: soft reboot
 Score: 97
 Grade: A
 ```
+
 ## Módulo.
 En matemáticas, la paridad se refiere a si un número es par o impar.
 El operador módulo %en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
