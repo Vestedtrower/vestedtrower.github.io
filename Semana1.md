@@ -50,23 +50,7 @@ Las declaraciones condicionales comparan un término de la izquierda con un tér
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera; de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
-```Python 
-x = int(input("What's x? "))
-y = int(input("What's y? "))
 
-if x < y:
-   print("x is less than y")
-
-```
-EL resultado es.
-
-```Console 
-MPY: soft reboot
-What's x? 2
-What's y? 4
-x is less than y
-```
-Ejemplo Karlos
 ```python
 from machine import Pin
 import dht
