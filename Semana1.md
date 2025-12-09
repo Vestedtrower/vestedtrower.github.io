@@ -51,6 +51,8 @@ En Python, las sentencias **if** se utilizan para tomar decisiones dentro del pr
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
 
+![DHT11](/imegen/)
+
 ```python
 from machine import Pin
 import dht
