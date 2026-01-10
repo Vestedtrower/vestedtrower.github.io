@@ -22,13 +22,19 @@ La lista de materiales es:
 - 2 Sensores para deteccion de Luz Ldr
 - 2 resistencias
 - Esp32
-- Cableado Jumper Electrónica "F - F"
+- Cableado Jumper Electrónica "H - H" x 6
 - Cable USB tipo A con entrada para micro puerto tipo B
 - Computadora
 - Aplicación Thonny 
 
 ## Coneccion de componentes
+Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. 
+![Protoboard](./imagen/Protoboard.png)
+
 Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
+
+![diagrama2ldr](./imagen/digrama2ldr.png)
+
 
 ## Usar Thonny
 Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactor nuetro codigo.
