@@ -28,7 +28,7 @@ La lista de materiales es:
 - Aplicación Thonny 
 
 ## Coneccion de componentes
-Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. 
+Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. hallo
 ![Protoboard](./imagen/Protoboard.png)
 
 Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
