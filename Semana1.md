@@ -28,10 +28,10 @@ La lista de materiales es:
 - Aplicación Thonny 
 
 ## Coneccion de componentes
-Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. hallo
+Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. 
 ![Protoboard](./imagen/Protoboard.png)
 
-Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos ptoboards solicitadas en la lista de materiales. despues utilizaremos nuestro cable de aimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
+Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
 
 ![diagrama2ldr](./imagen/digrama2ldr.png)
 
@@ -56,9 +56,26 @@ Las declaraciones condicionales comparan un término de la izquierda con un tér
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera; de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
+```python
+from machine import ADC, Pin
+import time
 
-![DHT11](/imegen/)
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
 
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+while True:
+    valor1 = ldr1.read()   # Valor de 0 - 4095
+    valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+    print("LDR1:", valor1, " | LDR2:", valor2)
+    
+    time.sleep(0.5)
+```
 ```python
 from machine import Pin
 import dht
