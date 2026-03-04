@@ -107,7 +107,7 @@ while True:
 
     time.sleep(0.5)
 ```
-
+El resultado es:
 ```console
 LDR1: 3645  | LDR2: 3722
 Hay más luz en LDR2
