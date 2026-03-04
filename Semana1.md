@@ -19,32 +19,33 @@ Bienbenidos [inicio](/README.md).
 ## Materiales 
 La lista de materiales es:
 - 2 protoboard 
-- 2 Sensores para deteccion de Luz Ldr
-- 2 resistencias
-- Esp32
+- 2 Sensores para deteccion de Luz LDR
+- 2 resistencias de 10k Ohms 
+- Esp32 DEVKITV1
 - Cableado Jumper Electrónica "H - H" x 6
 - Cable USB tipo A con entrada para micro puerto tipo B
-- Computadora
+- Computadora 
 - Aplicación Thonny 
 
 ## Coneccion de componentes
-Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones enseguida se te muestra una imagen donde se señalan. 
+Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones. En la siguiente imagen se te muestra un ejemplo de un protoboard mediante en las lineas en marcadas observamos la conductividad. 
 ![Protoboard](./imagen/Protoboard.png)
 
-Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte las dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestro computadora. enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
+Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestra computadora, Enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
 
 ![diagrama2ldr](./imagen/digrama2ldr.png)
 
 
 ## Usar Thonny
-Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactor nuetro codigo.
+Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuetro codigo.
 
 ## Condicionales.
-Los condicionales permiten que su programa tome decisiones y elija un camino sobre otro dependiendo de condiciones específicas.
+Los condicionales nos permiten que el programa tome decisiones y elija un camino sobre otro dependiendo de las condiciones que especifiquemos.
 
-En Python tenemos un conjunto de “operadores” que se utilizan para plantear preguntas matemáticas.
+En Python tenemos un conjunto de **“operadores”** que se utilizan para plantear preguntas matemáticas.
 
-los símbolos probablemente te resulten bastante familiares.
+Los símbolos que utilizamos para establecer condicionales son los siguientes.
+
 - **>=** denota “mayor o igual a”.
 - **<=** denota “menor o igual a”.
 - **\==** denota “igual”. Nótese el doble signo igual: un solo signo igual **=** asigna un valor, mientras que dos signos iguales **==** comparan valores.
@@ -53,7 +54,7 @@ los símbolos probablemente te resulten bastante familiares.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
-En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera; de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
+En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera, de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
 ```python
@@ -76,6 +77,36 @@ while True:
     
     time.sleep(0.5)
 ```
+```
+from machine import ADC, Pin
+import time
+
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+while True:
+    valor1 = ldr1.read()   # Valor de 0 - 4095
+    valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+    print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+    if valor1 > valor2:
+        print("Hay más luz en LDR1")
+    
+    if valor2 > valor1:
+        print("Hay más luz en LDR2")
+    
+    if valor1 == valor2:
+        print("Ambos sensores tienen la misma luz")
+
+    time.sleep(0.5)
+```
 ```python
 from machine import Pin
 import dht
@@ -92,6 +123,7 @@ if x < y:
    print("x es menor que y")
    
 ```
+
 ```console
 MPY: soft reboot
 27
