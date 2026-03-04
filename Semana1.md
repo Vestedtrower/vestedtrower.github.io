@@ -77,7 +77,7 @@ while True:
     
     time.sleep(0.5)
 ```
-```
+```python
 from machine import ADC, Pin
 import time
 
