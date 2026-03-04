@@ -107,6 +107,17 @@ while True:
 
     time.sleep(0.5)
 ```
+
+```console
+LDR1: 3645  | LDR2: 3722
+Hay más luz en LDR2
+LDR1: 3570  | LDR2: 3723
+Hay más luz en LDR2
+LDR1: 2198  | LDR2: 3715
+Hay más luz en LDR2
+LDR1: 2174  | LDR2: 3710
+Hay más luz en LDR2
+```
 ```python
 from machine import Pin
 import dht
@@ -123,7 +134,7 @@ if x < y:
    print("x es menor que y")
    
 ```
-
+El resultado esperado es:
 ```console
 MPY: soft reboot
 27
@@ -140,7 +151,43 @@ y = ldr2
 if x < y:
     print("x is less than y")
 ```
+```Python
+from machine import ADC, Pin
+import time
 
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+while True:
+    valor1 = ldr1.read()   # Valor de 0 - 4095
+    valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+    print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+    if valor1 < valor2:
+        print("Hay menos luz en LDR1")
+    
+    if valor2 > valor1:
+        print("Hay más luz en LDR2")
+    
+    if valor1 == valor2:
+        print("Ambos sensores tienen la misma luz")
+
+    time.sleep(0.5)
+```
+El resultado esperado es:
+```Console
+LDR1: 3651  | LDR2: 3764
+Hay menos luz en LDR1
+Hay más luz en LDR2
+LDR1: 3641  | LDR2: 2071
+```
 Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndolas en enteros y guardándolas en sus respectivas variables x e y. Luego, la instrucción compara x e y. Si se cumple ifla condición de , se ejecuta la instrucción.x < yprint
 
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
