@@ -57,26 +57,7 @@ Las declaraciones condicionales comparan un término de la izquierda con un tér
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera, de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
-```python
-from machine import ADC, Pin
-import time
 
-# Configurar los pines analógicos
-ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
-ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
-
-# Ajustar la atenuación para rango de 0 - 3.3V
-ldr1.atten(ADC.ATTN_11DB)
-ldr2.atten(ADC.ATTN_11DB)
-
-while True:
-    valor1 = ldr1.read()   # Valor de 0 - 4095
-    valor2 = ldr2.read()   # Valor de 0 - 4095
-    
-    print("LDR1:", valor1, " | LDR2:", valor2)
-    
-    time.sleep(0.5)
-```
 ```python
 from machine import ADC, Pin
 import time
@@ -118,29 +99,7 @@ Hay más luz en LDR2
 LDR1: 2174  | LDR2: 3710
 Hay más luz en LDR2
 ```
-```python
-from machine import Pin
-import dht
-s = dht.DHT11(Pin(15))
-s.measure()
 
-x = s.temperature()
-y = s.humidity()
-
-print(x)
-print(y)
-
-if x < y:
-   print("x es menor que y")
-   
-```
-El resultado esperado es:
-```console
-MPY: soft reboot
-27
-72
-x es menor que y
-```
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
 
 ## Ejemplo sensor LDR
