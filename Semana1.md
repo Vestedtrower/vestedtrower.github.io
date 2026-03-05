@@ -103,6 +103,7 @@ Hay más luz en LDR2
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
 
 ## Ejemplo sensor LDR
+
 ```Python
 from machine import ADC, Pin
 import time
