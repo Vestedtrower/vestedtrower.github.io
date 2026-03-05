@@ -90,7 +90,7 @@ meow
 
 ## Bucles for.
 Un for bucle es un tipo diferente de bucle.
-Para comprender mejor un forbucle, conviene empezar hablando de un nuevo tipo de variable llamado a listen Python. Como en otras áreas de nuestra vida, podemos tener una lista de la compra, una lista de tareas, etc.
+Para comprender mejor un for bucle, conviene empezar hablando de un nuevo tipo de variable llamado a listen Python. Como en otras áreas de nuestra vida, podemos tener una lista de la compra, una lista de tareas, etc.
 Un forbucle itera sobre un listconjunto de elementos. Por ejemplo, en la ventana del editor de texto, modifique su cat.pycódigo de la siguiente manera: 
 ```Python
 for i in [0, 1, 2]:
