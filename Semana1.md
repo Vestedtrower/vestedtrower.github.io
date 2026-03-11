@@ -58,7 +58,7 @@ En Python, las sentencias **if** se utilizan para tomar decisiones dentro del pr
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
 
-```python
+```Python
 from machine import ADC, Pin
 import time
 
@@ -70,34 +70,21 @@ ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
 ldr1.atten(ADC.ATTN_11DB)
 ldr2.atten(ADC.ATTN_11DB)
 
-while True:
-    valor1 = ldr1.read()   # Valor de 0 - 4095
-    valor2 = ldr2.read()   # Valor de 0 - 4095
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
     
-    print("LDR1:", valor1, " | LDR2:", valor2)
+print("LDR1:", valor1, " | LDR2:", valor2)
 
     # Comparación usando solo IF
-    if valor1 > valor2:
-        print("Hay más luz en LDR1")
+if valor1 < valor2:
+        print("Hay menos luz en LDR1")
     
-    if valor2 > valor1:
-        print("Hay más luz en LDR2")
-    
-    if valor1 == valor2:
-        print("Ambos sensores tienen la misma luz")
-
-    time.sleep(0.5)
 ```
-El resultado es:
+
 ```console
-LDR1: 3645  | LDR2: 3722
-Hay más luz en LDR2
-LDR1: 3570  | LDR2: 3723
-Hay más luz en LDR2
-LDR1: 2198  | LDR2: 3715
-Hay más luz en LDR2
-LDR1: 2174  | LDR2: 3710
-Hay más luz en LDR2
+MPY: soft reboot
+LDR1: 3712  | LDR2: 3776
+Hay menos luz en LDR1
 ```
 
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
@@ -148,41 +135,49 @@ ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si s
 ## Flujo de control elif, else.
 Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
 ```Python 
-x = int(input("What's x? "))
-y = int(input("What's y? "))
+from machine import ADC, Pin
+import time
 
-if x < y:
-    print("x is less than y")
-if x > y:
-    print("x is greater than y")
-if x == y:
-    print("x is equal to y")
-```
-Posibles respuestas para los tres casos **if**.
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
 
-Caso **1** donde **"X"** es menor que **"Y"**. 
-```console 
-MPY: soft reboot
-What's x? 2
-What's y? 4
-x is less than y
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+if valor1 < valor2:
+        print("Hay menos luz en LDR1")
+        
+if valor1 > valor2:
+        print("Hay mas luz en LDR1")
+        
+if valor1 == valor2:
+        print("El valor en LDR1 y LDR2 es igual")
 ```
-Caso **2** donde **"X"** es mayor que **"Y"**.
+Posibles resultados.
+
+**Caso 1** Para menor deteccion de Luz en **LDR1**. 
 ```console
 MPY: soft reboot
-What's x? 4
-What's y? 2
-x is greater than y
+LDR1: 3996  | LDR2: 4031
+Hay menos luz en LDR1
 ```
-Caso **3** donde **"X"** y **"Y"** son iguales. 
+**Caso 2**Para mayor deteccion de Luz en **LDR1**.
 ```console
 MPY: soft reboot
-What's x? 2
-What's y? 2
-x is equal to y
+LDR1: 4021  | LDR2: 2793
+Hay mas luz en LDR1
 ```
+
 ## Aplicaion de elif
-Observe comp el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
+Observe el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
 ```Python
 x = int(input("What's x? "))
 y = int(input("What's y? "))
@@ -194,59 +189,105 @@ elif x > y:
 elif x == y:
     print("x is equal to y")
 ```
-Posibles repuestas para los tres casos. **menor**, **mayor** y **igual que**.
+```Python
+from machine import ADC, Pin
+import time
 
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+if valor1 < valor2:
+        print("Hay menos luz en LDR1")
+        
+elif valor1 > valor2:
+        print("Hay mas luz en LDR1")
+        
+elif valor1 == valor2:
+        print("El valor en LDR1 y LDR2 es igual")
+```
+Posibles respuestas para los 3 casos.
+
+Caso 1
 ```console
 MPY: soft reboot
-What's x? 4
-What's y? 6
-x is less than y
+LDR1: 3056  | LDR2: 4095
+Hay menos luz en LDR1
+```
+Caso2
+```console
+MPY: soft reboot
+LDR1: 4089  | LDR2: 3050
+Hay mas luz en LDR1
+```
+Caso3
+```console
+MPY: soft reboot
+LDR1: 4095  | LDR2: 4095
+El valor en LDR1 y LDR2 es igual
 ```
 
-```console
-MPY: soft reboot
-What's x? 6
-What's y? 2
-x is greater than y
-```
-```console
-MPY: soft reboot
-What's x? 2
-What's y? 2
-x is equal to y
-```
 ## Aplicasion de else.
 Podemos crear un resultado predeterminado general usando una declarasion else. Podemos revisarlo de la siguiente forma. 
-```Python
-x = int(input("What's x? "))
-y = int(input("What's y? "))
 
-if x < y:
-    print("x is less than y")
-elif x > y:
-    print("x is greater than y")
-else:
-    print("x is equal to y")
+```Python
+from machine import ADC, Pin
+import time
+
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+if valor1 < valor2:
+        print("Hay menos luz en LDR1")
+        
+elif valor1 > valor2:
+        print("Hay mas luz en LDR1")
+        
+else: 
+        print("El valor en LDR1 y LDR2 es igual")
 ```
-Posibles resultados para los tres casos **menor**, **mayor** y **igual** que.
+Posibles respuestas para los 3 casos **if**, **elif**, **"else"**.
+
+Caso 1 
 ```console
 MPY: soft reboot
-What's x? 2
-What's y? 4
-x is less than y
+LDR1: 3920  | LDR2: 3966
+Hay menos luz en LDR1
 ```
+Caso 2
 ```console
 MPY: soft reboot
-What's x? 4
-What's y? 2
-x is greater than y
+LDR1: 4095  | LDR2: 3000
+Hay mas luz en LDR1
 ```
-```console 
+Caso 3
+```console
 MPY: soft reboot
-What's x? 2
-What's y? 2
-x is equal to y
+LDR1: 4095  | LDR2: 4095
+El valor en LDR1 y LDR2 es igual
 ```
+
 Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
 ## Aplicasion de Or.
