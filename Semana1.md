@@ -398,6 +398,8 @@ x is equal to y
 ## And.
 Similar a or, and se puede utilizar dentro de declaraciones condicionales.
 Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
+
+hallo
 ```Python 
 score = int(input("Score: "))
 
