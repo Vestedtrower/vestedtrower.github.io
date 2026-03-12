@@ -400,6 +400,47 @@ Similar a or, and se puede utilizar dentro de declaraciones condicionales.
 Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
 
 hallo
+
+```Python
+from machine import ADC, Pin
+import time
+
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+
+if valor1 >= 3000 and valor2 <= 4095:
+    print("Grade: A")
+elif valor1 >=2000 and valor2 < 3000:
+    print("Grade: B")
+elif valor1 >=1000 and valor2 < 2000:
+    print("Grade: C")
+elif valor1 >=500 and valor2 < 1000:
+    print("Grade: D")
+else:
+    print("Grade: F")
+```
+```console
+MPY: soft reboot
+LDR1: 3869  | LDR2: 3933
+Grade: A
+```
+```console
+MPY: soft reboot
+LDR1: 2512  | LDR2: 3890
+Grade: F
+```
+
 ```Python 
 score = int(input("Score: "))
 
