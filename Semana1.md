@@ -292,46 +292,67 @@ Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa l
 
 ## Aplicasion de Or.
 Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
-```Python
-x = int(input("What's x? "))
-y = int(input("What's y? "))
 
-if x < y or x > y:
-    print("x is not equal to y")
+```Python
+from machine import ADC, Pin
+import time
+
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+
+if valor1 < valor2 or valor1 > valor2:
+    print("valor1 no es igual al valor2")
 else:
-    print("x is equal to y")
+    print("valor1 es igual al valor2")
+
 ```
 Posibles resultados para los dos casos es **igual** y **no es igual que**.
-
-```consola 
+```console
 MPY: soft reboot
-What's x? 2
-What's y? 4
-x is not equal to y
+LDR1: 3770  | LDR2: 3790
+valor1 no es igual al valor2
 ```
 
-```consola
-MPY: soft reboot
-What's x? 3
-What's y? 3
-x is equal to y
-```
 en el siguiente ejemplo mejoramos mas aun nuestro programa eliminando el operadr **or**.
 ```Python
-x = int(input("What's x? "))
-y = int(input("What's y? "))
+from machine import ADC, Pin
+import time
 
-if x != y:
-    print("x is not equal to y")
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+
+if valor1 != valor2:
+    print("valor1 no es igual al valor2")
 else:
-    print("x is equal to y")
+    print("valor1 es igual al valor2")
 ```
 Posibles respuestas para los dos casos es **igual** o **no es igual** que.
 ```console
 MPY: soft reboot
-What's x? 4
-What's y? 2
-x is not equal to y
+LDR1: 3482  | LDR2: 2915
+valor1 no es igual al valor2
 ```
 ```console
 MPY: soft reboot
@@ -340,20 +361,33 @@ What's y? 3
 x is equal to y
 ```
 ```Python
-x = int(input("What's x? "))
-y = int(input("What's y? "))
+from machine import ADC, Pin
+import time
 
-if x == y:
-    print("x is equal to y")
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+valor1 = ldr1.read()   # Valor de 0 - 4095
+valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+print("LDR1:", valor1, " | LDR2:", valor2)
+
+
+if valor1 == valor2:
+    print("valor1 es igual al valor2")
 else:
-    print("x is not equal to y")
+    print("valor1 no es igual al valor2")
 ```
 Posibles  respuestas para los dos casos **no es igual** y es **igual que**. 
 ```console
 MPY: soft reboot
-What's x? 2
-What's y? 4
-x is not equal to y
+LDR1: 3613  | LDR2: 3466
+valor1 no es igual al valor2
 ```
 ```console 
 MPY: soft reboot
