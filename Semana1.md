@@ -440,6 +440,11 @@ MPY: soft reboot
 LDR1: 2512  | LDR2: 3890
 Grade: F
 ```
+```console
+MPY: soft reboot
+LDR1: 998  | LDR2: 991
+Grade: D
+```
 
 ```Python 
 score = int(input("Score: "))
