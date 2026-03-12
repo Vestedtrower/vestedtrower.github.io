@@ -536,6 +536,31 @@ En matemáticas, la paridad se refiere a si un número es par o impar.
 El operador módulo %en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
 Por ejemplo, 4 % 2 resultaría en cero, ya que es un divisor exacto. Sin embargo, 3 % 2 no es un divisor exacto y resultaría en un número distinto de cero.
 En la ventana de terminal, crea un nuevo programa escribiendo code parity.py. En el editor de texto, escribe el código como se indica a continuación:
+
+```Python
+from machine import ADC, Pin
+import time
+
+ldr = ADC(Pin(34))
+ldr.atten(ADC.ATTN_11DB)   
+ldr.width(ADC.WIDTH_10BIT) 
+
+valor = ldr.read()
+print(valor)
+score = ldr.read()
+
+
+if score % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+```console
+MPY: soft reboot
+4
+Even
+```
+
 ```Python
 x = int(input("What's x? "))
 
