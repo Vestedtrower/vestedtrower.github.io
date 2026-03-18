@@ -38,6 +38,25 @@ Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos 
 
 ## Usar Thonny
 Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuetro codigo.
+Materiales:
+
+1 ESP32
+
+1 sensor LDR
+
+1 resistencia de 10kΩ
+
+cables de conexión
+
+Conexión básica (divisor de voltaje):
+
+Un extremo del LDR → 3.3V
+
+El otro extremo del LDR → GPIO34
+
+Resistencia de 10kΩ → entre GPIO34 y GND
+
+Esto permite que el ESP32 lea el cambio de voltaje dependiendo de la luz.
 
 ## Condicionales.
 Los condicionales nos permiten que el programa tome decisiones y elija un camino sobre otro dependiendo de las condiciones que especifiquemos.
@@ -324,7 +343,7 @@ LDR1: 3770  | LDR2: 3790
 valor1 no es igual al valor2
 ```
 
-en el siguiente ejemplo mejoramos mas aun nuestro programa eliminando el operadr **or**.
+en el siguiente ejemplo mejoramos mas aun nuestro programa eliminando el operador **or**.
 ```Python
 from machine import ADC, Pin
 import time
@@ -533,10 +552,47 @@ Grade: A
 
 ## Módulo.
 En matemáticas, la paridad se refiere a si un número es par o impar.
-El operador módulo %en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
-Por ejemplo, 4 % 2 resultaría en cero, ya que es un divisor exacto. Sin embargo, 3 % 2 no es un divisor exacto y resultaría en un número distinto de cero.
-En la ventana de terminal, crea un nuevo programa escribiendo code parity.py. En el editor de texto, escribe el código como se indica a continuación:
+El operador módulo **%** en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
+Por ejemplo, **4 % 2** resultaría en cero, ya que es un divisor exacto. Sin embargo, **3 % 2** no es un divisor exacto y resultaría en un número distinto de cero.
+En la ventana de terminal, crea un nuevo programa escribiendo code parity.py , En el editor de texto, escribe el código como se indica a continuación:
 
+Ejemplo CHATGPT
+```Python 
+from machine import ADC, Pin
+import time
+
+
+ldr = ADC(Pin(34))              # Pin analógico
+ldr.atten(ADC.ATTN_11DB)        # Rango de 0 a 3.3V
+
+
+def leer_ldr():
+    valor = ldr.read()
+    return valor
+
+
+valor = leer_ldr()
+
+print("Valor del LDR:", valor)
+
+# Evaluar si el número es par o impar usando módulo
+if valor % 2 == 0:
+    print("El valor es PAR")
+else:
+    print("El valor es IMPAR")
+```
+Posibles resultados
+```console
+MPY: soft reboot
+Valor del LDR: 351
+El valor es IMPAR
+```
+```console
+MPY: soft reboot
+Valor del LDR: 746
+El valor es PAR
+```
+Ejemplo 1
 ```Python
 from machine import ADC, Pin
 import time
@@ -560,30 +616,84 @@ MPY: soft reboot
 4
 Even
 ```
-
+ejemplo mejorado 
 ```Python
-x = int(input("What's x? "))
+from machine import ADC, Pin
+import time
 
-if x % 2 == 0:
-    print("Even")
+# Configurar el pin analógico donde está conectado el LDR
+ldr = ADC(Pin(34))
+
+# Ajustar el rango de lectura (0 - 3.3V)
+ldr.atten(ADC.ATTN_11DB)
+
+# Leer el valor del sensor
+valor = ldr.read()
+
+print("Valor del LDR:", valor)
+
+# Uso del operador módulo
+if valor % 2 == 0:
+    print("El valor es PAR")
 else:
-    print("Odd")
+    print("El valor es IMPAR")
 ```
-Posibles respuestas para los dos casos par e impar Even, Odd. 
-```console 
+
+```console
 MPY: soft reboot
-What's x? 4
-Even
+Valor del LDR: 85
+El valor es IMPAR
 ```
 ```console
 MPY: soft reboot
-What's x? 5
-Odd
+Valor del LDR: 16
+El valor es PAR
 ```
 
 ## Creando tu propia función de paridad.
 Como se discutió en la lección 0, ¡te resultará útil crear una función propia!
 Podemos crear nuestra propia función para comprobar si un número es par o impar. Ajusta tu código como sigue:
+
+```Python
+from machine import ADC, Pin
+import time
+
+# Configurar el pin analógico donde está conectado el LDR
+ldr = ADC(Pin(34))
+
+# Ajustar el rango de lectura (0 - 3.3V)
+ldr.atten(ADC.ATTN_11DB)
+
+# Leer el valor del sensor
+valor = ldr.read()
+
+print("Valor del LDR:", valor)
+
+
+def main():
+    valor = ldr.read()
+    if is_even(valor):
+        print("Par")
+    else:
+        print("Impar")
+
+
+def is_even(n):
+    if n % 2 == 0:
+        return True
+    else:
+        return False
+
+
+main()
+```
+Resultado
+```console
+MPY: soft reboot
+Valor del LDR: 349
+Impar
+```
+
 ```Python
 def main():
     x = int(input("What's x? "))
@@ -617,12 +727,27 @@ Odd
 ## Pythonic
 En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
 ```Python
+from machine import ADC, Pin
+import time
+
+# Configurar el pin analógico donde está conectado el LDR
+ldr = ADC(Pin(34))
+
+# Ajustar el rango de lectura (0 - 3.3V)
+ldr.atten(ADC.ATTN_11DB)
+
+# Leer el valor del sensor
+valor = ldr.read()
+
+print("Valor del LDR:", valor)
+
+
 def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
+    valor = ldr.read()
+    if is_even(valor):
+        print("Par")
     else:
-        print("Odd")
+        print("Impar")
 
 
 def is_even(n):
@@ -634,24 +759,39 @@ main()
 Posibles respuestas para los dos casos par e impar Even, Odd. 
 ```console
 MPY: soft reboot
-What's x? 2
-Even
+Valor del LDR: 134
+Par
 ```
 ```console
 MPY: soft reboot
-What's x? 3
-Odd
+Valor del LDR: 672
+Impar
 ```
 Observe que esta declaración de retorno en nuestro código es casi como una oración en inglés. Esta es una forma única de codificar que solo se ve en Python.
 
 Podemos revisar aún más nuestro código y hacerlo cada vez más legible:
+
 ```python
+from machine import ADC, Pin
+import time
+
+# Configurar el pin analógico donde está conectado el LDR
+ldr = ADC(Pin(34))
+
+# Ajustar el rango de lectura (0 - 3.3V)
+ldr.atten(ADC.ATTN_11DB)
+
+# Leer el valor del sensor
+valor = ldr.read()
+
+print("Valor del LDR:", valor)
+
 def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
+    valor = ldr.read()
+    if is_even(valor):
+        print("Par")
     else:
-        print("Odd")
+        print("Impar")
 
 
 def is_even(n):
@@ -663,16 +803,17 @@ main()
 Posibles respuestas para los dos casos par e impar Even, Odd. 
 ```console
 MPY: soft reboot
-What's x? 2
-Even
+Valor del LDR: 227
+Par
 ```
 ```console
 MPY: soft reboot
-What's x? 3
-Odd
+Valor del LDR: 1056
+Impar
 ```
+
 ## Match
-De manera similar a las declaraciones if, elif, y else, matchlas declaraciones se pueden usar para ejecutar código condicional que coincida con ciertos valores.
+De manera similar a las declaraciones if, elif, y else, match las declaraciones se pueden usar para ejecutar código condicional que coincida con ciertos valores.
 
 ```Python 
  name = input("What's your name? ")
