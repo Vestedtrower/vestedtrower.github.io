@@ -726,6 +726,7 @@ Odd
 
 ## Pythonic
 En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
+
 ```Python
 from machine import ADC, Pin
 import time
