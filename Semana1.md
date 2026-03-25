@@ -58,7 +58,7 @@ Resistencia de 10kΩ → entre GPIO34 y GND
 
 Esto permite que el ESP32 lea el cambio de voltaje dependiendo de la luz.
 
-## Condicionales.
+## Condicionales
 Los condicionales nos permiten que el programa tome decisiones y elija un camino sobre otro dependiendo de las condiciones que especifiquemos.
 
 En Python tenemos un conjunto de **“operadores”** que se utilizan para plantear preguntas matemáticas.
@@ -68,11 +68,12 @@ Los símbolos que utilizamos para establecer condicionales son los siguientes.
 - **>=** denota “mayor o igual a”.
 - **<=** denota “menor o igual a”.
 - **\==** denota “igual”. Nótese el doble signo igual: un solo signo igual **=** asigna un valor, mientras que dos signos iguales **==** comparan valores.
-- **\!\=** denota “no igual a”.
+- **!\=** denota “no igual a”.
 
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
+
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera, de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
