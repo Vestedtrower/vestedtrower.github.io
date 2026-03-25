@@ -197,17 +197,7 @@ Hay mas luz en LDR1
 
 ## Aplicaion de elif
 Observe el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
-```Python
-x = int(input("What's x? "))
-y = int(input("What's y? "))
 
-if x < y:
-    print("x is less than y")
-elif x > y:
-    print("x is greater than y")
-elif x == y:
-    print("x is equal to y")
-```
 ```Python
 from machine import ADC, Pin
 import time
@@ -408,12 +398,7 @@ MPY: soft reboot
 LDR1: 3613  | LDR2: 3466
 valor1 no es igual al valor2
 ```
-```console 
-MPY: soft reboot
-What's x? 3
-What's y? 3
-x is equal to y
-```
+
 ## And.
 Similar a or, and se puede utilizar dentro de declaraciones condicionales.
 Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
@@ -465,27 +450,6 @@ LDR1: 998  | LDR2: 991
 Grade: D
 ```
 
-```Python 
-score = int(input("Score: "))
-
-if score >= 90 and score <= 100:
-    print("Grade: A")
-elif score >=80 and score < 90:
-    print("Grade: B")
-elif score >=70 and score < 80:
-    print("Grade: C")
-elif score >=60 and score < 70:
-    print("Grade: D")
-else:
-    print("Grade: F")
-```
-Posibles resultados 
-```consola
-MPY: soft reboot
-Score: 97
-Grade: A
-```
-Ejemplo Jerry
 ```python
 from machine import ADC, Pin
 import time
@@ -512,24 +476,9 @@ MPY: soft reboot
 833
 Grade: B
 ```
+
 Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
-```Python
-score = int(input("Score: "))
 
-  if 90 <= score <= 100:
-      print("Grade: A")
-  elif 80 <= score < 90:
-      print("Grade: B")
-  elif 70 <= score < 80:
-      print("Grade: C")
-  elif 60 <= score < 70:
-      print("Grade: D")
-  else:
-      print("Grade: F")
-```
-```console
-
-```
 ```Python
 score = int(input("Score: "))
 
@@ -757,7 +706,9 @@ def is_even(n):
 
 main()
 ```
+
 Posibles respuestas para los dos casos par e impar Even, Odd. 
+
 ```console
 MPY: soft reboot
 Valor del LDR: 134
