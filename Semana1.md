@@ -467,16 +467,11 @@ elif score >=700 and score < 800:
 elif score >=60 and score < 700:
     print("Grade: D")
 ```
-```console
 
-```
 ```console
 MPY: soft reboot
 833
 Grade: B
-```
-```console
-
 ```
 
 Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
