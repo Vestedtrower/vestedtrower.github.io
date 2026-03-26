@@ -8,7 +8,7 @@ Bienbenidos [inicio](/README.md).
 - [Condicionales](#condicionales)
 - [Declaraciones if](#declaraciones-if)
 - [Flujo de control elif else](#flujo-de-control-elif-else)
-- [Or](#)
+- [Or](#Or)
 - [And](#and)
 - [Módulo](#módulo)
 - [Creando tu propia función de paridad ](#creando-tu-propia-función-de-paridad) 
@@ -72,7 +72,6 @@ Los símbolos que utilizamos para establecer condicionales son los siguientes.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
-
 En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera, de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
@@ -152,7 +151,6 @@ Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndol
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
 
 ## Flujo de control elif, else
-
 Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
 
 ```Python 
@@ -199,7 +197,6 @@ Hay mas luz en LDR1
 ```
 
 ## Aplicaion de elif
-
 Observe el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
 
 ```Python
