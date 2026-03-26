@@ -482,7 +482,16 @@ Grade: B
 Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
 
 ```Python
-score = int(input("Score: "))
+from machine import ADC, Pin
+import time
+
+ldr = ADC(Pin(34))
+ldr.atten(ADC.ATTN_11DB)   
+ldr.width(ADC.WIDTH_10BIT) 
+
+valor = ldr.read()
+print(valor)
+score = ldr.read()
 
 if score >= 90:
     print("Grade: A")
@@ -497,8 +506,8 @@ else:
 ```
 ```console
 MPY: soft reboot
-Score: 97
-Grade: A
+17
+Grade: F
 ```
 
 ## Módulo.
@@ -678,7 +687,9 @@ def is_even(n):
 
 main()
 ```
+
 Posibles respuestas para los dos casos par e impar Even y Odd 
+
 ```console
 MPY: soft reboot
 Valor del LDR: 38
@@ -736,6 +747,7 @@ MPY: soft reboot
 Valor del LDR: 672
 Impar
 ```
+
 Observe que esta declaración de retorno en nuestro código es casi como una oración en inglés. Esta es una forma única de codificar que solo se ve en Python.
 
 Podemos revisar aún más nuestro código y hacerlo cada vez más legible:
