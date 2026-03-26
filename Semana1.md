@@ -8,7 +8,7 @@ Bienbenidos [inicio](/README.md).
 - [Condicionales](#condicionales)
 - [Declaraciones if](#declaraciones-if)
 - [Flujo de control elif else](#flujo-de-control-elif-else)
-- [Or](#Or)
+- [Or](#or)
 - [And](#and)
 - [Módulo](#módulo)
 - [Creando tu propia función de paridad ](#creando-tu-propia-función-de-paridad) 
@@ -300,7 +300,7 @@ El valor en LDR1 y LDR2 es igual
 
 Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
-## Aplicasion de Or
+## Or
 Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
 
 ```Python
