@@ -1,4 +1,4 @@
-# Condicionales. 
+# Condicionales 
 
 Bienbenidos [inicio](/README.md).
 
@@ -34,7 +34,6 @@ Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer
 Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestra computadora, Enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
 
 ![diagrama2ldr](./imagen/digrama2ldr.png)
-
 
 ## Usar Thonny
 Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuetro codigo.
@@ -152,8 +151,10 @@ Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndol
 
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
 
-## Flujo de control elif, else.
+## Flujo de control elif, else
+
 Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
+
 ```Python 
 from machine import ADC, Pin
 import time
@@ -181,6 +182,7 @@ if valor1 > valor2:
 if valor1 == valor2:
         print("El valor en LDR1 y LDR2 es igual")
 ```
+
 Posibles resultados.
 
 **Caso 1** Para menor deteccion de Luz en **LDR1**. 
@@ -197,6 +199,7 @@ Hay mas luz en LDR1
 ```
 
 ## Aplicaion de elif
+
 Observe el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
 
 ```Python
@@ -247,7 +250,7 @@ LDR1: 4095  | LDR2: 4095
 El valor en LDR1 y LDR2 es igual
 ```
 
-## Aplicasion de else.
+## Aplicasion de else
 Podemos crear un resultado predeterminado general usando una declarasion else. Podemos revisarlo de la siguiente forma. 
 
 ```Python
@@ -300,7 +303,7 @@ El valor en LDR1 y LDR2 es igual
 
 Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
 
-## Aplicasion de Or.
+## Aplicasion de Or
 Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
 
 ```Python
@@ -395,7 +398,7 @@ LDR1: 3613  | LDR2: 3466
 valor1 no es igual al valor2
 ```
 
-## And.
+## And
 Similar a or, and se puede utilizar dentro de declaraciones condicionales.
 Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
 
@@ -510,7 +513,7 @@ MPY: soft reboot
 Grade: F
 ```
 
-## Módulo.
+## Módulo
 En matemáticas, la paridad se refiere a si un número es par o impar.
 El operador módulo **%** en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
 Por ejemplo, **4 % 2** resultaría en cero, ya que es un divisor exacto. Sin embargo, **3 % 2** no es un divisor exacto y resultaría en un número distinto de cero.
@@ -610,7 +613,7 @@ Valor del LDR: 16
 El valor es PAR
 ```
 
-## Creando tu propia función de paridad.
+## Creando tu propia función de paridad
 Como se discutió en la lección 0, ¡te resultará útil crear una función propia!
 Podemos crear nuestra propia función para comprobar si un número es par o impar. Ajusta tu código como sigue:
 
