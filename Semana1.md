@@ -364,12 +364,7 @@ MPY: soft reboot
 LDR1: 3482  | LDR2: 2915
 valor1 no es igual al valor2
 ```
-```console
-MPY: soft reboot
-What's x? 3
-What's y? 3
-x is equal to y
-```
+
 ```Python
 from machine import ADC, Pin
 import time
@@ -472,10 +467,16 @@ elif score >=700 and score < 800:
 elif score >=60 and score < 700:
     print("Grade: D")
 ```
+```console
+
 ```
+```console
 MPY: soft reboot
 833
 Grade: B
+```
+```console
+
 ```
 
 Observa como en Python pueden encadenarse operadores y condiciones de una manera bastante inusual en otros lenguajes de programacion. 
@@ -645,12 +646,27 @@ Impar
 ```
 
 ```Python
+from machine import ADC, Pin
+import time
+
+# Configurar el pin analógico donde está conectado el LDR
+ldr = ADC(Pin(34))
+
+# Ajustar el rango de lectura (0 - 3.3V)
+ldr.atten(ADC.ATTN_11DB)
+
+# Leer el valor del sensor
+valor = ldr.read()
+
+print("Valor del LDR:", valor)
+
+
 def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
+    valor = ldr.read()
+    if is_even(valor):
+        print("Par")
     else:
-        print("Odd")
+        print("Impar")
 
 
 def is_even(n):
@@ -665,13 +681,13 @@ main()
 Posibles respuestas para los dos casos par e impar Even y Odd 
 ```console
 MPY: soft reboot
-What's x? 2
-Even
+Valor del LDR: 38
+Par
 ```
 ```console
 MPY: soft reboot
-What's x? 3
-Odd
+Valor del LDR: 0
+Impar
 ```
 
 ## Pythonic
