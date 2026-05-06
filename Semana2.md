@@ -9,6 +9,7 @@ Bienbenidos [inicio](/README.md).
 - [Longitud](#longitud)
 - [Diccionarios](#diccionarios)
 - [Mario](#mario)
+-[Ejemplo sensor TCRT5000](#ejemplo-sensor-tcrt5000)
 
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
@@ -1089,6 +1090,55 @@ MPY: soft reboot
 ###
 ```
 
+## Ejemplo sensor TCRT5000
+
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+
+def leer_ldr(n=5):
+    total = 0
+    for _ in range(n):
+        total += sensor_ldr.read()
+        time.sleep_ms(10)
+    return total // n
+
+
+conteo = 0
+
+while True:
+    ir  = sensor_ir.value()   # 0 = objeto detectado, 1 = sin objeto
+    luz = leer_ldr()          # 0 (muy oscuro) – 4095 (muy iluminado)
+
+    if ir == 0:
+        conteo += 1
+        print("Objeto detectado! | Luz:", luz, "| Detecciones:", conteo)
+    else:
+        print("Sin objeto        | Luz:", luz)
+
+    time.sleep(0.5)
+```
+
+```console
+MPY: soft reboot
+Objeto detectado! | Luz: 4095 | Detecciones: 1
+Objeto detectado! | Luz: 4095 | Detecciones: 2
+Objeto detectado! | Luz: 4095 | Detecciones: 3
+Objeto detectado! | Luz: 4095 | Detecciones: 4
+Objeto detectado! | Luz: 4095 | Detecciones: 5
+Objeto detectado! | Luz: 4095 | Detecciones: 6
+Objeto detectado! | Luz: 4095 | Detecciones: 7
+Objeto detectado! | Luz: 4095 | Detecciones: 8
+Objeto detectado! | Luz: 4095 | Detecciones: 9
+```
 
 
 
