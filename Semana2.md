@@ -19,13 +19,35 @@ print("meow")
 print("meow")
 print("meow")
 ```
+
 ```console
 MPY: soft reboot
 meow
 meow
 meow
 ```
+```Python
+from machine import Pin, ADC
+import time
 
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+print("meow")
+print("meow")
+print("meow")
+```
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
 ## Bucles While.
 El while bucle es casi universal en todos los lenguajes de codificación.
 Un bucle de este tipo repetirá un bloque de código una y otra vez.
@@ -38,6 +60,34 @@ while i != 0:
 ```console
 MPY: soft reboot
 meow
+meow
+meow
+meow
+meow
+meow
+meow
+meow
+meow
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+i = 3
+while i != 0:
+    print("meow")
+```
+el resultado seguira surgiendo indefinidamente.
+
+```console
+MPY: soft reboot
 meow
 meow
 meow
@@ -61,6 +111,53 @@ meow
 meow
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+i = 3
+while i != 0:
+  print("meow")
+  i = i - 1
+```
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+
+```Python
+  i = 1
+  while i <= 3:
+      print("meow")
+      i = i + 1
+```
+```console
+MPY: soft reboot
+Traceback (most recent call last):
+  File "<stdin>", line 1
+IndentationError: unexpected indent
+```
+
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
   i = 1
   while i <= 3:
       print("meow")
@@ -70,11 +167,34 @@ meow
 ```console
 MPY: soft reboot
 Traceback (most recent call last):
-  File "<stdin>", line 1
+  File "<stdin>", line 11
 IndentationError: unexpected indent
 ```
 
 ```Python
+i = 0
+while i < 3:
+    print("meow")
+    i += 1
+```
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
 i = 0
 while i < 3:
     print("meow")
@@ -103,9 +223,53 @@ meow
 meow
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+for i in [0, 1, 2]:
+    print("meow")
+```
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+
+```Python
 for i in range(3):
     print("meow")
 ```
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+for i in range(3):
+    print("meow")
+
+```
+
 ```console
 MPY: soft reboot
 meow
@@ -124,6 +288,28 @@ meow
 meow
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+for _ in range(3):
+    print("meow")
+
+```
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+```Python
 print("meow" * 3)
 ```
 ```console
@@ -131,7 +317,47 @@ MPY: soft reboot
 meowmeowmeow
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+print("meow" * 3)
+
+```
+
+```console
+MPY: soft reboot
+meowmeowmeow
+```
+```Python
 print("meow\n" * 3, end="")
+
+```console
+MPY: soft reboot
+meow
+meow
+meow
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+print("meow\n" * 3, end="")
+
+```
 
 ```console
 MPY: soft reboot
@@ -162,6 +388,13 @@ meow
 meow
 ```
 ```Python
+
+```
+
+```console
+
+```
+```Python
 while True:
     n = int(input("What's n? "))
     if n > 0:
@@ -170,6 +403,35 @@ while True:
 for _ in range(n):
     print("meow")
 ```
+```console
+MPY: soft reboot
+What's n? 5
+meow
+meow
+meow
+meow
+meow
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+while True:
+    n = int(input("What's n? "))
+    if n > 0:
+        break
+
+for _ in range(n):
+    print("meow")
+```
+
 ```console
 MPY: soft reboot
 What's n? 5
@@ -208,6 +470,46 @@ meow
 meow
 meow
 ```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+def main():
+    meow(get_number())
+
+
+def get_number():
+    while True:
+        n = int(input("What's n? "))
+        if n > 0:
+            return n
+
+
+def meow(n):
+    for _ in range(n):
+        print("meow")
+
+
+main()
+
+
+```
+
+```console
+MPY: soft reboot
+What's n? 4
+meow
+meow
+meow
+meow
+```
 
 ## Mas sobre las listas.
 Considere el mundo de Hogwarts del famoso universo de Harry Potter.
@@ -227,11 +529,59 @@ Harry
 Ron
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+students = ["Hermione", "Harry", "Ron"]
+
+print(students[0])
+print(students[1])
+print(students[2])
+
+```
+
+```console
+MPY: soft reboot
+Hermione
+Harry
+Ron
+```
+```Python
 students = ["Hermione", "Harry", "Ron"]
 
 for student in students:
     print(student)
 ```
+```console
+MPY: soft reboot
+Hermione
+Harry
+Ron
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+students = ["Hermione", "Harry", "Ron"]
+
+for student in students:
+    print(student)
+```
+
 ```console
 MPY: soft reboot
 Hermione
@@ -254,15 +604,47 @@ MPY: soft reboot
 2 Harry
 3 Ron
 ```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+students = ["Hermione", "Harry", "Ron"]
+
+for i in range(len(students)):
+    print(i + 1, students[i])
+```
+
+```console
+MPY: soft reboot
+1 Hermione
+2 Harry
+3 Ron
+```
 
 ## Diccionarios.
 dictLos diccionarios o s son una estructura de datos que permite asociar claves con valores.
 Donde a listes una lista de múltiples valores, a dictasocia una clave con un valor.
 Considerando las casas de Hogwarts, podríamos asignar estudiantes específicos a casas específicas.
+
 ```Pyhton
 students = ["Hermione", "Harry", "Ron", "Draco"]
 houses = ["Gryffindor", "Gryffindor", "Griffindor", "Slytherin"]
 ```
+
+```console
+
+```
+```Python
+
+```
+
 ```console
 
 ```
@@ -279,6 +661,37 @@ print(students["Harry"])
 print(students["Ron"])
 print(students["Draco"])
 ```
+```console
+MPY: soft reboot
+Gryffindor
+Gryffindor
+Gryffindor
+Slytherin
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+students = {
+    "Hermione": "Gryffindor",
+    "Harry": "Gryffindor",
+    "Ron": "Gryffindor",
+    "Draco": "Slytherin",
+}
+print(students["Hermione"])
+print(students["Harry"])
+print(students["Ron"])
+print(students["Draco"])
+
+```
+
 ```console
 MPY: soft reboot
 Gryffindor
@@ -304,6 +717,11 @@ Harry
 Hermione
 Ron
 ```
+```Python
+```
+
+```console
+```
 Observe cómo, al ejecutar este código, el bucle for solo itera todas las claves, lo que genera una lista con los nombres de los estudiantes. ¿Cómo podríamos imprimir tanto los valores como las claves?
 
 Modifique su código de la siguiente manera:
@@ -326,6 +744,11 @@ Hermione Gryffindor
 Ron Gryffindor
 ```
 ```Python
+```
+
+```console
+```
+```Python
 students = {
     "Hermione": "Gryffindor",
     "Harry": "Gryffindor",
@@ -343,6 +766,11 @@ Hermione, Gryffindor
 Ron, Gryffindor
 ```
 ```Python
+```
+
+```console
+```
+```Python
 students = [
     {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
     {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
@@ -352,6 +780,11 @@ students = [
 ```
 ```console
 
+```
+```Python
+```
+
+```console
 ```
 ```Python
 students = [
@@ -393,9 +826,52 @@ MPY: soft reboot
 #
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+print("#")
+print("#")
+print("#")
+```
+
+```console
+MPY: soft reboot
+#
+#
+#
+```
+```Python
 for _ in range(3):
     print("#")
 ```
+```console
+MPY: soft reboot
+#
+#
+#
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+for _ in range(3):
+    print("#")
+```
+
 ```console
 MPY: soft reboot
 #
@@ -421,6 +897,35 @@ MPY: soft reboot
 #
 ```
 ```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+def main():
+    print_column(3)
+
+
+def print_column(height):
+    for _ in range(height):
+        print("#")
+
+
+main()
+```
+
+```console
+MPY: soft reboot
+#
+#
+#
+```
+```Python
 def main():
     print_row(4)
 
@@ -431,6 +936,32 @@ def print_row(width):
 
 main()
 ```
+```console
+MPY: soft reboot
+????
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+def main():
+    print_row(4)
+
+
+def print_row(width):
+    print("?" * width)
+
+
+main()
+```
+
 ```console
 MPY: soft reboot
 ????
@@ -463,7 +994,45 @@ MPY: soft reboot
 ###
 ###
 ```
+```Python
+from machine import Pin, ADC
+import time
 
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+def main():
+    print_square(3)
+
+
+def print_square(size):
+
+    # For each row in square
+    for i in range(size):
+
+        # For each brick in row
+        for j in range(size):
+
+            #  Print brick
+            print("#", end="")
+
+        # Print blank line
+        print()
+
+
+main()
+```
+
+```console
+MPY: soft reboot
+###
+###
+###
+```
 ```Python
 def main():
     print_square(3)
@@ -480,6 +1049,39 @@ def print_row(width):
 
 main()
 ```
+```console
+MPY: soft reboot
+###
+###
+###
+```
+```Python
+from machine import Pin, ADC
+import time
+
+# TCRT5000 salida digital → GPIO4
+sensor_ir = Pin(4, Pin.IN)
+
+# LDR salida analógica → GPIO35 (ADC1 canal 7, solo entrada)
+sensor_ldr = ADC(Pin(35))
+sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4095
+
+def main():
+    print_square(3)
+
+
+def print_square(size):
+    for i in range(size):
+        print_row(size)
+
+
+def print_row(width):
+    print("#" * width)
+
+
+main()
+```
+
 ```console
 MPY: soft reboot
 ###
