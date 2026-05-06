@@ -9,7 +9,7 @@ Bienbenidos [inicio](/README.md).
 - [Longitud](#longitud)
 - [Diccionarios](#diccionarios)
 - [Mario](#mario)
--[Ejemplo sensor TCRT5000](#ejemplo-sensor-tcrt5000)
+- [Ejemplo sensor TCRT5000](#ejemplo-sensor-tcrt5000)
 
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
