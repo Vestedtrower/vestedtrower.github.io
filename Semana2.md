@@ -1,6 +1,9 @@
 # Bucles. 
 Bienbenidos [inicio](/README.md).
 
+- [Materiales y Programas](#materiales-y-programas)
+- [Usar Thonny]()
+- [Conectar el sensor TCRT5000](#conectar-sensor-tcrt5000)
 - [Bucles](#bucles)
 - [Bucles while](#bucles-while)
 - [Bucles for](#bucles-for)
@@ -11,6 +14,22 @@ Bienbenidos [inicio](/README.md).
 - [Mario](#mario)
 - [Ejemplo sensor TCRT5000](#ejemplo-sensor-tcrt5000)
 
+## Materiales y Programas
+La lista de materiales es:
+- Sensor TCRT5000
+- Esp32
+- Cableado Jumper Electrónica "F - F"
+- Cable USB tipo A con entrada para micro puerto tipo B
+- Computadora
+- Aplicación Thonny 
+- Instrucciones Git hub
+
+## Usar Thonny
+Para empesar a usar nuestro sensor tenemos que tener en mano lo antes mencionado en la lista de materiales
+
+## Conectar sensor TCRT5000
+Para conectar nuestro sensor contamos con las siguientes referencias.
+
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
 Comience escribiendo code cat.pyen la ventana del terminal.
@@ -20,7 +39,7 @@ print("meow")
 print("meow")
 print("meow")
 ```
-
+![]()
 ```console
 MPY: soft reboot
 meow
@@ -49,6 +68,7 @@ meow
 meow
 meow
 ```
+
 ## Bucles While.
 El while bucle es casi universal en todos los lenguajes de codificación.
 Un bucle de este tipo repetirá un bloque de código una y otra vez.
@@ -499,8 +519,6 @@ def meow(n):
 
 
 main()
-
-
 ```
 
 ```console
@@ -1092,6 +1110,8 @@ MPY: soft reboot
 
 ## Ejemplo sensor TCRT5000
 
+## ESTO ES EL PROGRAMA FINAL
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -1140,5 +1160,15 @@ Objeto detectado! | Luz: 4095 | Detecciones: 8
 Objeto detectado! | Luz: 4095 | Detecciones: 9
 ```
 
+
+```console
+Objeto detectado! | Luz: 3931 | Detecciones: 39
+Objeto detectado! | Luz: 3922 | Detecciones: 40
+Objeto detectado! | Luz: 3921 | Detecciones: 41
+Objeto detectado! | Luz: 3938 | Detecciones: 42
+Objeto detectado! | Luz: 3924 | Detecciones: 43
+Objeto detectado! | Luz: 3936 | Detecciones: 44
+
+```
 
 

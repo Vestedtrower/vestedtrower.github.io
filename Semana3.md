@@ -1,6 +1,9 @@
 # Excepciones.
 Bienbenidos [inicio](/README.md).
 
+- [Materiales y Programas](#materiales-y-programas)
+- [Usar Thonny](#usar-thonny)
+- [conectar sensor]()
 - [Excepciones](#excepciones)
 - [Errores de tiempo de ejecucion](#errores-de-tiempo-de-ejecucion)
 - [try](#try)
@@ -8,11 +11,26 @@ Bienbenidos [inicio](/README.md).
 - [Creacion de una funcion para obtener un entero](#creación-de-una-función-para-obtener-un-entero)
 - [Pass](#pass)
 
+## Materiales y Programas
+La lista de materiales es:
+- Sensor ?
+- Esp32
+- Cableado Jumper Electrónica "F - F"
+- Cable USB tipo A con entrada para micro puerto tipo B
+- Computadora
+- Aplicación Thonny 
+- Instrucciones Git hub
+
+## Usar Thonny
+
+
+## Conectar Sensor
+
+
 ## Excepciones.
 Las excepciones son cosas que salen mal dentro de nuestra codificación.
 Las excepciones son problemas que surgen mientras el programa se está ejecutando.
 En nuestro editor de texto, escriba code hello.pypara crear un nuevo archivo. Escriba lo siguiente (con los errores intencionales incluidos).
-
 ```Python
 print("hello, world)
 ```
@@ -29,6 +47,7 @@ MPY: soft reboot
 What's x? 2
 x is 2
 ```
+
 ## Try.
 En Python try, y exceptson formas de probar la entrada del usuario antes de que algo falle. Modifique su código de la siguiente manera:
 ```Python

@@ -2,8 +2,8 @@
 
 Bienbenidos [inicio](/README.md).
 
-- [Materiales](#materiales)
-- [Coneccion de componentes](#coneccion-de-componentes)
+- [Materiales y Programas](#materiales-y-programas)
+- [Coneccion de sensores LDR](#coneccion-de-sensores-ldr)
 - [Usar Thonny](#usar-thonny)
 - [Condicionales](#condicionales)
 - [Declaraciones if](#declaraciones-if)
@@ -15,8 +15,9 @@ Bienbenidos [inicio](/README.md).
 - [Codificación pitónica](#codificación-pitónica)
 - [Pythonic](#pythonic)
 - [Match](#match)
+- [Aplicacion Thonny con el sensor LDR](#aplicasion-thonny-con-el-sensor-ldr)
 
-## Materiales 
+## Materiales y Programas
 La lista de materiales es:
 - 2 protoboard 
 - 2 Sensores para deteccion de Luz LDR
@@ -26,14 +27,7 @@ La lista de materiales es:
 - Cable USB tipo A con entrada para micro puerto tipo B
 - Computadora 
 - Aplicación Thonny 
-
-## Coneccion de componentes
-Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones. En la siguiente imagen se te muestra un ejemplo de un protoboard mediante en las lineas en marcadas observamos la conductividad. 
-![Protoboard](./imagen/Protoboard.png)
-
-Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestra computadora, Enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
-
-![diagrama2ldr](./imagen/digrama2ldr.png)
+- Instrucciones Git hub
 
 ## Usar Thonny
 Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuetro codigo.
@@ -56,6 +50,16 @@ El otro extremo del LDR → GPIO34
 Resistencia de 10kΩ → entre GPIO34 y GND
 
 Esto permite que el ESP32 lea el cambio de voltaje dependiendo de la luz.
+
+
+## Coneccion de sensores LDR
+Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones. En la siguiente imagen se te muestra un ejemplo de un protoboard mediante en las lineas en marcadas observamos la conductividad. 
+![Protoboard](./imagen/Protoboard.png)
+
+Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos protoboards solicitados en la lista de materiales. despues utilizaremos nuestro cable de alimentacion para conectar el Esp32 a nuestra computadora, Enseguida colocaremos nuestros sensores y resistencias siguiendo el diagrama de la imagen. 
+
+![diagrama 2LDR](./semana1/ejercicio1/ejercicio1/diagrama2LDR.png)
+
 
 ## Condicionales
 Los condicionales nos permiten que el programa tome decisiones y elija un camino sobre otro dependiendo de las condiciones que especifiquemos.
@@ -902,3 +906,46 @@ match name:
 ```console
 
 ```
+
+## Aplicasion thonny con el sensor LDR
+
+## ESTO ES EL PROGRAMA FINAL 
+
+```Python
+from machine import ADC, Pin
+import time
+
+# Configurar los pines analógicos
+ldr1 = ADC(Pin(34))   # Primer LDR en GPIO 34
+ldr2 = ADC(Pin(35))   # Segundo LDR en GPIO 35
+
+# Ajustar la atenuación para rango de 0 - 3.3V
+ldr1.atten(ADC.ATTN_11DB)
+ldr2.atten(ADC.ATTN_11DB)
+
+while True:
+    valor1 = ldr1.read()   # Valor de 0 - 4095
+    valor2 = ldr2.read()   # Valor de 0 - 4095
+    
+    print("LDR1:", valor1, " | LDR2:", valor2)
+
+    # Comparación usando solo IF
+    if valor1 < valor2:
+        print("Hay menos luz en LDR1")
+    
+    if valor2 > valor1:
+        print("Hay más luz en LDR2")
+    
+    if valor1 == valor2:
+        print("Ambos sensores tienen la misma luz")
+
+    time.sleep(0.5)
+```
+El resultado esperado es:
+```Console
+LDR1: 3651  | LDR2: 3764
+Hay menos luz en LDR1
+Hay más luz en LDR2
+LDR1: 3641  | LDR2: 2071
+```
+

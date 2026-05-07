@@ -1,32 +1,29 @@
-# Tutorial mejorado de MicroPython para estudiantes de Mecatrónica
+# Tutorial mejorado de MicroPython para estudiantes de Ingeniería en Mecatrónica
 _Versión revisada: 2025-05-27_
 
 Bienbenidos [inicio](/README.md).
 
 # Funciónes y variables con Micropython.
-- [Materiales](#materiales)
+- [Materiales y Programas](#materiales-y-programas)
 - [Instalar Thonny](#instalar-thonny)
 - [Instalar firmware Micropython en ESP32](#instalar-firmware-micropython-en-esp32)
 - [Usar Thonny](#usar-thonny)
 - [Conectar el sensor DHT11 a nuestro esp32](#conectar-el-sensor-dht11-a-nuestro-esp32)
+- [Funciones](#funciones)
 - [Bugs](#Bugs)
 - [Variables](#variables)
 - [Comentarios](#comentarios)
 - [Pseudocodigo](#pseudocodigo)
-- [Mejorando el programa anterior](#mejorando-el-programa-anterior)
 - [Comas](#comas)
 - [Cadenas_y_parametros](#cadenas-y-parametros)
-- [Modificaciones](#modificaciones)
 - [Formato_cadenas](#formato-cadenas)
-- [Mas_sobre_cuerdas](#mas-sobre-cuerdas)
 - [Numeros_enteros_o_int](#numeros-enteros-o-int)
 - [Conceptos_basicos_de_flotacion](#conceptos-basicos-de-flotacion)
-- [Mas_sobre_los_flotadores](#mas-sobre-los-flotadores)
 - [Definicion](#definicion)
 - [Devolviendo valores](#devolviendo-valores)
 - [Aplicasion_thonny_con_el_sensor_Dht11](#aplicasion-thonny-con-el-sensor-dht11)
   
-## Materiales
+## Materiales y Programas
 La lista de materiales es:
 - Sensor DHT11
 - Esp32
@@ -94,6 +91,9 @@ Duespués de esto, ve al menú **Ejecutar** y enseguida da click en **Detener/Re
 Asegúrate que los datos abreviado **DAT** del DHT11 estan conectados al pin 15, **VCC** DHT11 en 3v3 del ESP32 y **GND** de DHT11 al **GND** de nuestro ESP32.
 ![conexion](./imagen/conexionESPDHT11.png)
 
+## Diagrama de conexiones
+![Diagrama](./semana0/ejercicio0/ejercicio0/DHT11picture.png)
+
 Ahora comenzaremos a escribir el siguiente código.
 Partiendo por poner a prueba lo primero que aprendemos en Python sera imprimir una simple etiqueta de texto en Python utlizando la función **print**.
 Para ejecutarlo ve al menú **Ejecutar** y da click en **Ejecutar el script actual**.
@@ -124,6 +124,11 @@ Cual es la temperatura? 32
 Hola, ambiente
 ```
 
+## Funciones
+Las funciones son verbos o acciones que la computadora o el lenguaje de programación ya sabrán realizar.
+En tu hello.pyprograma, la printfunción sabe cómo imprimir en la ventana del terminal.
+La printfunción toma argumentos. En este caso, "hello, world"son los argumentos que printtoma la función.
+
 ## Bugs
 En programacion independientemente de cualquier lenguaje usualmente podemos cometer errores no te preocupes, es parte de covertirse en un gran programador a estos errores en programacion se les llama bugs.
  
@@ -131,6 +136,7 @@ Imaginemos que en nuestro programa escribimos accidentalmente print("hola, mundo
 ```python
 print("Hola mundo"
 ```
+
 Los mensajes de error suelen informarle de sus errores y ofrecerle pistas sobre cómo solucionarlos. Sin embargo, en muchas ocasiones el intérprete no será tan útil.
 ```console
 MPY: soft reboot
@@ -138,6 +144,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2
 SyntaxError: invalid syntax
 ```
+
 ## Variables
 A continuacion vamos a nombrar una variable.
 Para esto utilizaremos el signo **=** para asignar el valor a la variable.
@@ -434,6 +441,7 @@ print(temp + hum)
 MPY: soft reboot
 91
 ```
+
 ## Flotantes
 Los valores flotantes son números reales con puntos décimales, Por ejemplo **0.22** dando asi una aproximación a los enteros o int.
 Para utilizar los valores flotantes recordemos el comando de los números enteros, pero en su lugar utlizaremos **float**.
@@ -526,7 +534,6 @@ El resultado obtenido es
 MPY: soft reboot
 0.43
 ```
-
 
 ## Definicion
 las definiciones en python son mejor conocidas como funciones. 

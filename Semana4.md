@@ -1,6 +1,7 @@
 # Bibliotecas.
 Bienbenidos [inicio](/README.md).
 
+- [Materiales y Programas](#materiales-y-programas)
 - [Bibliotecas](#bibliotecas)
 - [Aleatorio](#aleatorio)
 - [Estadistica](#estadistica)
@@ -9,6 +10,9 @@ Bienbenidos [inicio](/README.md).
 - [Paquetes](#paquetes)
 - [API](#api)
 - [Creando tus propias bibliotecas](#creando-tus-propias-bibliotecas)
+
+## Materiales y Programas 
+
 
 ## Bibliotecas.
 Generalmente, las bibliotecas son fragmentos de código escritos por usted u otros y que puede utilizar en su programa.
