@@ -52,7 +52,7 @@ Resistencia de 10kΩ → entre GPIO34 y GND
 Esto permite que el ESP32 lea el cambio de voltaje dependiendo de la luz.
 
 
-## Coneccion de sensores LDR
+## Coneccion de sensores LDR a nuestro esp32
 Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones. En la siguiente imagen se te muestra un ejemplo de un protoboard mediante en las lineas en marcadas observamos la conductividad. 
 ![Protoboard](./imagen/Protoboard.png)
 

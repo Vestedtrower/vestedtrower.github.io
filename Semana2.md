@@ -25,10 +25,21 @@ La lista de materiales es:
 - Instrucciones Git hub
 
 ## Usar Thonny
-Para empesar a usar nuestro sensor tenemos que tener en mano lo antes mencionado en la lista de materiales
+Para empezar a programar abrimos la aplicación Thonny que estara ubicada en el Escritorio.
+Nos ubicamos en la interfaz del interprete para comenzar a escribir el código.
 
 ## Conectar sensor TCRT5000
-Para conectar nuestro sensor contamos con las siguientes referencias.
+Para conectar nuestro sensor Utilizaremos los siguientes pines para depues conectarlos a nuestro esp32. 
+
+- VCC
+- GND
+- DO
+
+Procedemos a realizar las conecciones en nuestro protoboard mismo donde conectaremos nuestro esp32 alineandolos en los sigueintes pines. 
+
+- 3V3
+- GND
+- D35
 
 ## Bucles.
  Básicamente, los bucles son una forma de hacer algo una y otra vez.
@@ -46,6 +57,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -61,7 +73,6 @@ print("meow")
 print("meow")
 print("meow")
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -90,6 +101,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -106,7 +118,6 @@ while i != 0:
     print("meow")
 ```
 el resultado seguira surgiendo indefinidamente.
-
 ```console
 MPY: soft reboot
 meow
@@ -131,6 +142,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -147,7 +159,6 @@ while i != 0:
   print("meow")
   i = i - 1
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -184,7 +195,6 @@ sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4
       print("meow")
       i = i + 1
 ```
-
 ```console
 MPY: soft reboot
 Traceback (most recent call last):
@@ -198,13 +208,13 @@ while i < 3:
     print("meow")
     i += 1
 ```
-
 ```console
 MPY: soft reboot
 meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -221,7 +231,6 @@ while i < 3:
     print("meow")
     i += 1
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -243,6 +252,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -257,7 +267,6 @@ sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4
 for i in [0, 1, 2]:
     print("meow")
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -275,6 +284,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -290,7 +300,6 @@ for i in range(3):
     print("meow")
 
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -308,6 +317,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -323,13 +333,13 @@ for _ in range(3):
     print("meow")
 
 ```
-
 ```console
 MPY: soft reboot
 meow
 meow
 meow
 ```
+
 ```Python
 print("meow" * 3)
 ```
@@ -337,6 +347,7 @@ print("meow" * 3)
 MPY: soft reboot
 meowmeowmeow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -351,11 +362,11 @@ sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4
 print("meow" * 3)
 
 ```
-
 ```console
 MPY: soft reboot
 meowmeowmeow
 ```
+
 ```Python
 print("meow\n" * 3, end="")
 
@@ -365,6 +376,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -379,7 +391,6 @@ sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4
 print("meow\n" * 3, end="")
 
 ```
-
 ```console
 MPY: soft reboot
 meow
@@ -408,6 +419,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 
 ```
@@ -415,6 +427,7 @@ meow
 ```console
 
 ```
+
 ```Python
 while True:
     n = int(input("What's n? "))
@@ -433,6 +446,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -452,7 +466,6 @@ while True:
 for _ in range(n):
     print("meow")
 ```
-
 ```console
 MPY: soft reboot
 What's n? 5
@@ -491,6 +504,7 @@ meow
 meow
 meow
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -520,7 +534,6 @@ def meow(n):
 
 main()
 ```
-
 ```console
 MPY: soft reboot
 What's n? 4
@@ -547,6 +560,7 @@ Hermione
 Harry
 Ron
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -565,13 +579,13 @@ print(students[1])
 print(students[2])
 
 ```
-
 ```console
 MPY: soft reboot
 Hermione
 Harry
 Ron
 ```
+
 ```Python
 students = ["Hermione", "Harry", "Ron"]
 
@@ -584,6 +598,7 @@ Hermione
 Harry
 Ron
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -600,7 +615,6 @@ students = ["Hermione", "Harry", "Ron"]
 for student in students:
     print(student)
 ```
-
 ```console
 MPY: soft reboot
 Hermione
@@ -639,7 +653,6 @@ students = ["Hermione", "Harry", "Ron"]
 for i in range(len(students)):
     print(i + 1, students[i])
 ```
-
 ```console
 MPY: soft reboot
 1 Hermione
@@ -656,14 +669,13 @@ Considerando las casas de Hogwarts, podríamos asignar estudiantes específicos 
 students = ["Hermione", "Harry", "Ron", "Draco"]
 houses = ["Gryffindor", "Gryffindor", "Griffindor", "Slytherin"]
 ```
-
 ```console
 
 ```
+
 ```Python
 
 ```
-
 ```console
 
 ```
@@ -687,6 +699,7 @@ Gryffindor
 Gryffindor
 Slytherin
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -710,7 +723,6 @@ print(students["Ron"])
 print(students["Draco"])
 
 ```
-
 ```console
 MPY: soft reboot
 Gryffindor
@@ -718,7 +730,8 @@ Gryffindor
 Gryffindor
 Slytherin
 ```
-Mejorando el programa.
+
+## Mejorando el programa.
 ```Python
 students = {
     "Hermione": "Gryffindor",
@@ -736,11 +749,13 @@ Harry
 Hermione
 Ron
 ```
+
 ```Python
 ```
 
 ```console
 ```
+
 Observe cómo, al ejecutar este código, el bucle for solo itera todas las claves, lo que genera una lista con los nombres de los estudiantes. ¿Cómo podríamos imprimir tanto los valores como las claves?
 
 Modifique su código de la siguiente manera:
@@ -762,11 +777,13 @@ Harry Gryffindor
 Hermione Gryffindor
 Ron Gryffindor
 ```
+
 ```Python
 ```
 
 ```console
 ```
+
 ```Python
 students = {
     "Hermione": "Gryffindor",
@@ -784,11 +801,13 @@ Harry, Gryffindor
 Hermione, Gryffindor
 Ron, Gryffindor
 ```
+
 ```Python
 ```
 
 ```console
 ```
+
 ```Python
 students = [
     {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
@@ -800,11 +819,12 @@ students = [
 ```console
 
 ```
+
 ```Python
 ```
-
 ```console
 ```
+
 ```Python
 students = [
     {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
@@ -823,6 +843,7 @@ Harry, Gryffindor, Stag
 Ron, Gryffindor, Jack Russell terrier
 Draco, Slytherin, None
 ```
+
 ```Python
 
 ```
@@ -844,6 +865,7 @@ MPY: soft reboot
 #
 #
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -859,13 +881,13 @@ print("#")
 print("#")
 print("#")
 ```
-
 ```console
 MPY: soft reboot
 #
 #
 #
 ```
+
 ```Python
 for _ in range(3):
     print("#")
@@ -876,6 +898,7 @@ MPY: soft reboot
 #
 #
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -890,13 +913,13 @@ sensor_ldr.atten(ADC.ATTN_11DB)   # rango completo 0 – 3.3 V → valor 0 – 4
 for _ in range(3):
     print("#")
 ```
-
 ```console
 MPY: soft reboot
 #
 #
 #
 ```
+
 ```Python
 def main():
     print_column(3)
@@ -915,6 +938,7 @@ MPY: soft reboot
 #
 #
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -937,13 +961,13 @@ def print_column(height):
 
 main()
 ```
-
 ```console
 MPY: soft reboot
 #
 #
 #
 ```
+
 ```Python
 def main():
     print_row(4)
@@ -959,6 +983,7 @@ main()
 MPY: soft reboot
 ????
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -980,11 +1005,11 @@ def print_row(width):
 
 main()
 ```
-
 ```console
 MPY: soft reboot
 ????
 ```
+
 ```Python
 def main():
     print_square(3)
@@ -1013,6 +1038,7 @@ MPY: soft reboot
 ###
 ###
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -1045,13 +1071,13 @@ def print_square(size):
 
 main()
 ```
-
 ```console
 MPY: soft reboot
 ###
 ###
 ###
 ```
+
 ```Python
 def main():
     print_square(3)
@@ -1074,6 +1100,7 @@ MPY: soft reboot
 ###
 ###
 ```
+
 ```Python
 from machine import Pin, ADC
 import time
@@ -1100,7 +1127,6 @@ def print_row(width):
 
 main()
 ```
-
 ```console
 MPY: soft reboot
 ###
