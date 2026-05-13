@@ -30,7 +30,8 @@ La lista de materiales es:
 - Instrucciones Git hub
 
 ## Usar Thonny
-Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuetro codigo.
+Para empezar a usar Thonny nos ubicamos en la ventana del editor. al ya tener nuestros componentes especificados y conectados empezamos a redactar nuestro codigo.
+
 Materiales:
 
 1 ESP32
@@ -51,7 +52,6 @@ Resistencia de 10kΩ → entre GPIO34 y GND
 
 Esto permite que el ESP32 lea el cambio de voltaje dependiendo de la luz.
 
-
 ## Coneccion de sensores LDR a nuestro esp32
 Antes de comenzar debemos considerar los puentes de nuestro protoboard y conocer la distribucion vertical y Orizontal para las conecciones. En la siguiente imagen se te muestra un ejemplo de un protoboard mediante en las lineas en marcadas observamos la conductividad. 
 ![Protoboard](./imagen/Protoboard.png)
@@ -62,7 +62,7 @@ Para empezar nesecitaremos conectar nuestro esp32 de manera que conecte los dos 
 
 
 ## Condicionales
-Los condicionales nos permiten que el programa tome decisiones y elija un camino sobre otro dependiendo de las condiciones que especifiquemos.
+Los condicionales permiten que un programa tome decisiones y seleccione diferentes acciones según las condiciones establecidas en el código. Estas estructuras son fundamentales en programación, ya que permiten controlar el flujo de ejecución de acuerdo con los resultados obtenidos.
 
 En Python tenemos un conjunto de **“operadores”** que se utilizan para plantear preguntas matemáticas.
 
@@ -76,7 +76,7 @@ Los símbolos que utilizamos para establecer condicionales son los siguientes.
 Las declaraciones condicionales comparan un término de la izquierda con un término de la derecha.
 
 ## Declaraciones If
-En Python, las sentencias **if** se utilizan para tomar decisiones dentro del programa. Estas permiten ejecutar un bloque de código solo cuando una condición se evalúa como verdadera, de lo contrario, el programa puede ejecutar instrucciones alternativas o simplemente continuar su flujo normal.
+En Python, las sentencias **if** se utilizan para la toma de decisiones dentro de un programa. Estas estructuras permiten ejecutar un bloque de código cuando una condición se evalúa como verdadera. En caso contrario, el programa puede ejecutar instrucciones alternativas o continuar con su flujo normal de ejecución.
 
 En la ventana del editor de thonny comenzamos a redactar nuestro ejemplo para empesar a usar **if**. 
 
@@ -112,6 +112,7 @@ Hay menos luz en LDR1
 Solo especificamos el codigo para que el codigo indique que **"X"** es menor a **"Y"** por lo tanto solo la respuesta señalara lo antes mencionado siendo **Y** mayor que **X**. 
 
 ## Ejemplo sensor LDR
+A continuación, se muestra un ejemplo de código en MicroPython que utiliza dos sensores LDR para realizar lecturas en tiempo real.
 
 ```Python
 from machine import ADC, Pin
@@ -155,7 +156,7 @@ Observe cómo su programa toma la entrada del usuario para x e y, convirtiéndol
 ifLas sentencias utilizan boolvalores booleanos ( Trueo False) para decidir si se ejecuta el código. Si la comparación x > yes True, el intérprete ejecuta el bloque con sangría.
 
 ## Flujo de control elif, else
-Observe cómo proporciona una serie de <kbd>if</kbd> instrucciones. Primero, <kbd>if</kbd>se evalúa la primera instrucción. Luego, la segunda ifinstrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. Este flujo de decisiones se denomina "flujo de control".
+Observe cómo el programa utiliza una serie de instrucciones <kbd>if</kbd>. Primero, se evalúa la primera condición; posteriormente, se analiza la segunda instrucción <kbd>if</kbd>; y finalmente, se evalúa la última condición. Este proceso de evaluación y toma de decisiones se conoce como “flujo de control”, ya que determina el orden en que se ejecutan las instrucciones dentro del programa.
 
 ```Python 
 from machine import ADC, Pin
@@ -201,7 +202,7 @@ Hay mas luz en LDR1
 ```
 
 ## Aplicaion de elif
-Observe el uso de **elif** permite que el programa tome menos decisiones, Primero **if** se evalua la condicion es verdadera, ninguna de las **elif** demas se ejecutara, sin embargo si la **if** se evalua y es falsa, **elif** se evaluara la primera condicion si esta es verdadera, no se ejecutara la evaluacion final.
+Observe cómo el uso de **elif** permite optimizar la toma de decisiones dentro del programa. Primero, se evalúa la condición de la instrucción **if**; si esta resulta verdadera, las demás condiciones **elif** no se ejecutarán. Sin embargo, si la condición de **if** es falsa, el programa evaluará la primera condición **elif**. Si esta se cumple, las condiciones restantes ya no serán evaluadas. De esta manera, el flujo de control se vuelve más eficiente y organizado.
 
 ```Python
 from machine import ADC, Pin
@@ -252,7 +253,7 @@ El valor en LDR1 y LDR2 es igual
 ```
 
 ## Aplicasion de else
-Podemos crear un resultado predeterminado general usando una declarasion else. Podemos revisarlo de la siguiente forma. 
+En Python, la sentencia **else** se utiliza para definir un bloque de código alternativo que se ejecutará cuando la condición evaluada en las instrucciones **if** o **elif** sea falsa. Al programar, es importante recordar el uso correcto de la indentación, ya que esta define la estructura de los flujos de control y la toma de decisiones del tipo “Sí” y “No” dentro del programa.
 
 ```Python
 from machine import ADC, Pin
@@ -302,10 +303,8 @@ LDR1: 4095  | LDR2: 4095
 El valor en LDR1 y LDR2 es igual
 ```
 
-Observe cómo proporciona una serie de ifinstrucciones. Primero, if se evalúa la primera instrucción. Luego, la segunda if instrucción ejecuta su evaluación. Finalmente, la última ifinstrucción ejecuta su evaluación. 
-
 ## Or
-Or Permite que su programa decida entre una o más alternativas. Por ejemplo, podríamos editar nuestro programa de la siguiente manera.
+La sentencia **or** permite que un programa tome decisiones entre una o más alternativas. Esta condición lógica se cumple cuando al menos una de las condiciones evaluadas es verdadera. Por ejemplo, puede utilizarse para activar una acción cuando cualquiera de varios sensores detecte una señal o condición específica.
 
 ```Python
 from machine import ADC, Pin
@@ -400,10 +399,8 @@ valor1 no es igual al valor2
 ```
 
 ## And
-Similar a or, and se puede utilizar dentro de declaraciones condicionales.
-Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se indica a continuación:
-
-hallo
+De manera similar a **or**, la sentencia **and** puede utilizarse dentro de las declaraciones condicionales. Esta condición lógica permite que un bloque de código se ejecute únicamente cuando todas las condiciones evaluadas sean verdaderas..
+Ejecútalo en la ventana de terminal, Inicia tu nuevo programa como se te indica a continuación.
 
 ```Python
 from machine import ADC, Pin
@@ -510,12 +507,14 @@ Grade: F
 ```
 
 ## Módulo
-En matemáticas, la paridad se refiere a si un número es par o impar.
-El operador módulo **%** en programación permite ver si dos números se dividen exactamente o se dividen y tienen resto.
-Por ejemplo, **4 % 2** resultaría en cero, ya que es un divisor exacto. Sin embargo, **3 % 2** no es un divisor exacto y resultaría en un número distinto de cero.
-En la ventana de terminal, crea un nuevo programa escribiendo code parity.py , En el editor de texto, escribe el código como se indica a continuación:
+En matemáticas, la paridad se refiere a la clasificación de un número como par o impar. En programación, el operador módulo % se utiliza para obtener el residuo de una división y determinar si un número es divisible exactamente entre otro.
 
-Ejemplo CHATGPT
+Por ejemplo:
+
+- 4 % 2 = 0, porque 4 es divisible exactamente entre 2 y no existe residuo.
+- 3 % 2 = 1, porque 3 no es divisible exactamente entre 2 y la división genera un residuo distinto de cero.
+
+Este operador es ampliamente utilizado para identificar números pares e impares dentro de un programa.
 ```Python 
 from machine import ADC, Pin
 import time
@@ -610,8 +609,11 @@ El valor es PAR
 ```
 
 ## Creando tu propia función de paridad
-Como se discutió en la lección 0, ¡te resultará útil crear una función propia!
-Podemos crear nuestra propia función para comprobar si un número es par o impar. Ajusta tu código como sigue:
+Como se mencionó en la lección 0, resulta muy útil crear funciones propias para organizar y reutilizar código dentro de un programa.
+
+Por ejemplo, podemos desarrollar una función que permita verificar si un número es par o impar de manera automática y eficiente.
+
+Modificaremos el código de la siguiente manera.
 
 ```Python
 from machine import ADC, Pin
@@ -701,7 +703,9 @@ Impar
 ```
 
 ## Pythonic
-En el mundo de la programación, existen tipos de programación que se denominan "Pythonic". Es decir, existen formas de programar que a veces solo se ven en la programación Python. Considere la siguiente revisión de nuestro programa:
+En el mundo de la programación, existen estilos de desarrollo conocidos como **“Pythonic”**. Este término se utiliza para describir formas de programar que aprovechan las características y la filosofía propias de Python, buscando que el código sea más claro, sencillo, legible y eficiente. Muchas de estas prácticas son características distintivas del lenguaje Python.
+
+Debemos considerar la siguiente revisión de nuestro programa:
 
 ```Python
 from machine import ADC, Pin
@@ -791,9 +795,10 @@ MPY: soft reboot
 Valor del LDR: 1056
 Impar
 ```
+Tenga en cuenta que el programa evaluará la expresión n % 2 == 0 para determinar si su resultado es True o False. Posteriormente, este valor lógico será devuelto a la función principal para continuar con el flujo de ejecución del programa.
 
 ## Match
-De manera similar a las declaraciones if, elif, y else, match las declaraciones se pueden usar para ejecutar código condicional que coincida con ciertos valores.
+De manera similar a las sentencias **if**, **elif** y **else**, las instrucciones match pueden utilizarse para ejecutar bloques de código de forma condicional, dependiendo de si un valor coincide con un caso específico definido por el programador.
 
 ```Python 
  name = input("What's your name? ")
